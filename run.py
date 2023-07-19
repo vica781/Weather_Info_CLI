@@ -1,6 +1,21 @@
 # Import required libraries
 from geopy.geocoders import Nominatim
 import requests
+from datetime import date
+from termcolor import colored
+
+# Defining Welcome message function
+
+
+def welcome():
+    """
+    This function prints a welcome message to the user
+    """
+    print(colored('Welcome to Victoria\'s Weather App!', 'green'))
+    print(colored('This app will provide you with the weather \
+    information you need.', 'green'))
+    print(colored('Please enter the city and country of your choice.', 'green'))
+    print(colored('Enjoy!', 'green'))
 
 
 def get_location(city, country):
@@ -13,8 +28,8 @@ def get_location(city, country):
     # Get location
     location = geolocator.geocode(f"{city}, {country}")
 
-    latitude = location.latitude
-    longitude = location.longitude
+    latitude = str(location.latitude)
+    longitude = str(location.longitude)
     return latitude, longitude
 
 
@@ -28,14 +43,3 @@ print(f"You have entered the following location: {city}, {country}")
 
 city_country = get_location(city, country)
 print(city_country)
-# # Path: run.py
-# def get_weather(latitude, longitude):
-#     """
-#     This function returns the weather for a given latitude and longitude
-#     """
-#     # Initialize DarkSky API
-#     darksky = DarkSky(API_KEY)
-
-#     # Get weather
-#     weather = darksky.get_forecast(latitude, longitude)
-#     return weather
