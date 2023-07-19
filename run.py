@@ -51,6 +51,9 @@ def get_weather(latitude, longitude):
     # Get data from API
     response = requests.get(URL)
     # Check if the response is successful
+    # If successful, get data
+    # 200 is the HTTP status code for "OK" used for data communication \
+    # on the web (https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html)
     if response.status_code == 200:
         # Print success message
         print('Success! Everything is okay. I got the data!')
@@ -60,7 +63,7 @@ def get_weather(latitude, longitude):
     else:
         # Print error message
         print('Oops! Something went wrong. Please try again later.')
-        # Return None
+        # Return None if the response is enything other then successful
         data = None
     return data
 
