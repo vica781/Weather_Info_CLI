@@ -108,6 +108,12 @@ def print_weather(data):
         current_windgusts = data['hourly']['windgusts_10m'][hourly_index]
 
         # Daily requests
+        # Get current maximum temperature
+        current_temperature_max = data['daily'][
+            'temperature_2m_max'][daily_index]
+        # Get current minimum temperature
+        current_temperature_min = data['daily'][
+            'temperature_2m_min'][daily_index]
         # Get current sunrise
         current_sunrise = data['daily']['sunrise'][daily_index]
         # Get current sunset
@@ -115,30 +121,45 @@ def print_weather(data):
         # Get current UV index
         current_uv_index = data['daily']['uv_index_max'][daily_index]
         # Get current precipitation probability
-        current_precipitation_probability = data['daily']['precipitation_probability_max'][daily_index]
+        current_precipitation_probability = data['daily'][
+            'precipitation_probability_max'][daily_index]
 
+        # Print hourly requests
+        # Print current temperature
         print(
-            f"The current temperature is {current_temperature} degrees Celsius")
+            f"The current temperature is {current_temperature} \u00b0 Celsius")
         # Print current humidity
-        print(f"The current humidity is {current_humidity} %")
-        # Print current pressure
-        print(f"The current pressure is {current_pressure} hPa")
-        # Print current visibility
-        print(f"The current visibility is {current_visibility} m")
-        # Print current sunrise
-        print(f"The current sunrise is at {current_sunrise}")
-        # Print current sunset
-        print(f"The current sunset is at {current_sunset}")
-        # Print current UV index
-        print(f"The current UV index is {current_uv_index}")
+        print(f"The current relative humidity is {current_humidity} %")
         # Print current precipitation probability
         print(
             f"The current precipitation probability is {current_precipitation_probability} %")
+        # Print current surface pressure
+        print(f"The current surface pressure is {current_pressure} hPa")
+        # Print current visibility
+        print(f"The current visibility is {current_visibility} km")
+        # Print current windspeed
+        print(f"The current windspeed is {current_windspeed} m/s")
         # Print current wind direction
-        # print(
-        #     f"The current wind direction is {current_wind_direction} degrees")
-        # # Print current wind speed
-        # print(f"The current wind speed is {current_wind_speed} m/s")
+        print(f"The current wind direction is {current_winddirection}")
+        # Print current wind gusts
+        print(f"The current wind gusts are {current_windgusts} m/s")
+
+        # Print daily requests
+        # Print daily maximum temperature
+        print(
+            f"The daily maximum temperature is {current_temperature_max} \u00b0 Celsius")
+        # Print daily minimum temperature
+        print(
+            f"The daily minimum temperature is {current_temperature_min} \u00b0 Celsius")
+        # Print sunrise
+        print(f"The sunrise is at {current_sunrise}")
+        # Print sunset
+        print(f"The sunset is at {current_sunset}")
+        # Print UV index
+        print(f"The UV index is {current_uv_index}")
+        # Print precipitation probability
+        print(
+            f"The maximum daily precipitation probability is {current_precipitation_probability} %")
     else:
         # Print error message
         print('Oops! Something went wrong. Please try again later.')
