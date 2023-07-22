@@ -83,7 +83,6 @@ def print_weather(data):
     now = str(datetime.datetime.now()).split()
     now_time = now[0] + 'T' + now[1][:2] + ':00'
     hourly_index = data['hourly']['time'].index(now_time)
-
     daily_index = data['daily']['time'].index(
         str(datetime.datetime.now()).split()[0])
 
