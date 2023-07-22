@@ -116,11 +116,7 @@ def print_weather(data):
         current_uv_index = data['daily']['uv_index_max'][daily_index]
         # Get current precipitation probability
         current_precipitation_probability = data['daily']['precipitation_probability_max'][daily_index]
-        # Get current wind direction
-        # current_wind_direction = data['daily']['winddirection_10m_dominant'][daily_index]
-        # Get current wind speed
-        # current_wind_speed = data['daily']['windspeed_10m'][daily_index]
-        # Print current temperature
+
         print(
             f"The current temperature is {current_temperature} degrees Celsius")
         # Print current humidity
