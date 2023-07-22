@@ -93,10 +93,21 @@ def print_weather(data):
         current_temperature = data['hourly']['temperature_2m'][hourly_index]
         # Get current humidity
         current_humidity = data['hourly']['relativehumidity_2m'][hourly_index]
+        # Get current precipitation probability
+        current_precipitation_probability = data['hourly'][
+            'precipitation_probability'][hourly_index]
         # Get current pressure
         current_pressure = data['hourly']['surface_pressure'][hourly_index]
         # Get current visibility
         current_visibility = data['hourly']['visibility'][hourly_index]
+        # Get curreent windspeed
+        current_windspeed = data['hourly']['windspeed_10m'][hourly_index]
+        # Get current wind direction
+        current_winddirection = data['hourly'][
+            'winddirection_10m'][hourly_index]
+        # Get current wind gusts
+        current_windgusts = data['hourly']['windgusts_10m'][hourly_index]
+
         # Daily requests
         # Get current sunrise
         current_sunrise = data['daily']['sunrise'][daily_index]
