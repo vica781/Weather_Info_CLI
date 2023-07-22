@@ -12,8 +12,9 @@ def welcome_message():
     """
     print(colored('Welcome to Victoria\'s Weather App!', 'green'))
     print(colored('This app will provide you with the weather \
-information you need.', 'green'))
-    print(colored('Please enter the city and country of your choice.', 'green'))
+information for the location of your choice.', 'green'))
+    print(colored('In order to obtain the weather information, \
+please enter the city and country.', 'yellow'))
     print(colored('Enjoy!', 'green'))
 
 
@@ -127,7 +128,7 @@ def print_weather(data):
         # Print hourly requests
         # Print current temperature
         print(
-            f"The current temperature is {current_temperature} \u00b0 Celsius")
+            f"The current temperature is {current_temperature}\u00b0 C")
         # Print current humidity
         print(f"The current relative humidity is {current_humidity} %")
         # Print current precipitation probability
@@ -147,10 +148,10 @@ def print_weather(data):
         # Print daily requests
         # Print daily maximum temperature
         print(
-            f"The daily maximum temperature is {current_temperature_max} \u00b0 Celsius")
+            f"The daily maximum temperature is {current_temperature_max}\u00b0 C")
         # Print daily minimum temperature
         print(
-            f"The daily minimum temperature is {current_temperature_min} \u00b0 Celsius")
+            f"The daily minimum temperature is {current_temperature_min}\u00b0 C")
         # Print sunrise
         print(f"The sunrise is at {current_sunrise}")
         # Print sunset
@@ -175,15 +176,6 @@ country = input('Country: ')
 latitude, longitude = get_location(city, country)
 # Call get_weather function
 data = get_weather(latitude, longitude)
-
-print('Dear user, in order to obtain the weather information, \
-please enter the city and country of your choice.')
-
-# city = input('City: ')
-# country = input('Country: ')
-
-# city_country = get_location(city, country)
-# print(city_country)
 
 print(f"You have entered the following location: {city}, {country}")
 print('Please wait while I am getting the weather information for you...')
