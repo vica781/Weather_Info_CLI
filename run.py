@@ -15,6 +15,13 @@ precipitation_probability,surface_pressure,visibility,windspeed_10m,\
 winddirection_10m,windgusts_10m&daily=temperature_2m_max,temperature_2m_min,\
 sunrise,sunset,uv_index_max,\
 precipitation_probability_max&windspeed_unit=ms&timezone=GMT'
+BANNER = """
+
+.-. . .-.----. .--. .---..-. .-.----.----.      .--. .----..----. 
+| |/ \| | {_  / {} {_   _| {_} | {_ | {}  }    / {} \| {}  | {}  }
+|  .'.  | {__/  /\  \| | | { } | {__| .-. \   /  /\  | .--'| .--' 
+`-'   `-`----`-'  `-'`-' `-' `-`----`-' `-'   `-'  `-`-'   `-'    
+"""
 
 
 # Defining Welcome message function
@@ -22,6 +29,7 @@ def welcome_message():
     """
     This function prints a welcome message to the user
     """
+    print(colored(BANNER, 'cyan'))
     print(colored('Welcome to Victoria\'s Weather App!', 'green'))
     print(colored('This app will provide you with the weather \
 information for the location of your choice.', 'green'))
