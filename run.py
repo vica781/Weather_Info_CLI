@@ -4,6 +4,18 @@ import requests
 import datetime
 from termcolor import colored
 
+# Define constants
+BASE_URL = 'https://api.open-meteo.com/v1/forecast?'
+# Define parts of the URL
+LATITUDE_PART = 'latitude='
+LONGITUDE_PART = '&longitude='
+# Define closing part of the URL
+CLOSING_PART = '&hourly=temperature_2m,relativehumidity_2m,\
+precipitation_probability,surface_pressure,visibility,windspeed_10m,\
+winddirection_10m,windgusts_10m&daily=temperature_2m_max,temperature_2m_min,\
+sunrise,sunset,uv_index_max,\
+precipitation_probability_max&windspeed_unit=ms&timezone=GMT'
+
 
 # Defining Welcome message function
 def welcome_message():
@@ -35,19 +47,6 @@ def get_location(city, country):
     return latitude, longitude
 
 
-# Define constants
-BASE_URL = 'https://api.open-meteo.com/v1/forecast?'
-# Define parts of the URL
-LATITUDE_PART = 'latitude='
-LONGITUDE_PART = '&longitude='
-# Define closing part of the URL
-CLOSING_PART = '&hourly=temperature_2m,relativehumidity_2m,\
-precipitation_probability,surface_pressure,visibility,windspeed_10m,\
-winddirection_10m,windgusts_10m&daily=temperature_2m_max,temperature_2m_min,\
-sunrise,sunset,uv_index_max,\
-precipitation_probability_max&windspeed_unit=ms&timezone=GMT'
-
-
 # Defining get_weather function
 def get_weather(latitude, longitude):
     """
@@ -64,7 +63,6 @@ def get_weather(latitude, longitude):
     # If successful, get data
     # 200 is the HTTP status code for "OK" used for data communication \
     # on the web (https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html)
-    print(response.status_code)
     if response.status_code == 200:
         # Print success message
         print(colored('Success! Everything is okay. I got the data!', 'blue'))
@@ -172,19 +170,24 @@ def print_weather(data):
         data = None
 
 
-# Call welcome message function
-welcome_message()
-city = input('City: ')
-country = input('Country: ')
-# Call get_location function
-latitude, longitude = get_location(city, country)
-# Call get_weather function
-data = get_weather(latitude, longitude)
+def main():
+    # Call welcome message function
+    welcome_message()
+    city = input('City: ')
+    country = input('Country: ')
+    # Call get_location function
+    latitude, longitude = get_location(city, country)
+    # Call get_weather function
+    data = get_weather(latitude, longitude)
 
-print(f"You have entered the following location: {city}, {country}")
-print('Please wait while I am getting the weather information for you...')
-print('This may take a few seconds...')
-print('Thank you for your patience!')
-print(
-    colored(f'Here is the weather information for {city}, {country}:', 'cyan'))
-print_weather(data)
+    print(f"You have entered the following location: {city}, {country}")
+    print('Please wait while I am getting the weather information for you...')
+    print('This may take a few seconds...')
+    print('Thank you for your patience!')
+    print(
+        colored(f'Here is the weather information for {city}, {country}:', 'cyan'))
+    print_weather(data)
+
+
+if __name__ == '__main__':
+    main()
