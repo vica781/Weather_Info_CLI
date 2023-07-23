@@ -18,19 +18,26 @@ winddirection_10m,windgusts_10m&daily=temperature_2m_max,temperature_2m_min,\
 sunrise,sunset,uv_index_max,\
 precipitation_probability_max&windspeed_unit=ms&timezone=GMT'
 BANNER_INPUT = """
-.----..-. .-..----..----..-.  .-.    .---. .-.    .----. .-. .-..----.    .-. .-.  .--.   .----.     .--.      .----..-..-.   .-. .-..----..----.    .-.   .-..-. .-..-..-. .-. .---. 
-| {_  | | | || {_  | {}  }\ \/ /    /  ___}| |   /  {}  \| { } || {}  \   | {_} | / {} \ { {__      / {} \    { {__  | || |   | | | || {_  | {}  }   | |   | ||  `| || ||  `| |/   __}
-| {__ \ \_/ /| {__ | .-. \ }  {     \     }| `--.\      /| {_} ||     /   | { } |/  /\  \.-._} }   /  /\  \   .-._} }| || `--.\ \_/ /| {__ | .-. \   | `--.| || |\  || || |\  |\  {_ }
-`----' `---' `----'`-' `-' `--'      `---' `----' `----' `-----'`----'    `-' `-'`-'  `-'`----'    `-'  `-'   `----' `-'`----' `---' `----'`-' `-'   `----'`-'`-' `-'`-'`-' `-' `---' 
+.----..-. .-..----..----..-.  .-.    .---. .-.    .----. .-. .-..----.     
+| {_  | | | || {_  | {}  }\ \/ /    /  ___}| |   /  {}  \| { } || {}  \   
+| {__ \ \_/ /| {__ | .-. \ }  {     \     }| `--.\      /| {_} ||     /   
+`----' `---' `----'`-' `-' `--'      `---' `----' `----' `-----'`----'     
+.-. .-.  .--.   .----.     .--.      .----..-..-.   .-. .-..----..----.     
+| {_} | / {} \ { {__      / {} \    { {__  | || |   | | | || {_  | {}  }   
+| { } |/  /\  \.-._} }   /  /\  \   .-._} }| || `--.\ \_/ /| {__ | .-. \   
+`-' `-'`-'  `-'`----'    `-'  `-'   `----' `-'`----' `---' `----'`-' `-'    
+.-.   .-..-. .-..-..-. .-. .---. 
+| |   | ||  `| || ||  `| |/   __}
+| `--.| || |\  || || |\  |\  {_ }
+`----'`-'`-' `-'`-'`-' `-' `---' 
 """
 BANNER_INTRO = """
-             .
-               					
-              |					
-     .               /				
-      \       I     				
+             .             					
+              | 		.		
+     .        .      /				
+      \       |     .				
                   /
-        \  ,g88R_
+        \  ,g88R__== --__ =-
           d888(`  ).                   _
  -  --==  888(     ).=--           .+(`  )`.
 )         Y8P(       '`.          :(   .    )
@@ -41,7 +48,6 @@ BANNER_INTRO = """
 )  )  ( )       --'       `- __.'         :(      ))
 .-'  (_.'          .')                    `(    )  ))
                   (_  )                     ` __.:'
-                                        	
 --..,___.--,--'`,---..-.--+--.,,-,,..._.--..-._.-a:f--.
 """
 
@@ -77,6 +83,28 @@ please enter the city and country.', 'yellow'))
     print(colored('Enjoy!', 'green'))
 
 
+# Define name_input function
+def name_input():
+    """
+    This function asks for the user's name
+    """
+    print(colored(BANNER_INPUT, 'cyan'))
+    name = input('Choose a name - it must be at least 3 characters long, \
+    but no longer than 10 characters, include only letters, \
+    no numbers or special characters: ')
+    # Check if the name is valid
+    while len(name) < 3 or len(name) > 10 or not name.isalpha():
+        print(colored('Oops! Something went wrong. Please try again.', 'red'))
+        name = input('Choose a name - it must be at least 3 characters long, \
+    but no longer than 10 characters, include only letters, \
+    no numbers or special characters: ')
+    print(colored(f"Hello,{name}! 'come rain or shine,'.upper() \
+    I wish you to be on a + 'cloud nine'.upper() and everything you do + \
+    'to be a breeze!'.upper()," 'magenta'))
+    return name
+
+
+# Defining get_location function
 def get_location(city, country):
     """
     This function returns a string of the form City, Country
@@ -220,8 +248,15 @@ def print_weather(data):
 def main():
     # Call welcome message function
     welcome_message()
+    # Call key_pressed function
+    key_pressed()
+    # Call clear_screen function
+    clear_screen()
+    # Call name_input function
+    name = name_input()
     key_pressed()
     clear_screen()
+    # Ask for city and country
     city = input('City: ')
     country = input('Country: ')
     # Call get_location function
