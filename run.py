@@ -26,6 +26,10 @@ def get_location(city, country):
     geolocator = Nominatim(user_agent="VictoriasApp")
     # Get location
     location = geolocator.geocode(f"{city}, {country}")
+    if location is None:
+        print(colored('Oops! Something went wrong. Please try again later.', 'red'))
+        exit()
+    # Get latitude and longitude
     latitude = str(location.latitude)
     longitude = str(location.longitude)
     return latitude, longitude
@@ -60,10 +64,10 @@ def get_weather(latitude, longitude):
     # If successful, get data
     # 200 is the HTTP status code for "OK" used for data communication \
     # on the web (https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html)
-
+    print(response.status_code)
     if response.status_code == 200:
         # Print success message
-        print('Success! Everything is okay. I got the data!')
+        print(colored('Success! Everything is okay. I got the data!', 'blue'))
         # Get data
         data = response.json()
         # Get current date
@@ -181,5 +185,6 @@ print(f"You have entered the following location: {city}, {country}")
 print('Please wait while I am getting the weather information for you...')
 print('This may take a few seconds...')
 print('Thank you for your patience!')
-print(f'Here is the weather information for {city}, {country}:')
+print(
+    colored(f'Here is the weather information for {city}, {country}:', 'cyan'))
 print_weather(data)
