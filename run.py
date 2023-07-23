@@ -4,6 +4,7 @@ import requests
 import datetime
 from termcolor import colored
 import readchar
+import os
 
 # Define constants
 BASE_URL = 'https://api.open-meteo.com/v1/forecast?'
@@ -16,13 +17,13 @@ precipitation_probability,surface_pressure,visibility,windspeed_10m,\
 winddirection_10m,windgusts_10m&daily=temperature_2m_max,temperature_2m_min,\
 sunrise,sunset,uv_index_max,\
 precipitation_probability_max&windspeed_unit=ms&timezone=GMT'
-BANNER = """
+BANNER_INPUT = """
 .----..-. .-..----..----..-.  .-.    .---. .-.    .----. .-. .-..----.    .-. .-.  .--.   .----.     .--.      .----..-..-.   .-. .-..----..----.    .-.   .-..-. .-..-..-. .-. .---. 
 | {_  | | | || {_  | {}  }\ \/ /    /  ___}| |   /  {}  \| { } || {}  \   | {_} | / {} \ { {__      / {} \    { {__  | || |   | | | || {_  | {}  }   | |   | ||  `| || ||  `| |/   __}
 | {__ \ \_/ /| {__ | .-. \ }  {     \     }| `--.\      /| {_} ||     /   | { } |/  /\  \.-._} }   /  /\  \   .-._} }| || `--.\ \_/ /| {__ | .-. \   | `--.| || |\  || || |\  |\  {_ }
 `----' `---' `----'`-' `-' `--'      `---' `----' `----' `-----'`----'    `-' `-'`-'  `-'`----'    `-'  `-'   `----' `-'`----' `---' `----'`-' `-'   `----'`-'`-' `-'`-'`-' `-' `---' 
 """
-BANNER_2 = """
+BANNER_INTRO = """
              .
                					
               |					
@@ -54,14 +55,21 @@ def key_pressed():
     return
 
 
+def clear_screen():
+    """
+    This function clears the screen
+    """
+    os.system('cls' if os.name == 'nt' else 'clear')
+    return
+
+
 # Defining Welcome message function
 def welcome_message():
     """
     This function prints a welcome message to the user
     """
-    print(colored(BANNER, 'cyan'))
-    print(colored(BANNER_2, 'cyan'))
-    print(colored('Welcome to Victoria\'s Weather App!', 'green'))
+    print(colored('Welcome to Victoria\'s Weather App!'.upper(), 'green'))
+    print(colored(BANNER_INTRO, 'cyan'))
     print(colored('This app will provide you with the weather \
 information for the location of your choice.', 'green'))
     print(colored('In order to obtain the weather information, \
@@ -213,6 +221,7 @@ def main():
     # Call welcome message function
     welcome_message()
     key_pressed()
+    clear_screen()
     city = input('City: ')
     country = input('Country: ')
     # Call get_location function
