@@ -3,6 +3,7 @@ from geopy.geocoders import Nominatim
 import requests
 import datetime
 from termcolor import colored
+import readchar
 
 # Define constants
 BASE_URL = 'https://api.open-meteo.com/v1/forecast?'
@@ -16,12 +17,41 @@ winddirection_10m,windgusts_10m&daily=temperature_2m_max,temperature_2m_min,\
 sunrise,sunset,uv_index_max,\
 precipitation_probability_max&windspeed_unit=ms&timezone=GMT'
 BANNER = """
-
-.-. . .-.----. .--. .---..-. .-.----.----.      .--. .----..----. 
-| |/ \| | {_  / {} {_   _| {_} | {_ | {}  }    / {} \| {}  | {}  }
-|  .'.  | {__/  /\  \| | | { } | {__| .-. \   /  /\  | .--'| .--' 
-`-'   `-`----`-'  `-'`-' `-' `-`----`-' `-'   `-'  `-`-'   `-'    
+.----..-. .-..----..----..-.  .-.    .---. .-.    .----. .-. .-..----.    .-. .-.  .--.   .----.     .--.      .----..-..-.   .-. .-..----..----.    .-.   .-..-. .-..-..-. .-. .---. 
+| {_  | | | || {_  | {}  }\ \/ /    /  ___}| |   /  {}  \| { } || {}  \   | {_} | / {} \ { {__      / {} \    { {__  | || |   | | | || {_  | {}  }   | |   | ||  `| || ||  `| |/   __}
+| {__ \ \_/ /| {__ | .-. \ }  {     \     }| `--.\      /| {_} ||     /   | { } |/  /\  \.-._} }   /  /\  \   .-._} }| || `--.\ \_/ /| {__ | .-. \   | `--.| || |\  || || |\  |\  {_ }
+`----' `---' `----'`-' `-' `--'      `---' `----' `----' `-----'`----'    `-' `-'`-'  `-'`----'    `-'  `-'   `----' `-'`----' `---' `----'`-' `-'   `----'`-'`-' `-'`-'`-' `-' `---' 
 """
+BANNER_2 = """
+             .
+               					
+              |					
+     .               /				
+      \       I     				
+                  /
+        \  ,g88R_
+          d888(`  ).                   _
+ -  --==  888(     ).=--           .+(`  )`.
+)         Y8P(       '`.          :(   .    )
+        .+(`(      .   )     .--  `.  (    ) )
+       ((    (..__.:'-'   .=(   )   ` _`  ) )
+`.     `(       ) )       (   .  )     (   )  ._
+  )      ` __.:'   )     (   (   ))     `-'.:(`  )
+)  )  ( )       --'       `- __.'         :(      ))
+.-'  (_.'          .')                    `(    )  ))
+                  (_  )                     ` __.:'
+                                        	
+--..,___.--,--'`,---..-.--+--.,,-,,..._.--..-._.-a:f--.
+"""
+
+
+def key_pressed():
+    """
+    This function waits for a key to be pressed
+    """
+    print('Press any key to continue...')
+    key = readchar.readkey()
+    return
 
 
 # Defining Welcome message function
@@ -30,6 +60,7 @@ def welcome_message():
     This function prints a welcome message to the user
     """
     print(colored(BANNER, 'cyan'))
+    print(colored(BANNER_2, 'cyan'))
     print(colored('Welcome to Victoria\'s Weather App!', 'green'))
     print(colored('This app will provide you with the weather \
 information for the location of your choice.', 'green'))
@@ -181,6 +212,7 @@ def print_weather(data):
 def main():
     # Call welcome message function
     welcome_message()
+    key_pressed()
     city = input('City: ')
     country = input('Country: ')
     # Call get_location function
