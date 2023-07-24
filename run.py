@@ -33,22 +33,37 @@ BANNER_INPUT = """
 | `--.| || |\  || || |\  |\  {_ }
 `----'`-'`-' `-'`-'`-' `-' `---' 
 """
-BANNER_INTRO = """                     					
-        			
-     .        .      /				
-      \       |     .				
-                  /
-        \  ,g88R__== --__ =-
---__==-__ d888(`  ).                   _
- -  --==  888(     ).=--.--        .+(`  )`.
-)         Y8P(       '`.          :(   .    )
-        .+(`(      .   )     .--  `.  (    ) )
+BANNER_INTRO = """            					
+    .        .      /				
+      \      |     .				
+             oo  /
+        \ ,oOOO__== --__ =-
+.____ -__. OoOO(`  )).                   _
+____. __  OOO(o    )). __ . __--    .+(`  )`.
+)        oOOO(o      '`.          :(   .    )
+        .+(`(      .   ))    .--  `.  (    ) )
        ((    (..__.:'-'   .=(   )   ` _`  ) )
 `.     `(       ) )       (   .  )     (   )  ._
   )      ` __.:'   )     (   (   ))     `-'.:(`  )
 )  )  ( )       --'       `- __.'         :(      ))
 .-'  (_.'          .')                    `(    )  ))
 --..,___.--,--'`,---..-.--+--.,,-,,..._.--..-._.-a:f--.
+"""
+BANNER_RAIN = """
+      __I__
+   .-'"  .  "'-.
+ .'  / . ' . \  '.
+/_.-..-..-..-..-._\ .---------------------------------.
+         #  _,,_   ( I hear it might rain people today )
+         #/`    `\ /'---------------------------------'
+         / / 6 6\ \
+         \/\  Y /\/       /\-/\
+         #/ `'U` \       /a a  \               _
+       , (  \   | \     =\ Y  =/-~~~~~~-,_____/ )
+       |\|\_/#  \_/       '^--'          ______/
+       \/'.  \  /'\         \           /
+        \    /=\  /         ||  |---'\  \
+        /____)/____)       (_(__|   ((__|
 """
 
 
@@ -78,8 +93,8 @@ def welcome_message():
     print(colored(BANNER_INTRO, 'yellow'))
     print(colored('This app will provide you with the weather \
 information for the location of your choice.', 'green'))
-    print(colored('In order to obtain the weather information, \
-please enter the city and country.', 'yellow'))
+#     print(colored('In order to obtain the weather information, \
+# please enter the city and country.', 'yellow'))
     print(colored('Enjoy!', 'green'))
 
 
@@ -111,6 +126,9 @@ no numbers or special characters: """)
         name = input('Choose a name - it must be at least 3 characters long,\
 \nbut no longer than 10 characters, include only letters,\
 \nno numbers or special characters: ')
+    print()
+    print()
+    # Print welcome message
     print(colored(f"Hello,{name}! {'come rain or shine'.upper()},\
 \nI wish you to be on a {'cloud nine'.upper()} \
 \nand everything you do {'to be a breeze!'.upper()}", 'green'))
@@ -154,11 +172,9 @@ def get_weather(latitude, longitude):
     # 200 is the HTTP status code for "OK" used for data communication \
     # on the web (https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html)
     if response.status_code == 200:
-        # Print success message
-        print(colored('Success! Everything is okay. I got the data!', 'blue'))
-        # Get data
+        # Get data in JSON format
         data = response.json()
-        # Get current date
+        # Return data
     else:
         # Print error message
         print('Oops! Something went wrong. Please try again later.')
@@ -263,30 +279,58 @@ def print_weather(data):
 def main():
     # Call welcome message function
     welcome_message()
+    print()
     # Call key_pressed function
     key_pressed()
     # Call clear_screen function
     clear_screen()
     # Call name_input function
     name = name_input()
+    print()
     key_pressed()
     clear_screen()
     # Ask for city and country
+    print(colored(f'Hello, {name}! In order to obtain the weather information, \
+please enter the city and country of your choise.', 'green'))
+    print()
+    print()
     city = input('City: ')
     country = input('Country: ')
     # Call get_location function
     latitude, longitude = get_location(city, country)
     # Call get_weather function
     data = get_weather(latitude, longitude)
+    print()
+    print()
+    # Print weather information
+    print(colored(f"You have entered the following location: \
+{city}, {country}", 'yellow'))
+    print()
+    print()
+    key_pressed()
+    clear_screen()
 
-    print(f"You have entered the following location: {city}, {country}")
     print('Please wait while I am getting the weather information for you...')
     print('This may take a few seconds...')
     print('Thank you for your patience!')
+    print()
+    print()
+    key_pressed()
+    clear_screen()
+    # Print success message
+    print(colored('Success! Everything is okay. I got the data!', 'blue'))
+    print()
+    print()
     print(
         colored(f'Here is the weather information for {city}, {country}:', 'cyan'))
+    # Call print_weather function
     print_weather(data)
 
+    print()
+    key_pressed()
+    clear_screen()
 
+
+# Call main function
 if __name__ == '__main__':
     main()
