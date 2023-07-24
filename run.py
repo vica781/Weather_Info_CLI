@@ -103,13 +103,17 @@ def name_input():
 
     # Ask for name
     name = input("""Choose a name - it must be at least 3 characters long, 
-    but no longer than 10 characters, include only letters, 
-    no numbers or special characters: """)
+but no longer than 10 characters, include only letters, 
+no numbers or special characters: """)
     # Check if the name is valid
     while len(name) < 3 or len(name) > 10 or not name.isalpha():
         print(colored('Oops! Something went wrong. Please try again.', 'red'))
-        name = input('Choose a name - it must be at least 3 characters long, but no longer than 10 characters, include only letters, no numbers or special characters: ')
-    print(colored(f"Hello,{name}! {'come rain or shine'.upper()}, I wish you to be on a {'cloud nine'.upper()} and everything you do {'to be a breeze!'.upper()}", 'magenta'))
+        name = input('Choose a name - it must be at least 3 characters long,\
+\nbut no longer than 10 characters, include only letters,\
+\nno numbers or special characters: ')
+    print(colored(f"Hello,{name}! {'come rain or shine'.upper()},\
+\nI wish you to be on a {'cloud nine'.upper()} \
+\nand everything you do {'to be a breeze!'.upper()}", 'green'))
     return name
 
 
@@ -123,7 +127,9 @@ def get_location(city, country):
     # Get location
     location = geolocator.geocode(f"{city}, {country}")
     if location is None:
-        print(colored('Oops! Something went wrong. Please try again later.', 'red'))
+        # Print error message
+        print(colored('Oops! Something went wrong.\
+ Please try again later.', 'red'))
         exit()
     # Get latitude and longitude
     latitude = str(location.latitude)
