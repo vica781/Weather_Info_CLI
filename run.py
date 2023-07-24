@@ -5,6 +5,8 @@ import datetime
 from termcolor import colored
 import readchar
 import os
+import time
+
 
 # Define constants
 BASE_URL = 'https://api.open-meteo.com/v1/forecast?'
@@ -31,15 +33,14 @@ BANNER_INPUT = """
 | `--.| || |\  || || |\  |\  {_ }
 `----'`-'`-' `-'`-'`-' `-' `---' 
 """
-BANNER_INTRO = """
-             .             					
-              | 		.		
+BANNER_INTRO = """                     					
+        			
      .        .      /				
       \       |     .				
                   /
         \  ,g88R__== --__ =-
-          d888(`  ).                   _
- -  --==  888(     ).=--           .+(`  )`.
+--__==-__ d888(`  ).                   _
+ -  --==  888(     ).=--.--        .+(`  )`.
 )         Y8P(       '`.          :(   .    )
         .+(`(      .   )     .--  `.  (    ) )
        ((    (..__.:'-'   .=(   )   ` _`  ) )
@@ -47,7 +48,6 @@ BANNER_INTRO = """
   )      ` __.:'   )     (   (   ))     `-'.:(`  )
 )  )  ( )       --'       `- __.'         :(      ))
 .-'  (_.'          .')                    `(    )  ))
-                  (_  )                     ` __.:'
 --..,___.--,--'`,---..-.--+--.,,-,,..._.--..-._.-a:f--.
 """
 
@@ -75,7 +75,7 @@ def welcome_message():
     This function prints a welcome message to the user
     """
     print(colored('Welcome to Victoria\'s Weather App!'.upper(), 'green'))
-    print(colored(BANNER_INTRO, 'cyan'))
+    print(colored(BANNER_INTRO, 'yellow'))
     print(colored('This app will provide you with the weather \
 information for the location of your choice.', 'green'))
     print(colored('In order to obtain the weather information, \
@@ -83,12 +83,25 @@ please enter the city and country.', 'yellow'))
     print(colored('Enjoy!', 'green'))
 
 
+lines = BANNER_INPUT.split()
+
 # Define name_input function
+
+
 def name_input():
     """
     This function asks for the user's name
     """
-    print(colored(BANNER_INPUT, 'cyan'))
+    # Print banner
+    for line in BANNER_INPUT.splitlines():
+        for character in line:
+            print(colored(character, 'yellow'), end='', flush=True)
+            # delay printing of each character by 0.05 seconds
+            time.sleep(.005)
+        print('')  # print a new line
+        time.sleep(0.5)  # delay printing of each line by 0.5 seconds
+
+    # Ask for name
     name = input('Choose a name - it must be at least 3 characters long, but no longer than 10 characters, include only letters, no numbers or special characters: ')
     # Check if the name is valid
     while len(name) < 3 or len(name) > 10 or not name.isalpha():
