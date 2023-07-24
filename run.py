@@ -97,12 +97,14 @@ def name_input():
         for character in line:
             print(colored(character, 'yellow'), end='', flush=True)
             # delay printing of each character by 0.05 seconds
-            time.sleep(.005)
+            time.sleep(.003)
         print('')  # print a new line
         time.sleep(0.5)  # delay printing of each line by 0.5 seconds
 
     # Ask for name
-    name = input('Choose a name - it must be at least 3 characters long, but no longer than 10 characters, include only letters, no numbers or special characters: ')
+    name = input("""Choose a name - it must be at least 3 characters long, 
+    but no longer than 10 characters, include only letters, 
+    no numbers or special characters: """)
     # Check if the name is valid
     while len(name) < 3 or len(name) > 10 or not name.isalpha():
         print(colored('Oops! Something went wrong. Please try again.', 'red'))
