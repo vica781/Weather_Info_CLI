@@ -89,18 +89,12 @@ def name_input():
     This function asks for the user's name
     """
     print(colored(BANNER_INPUT, 'cyan'))
-    name = input('Choose a name - it must be at least 3 characters long, \
-    but no longer than 10 characters, include only letters, \
-    no numbers or special characters: ')
+    name = input('Choose a name - it must be at least 3 characters long, but no longer than 10 characters, include only letters, no numbers or special characters: ')
     # Check if the name is valid
     while len(name) < 3 or len(name) > 10 or not name.isalpha():
         print(colored('Oops! Something went wrong. Please try again.', 'red'))
-        name = input('Choose a name - it must be at least 3 characters long, \
-    but no longer than 10 characters, include only letters, \
-    no numbers or special characters: ')
-    print(colored(f"Hello,{name}! 'come rain or shine,'.upper() \
-    I wish you to be on a + 'cloud nine'.upper() and everything you do + \
-    'to be a breeze!'.upper()," 'magenta'))
+        name = input('Choose a name - it must be at least 3 characters long, but no longer than 10 characters, include only letters, no numbers or special characters: ')
+    print(colored(f"Hello,{name}! {'come rain or shine'.upper()}, I wish you to be on a {'cloud nine'.upper()} and everything you do {'to be a breeze!'.upper()}", 'magenta'))
     return name
 
 
