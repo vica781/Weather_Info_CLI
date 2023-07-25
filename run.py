@@ -114,10 +114,6 @@ information for the location of your choice.', 'green'))
     clear_screen()
 
 
-# ????????
-lines = BANNER_INPUT.split()
-
-
 # USER NAME INPUT
 def name_input():
     """
@@ -127,8 +123,8 @@ def name_input():
     for line in BANNER_INPUT.splitlines():
         for character in line:
             print(colored(character, 'yellow'), end='', flush=True)
-            # delay printing of each character by 0.05 seconds
-            # time.sleep(.009)
+            # delay printing of each character by 0.003 seconds
+            # time.sleep(.003)
         print('')  # print a new line
         time.sleep(0.5)  # delay printing of each line by 0.5 seconds
 
@@ -329,81 +325,103 @@ def print_weather(latitude, longitude, city, country):
         data = None
 
 
+# WEATHER COMPONENTS INFO EXPLAINED
 def weather_components():
-    components = []
+    """
+    This function prints the weather components information
+    """
+    # Define menu
+    components_menu = [
+        'a. Temperature',
+        'b. Humidity',
+        'c. Precipitation',
+        'd. Surface Pressure',
+        'e. Visibility',
+        'f. Wind',
+        'g. UV Index',
+        'h. Sunrise and Sunset'
+    ]
+
     # You can get the info about
     while True:
-        # clear screen
-        # Menu
+        clear_screen()
+        # Print menu
+        print('\n W E A T H E R   C O M P O N E N T S\n\n'.center(80, '-'))
+        for item in components_menu:
+            print(item + '\n')
+        print('i. Back to Main Menu\n')
+
+        # Ask for user input
         while True:
-            selection = input('Selection: ')
-            if selection == "a":
-                print('Temperature')
-                key_pressed()
-                break
-            elif selection == "b":
-                print('Humidity')
-                key_pressed()
-                break
-            elif selection == "c":
-                print('Precipitation Probability')
-                key_pressed()
-                break
-            elif selection == "d":
-                print('Pressure')
-                key_pressed()
-                break
-            elif selection == "e":
-                print('Visibility')
-                key_pressed()
-                break
-            elif selection == "f":
-                print('Windspeed')
-                key_pressed()
-                break
-            elif selection == "g":
-                print('Wind Direction')
-                key_pressed()
-                break
-            elif selection == "h":
-                print('Wind Gusts')
+            selection = input('Please, \
+choose the weather component you want to know more about by \
+entering a, b, c, d, e, f, g, h, or i: ').lower().strip()
+            if selection in ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i']:
+                print(f"You've chosen {selection}")
                 key_pressed()
                 break
             elif selection == "i":
-                print('Temperature Maximum')
-                key_pressed()
-                break
-            elif selection == "j":
-                print('Sunrise')
-                key_pressed()
-                break
-            elif selection == "k":
-                print('Sunset')
-                key_pressed()
-                break
-            elif selection == "l":
-                print('UV Index')
-                key_pressed()
-                break
-            elif selection == "m":
-                print('Precipitation Probability Maximum')
-                key_pressed()
-                break
-            elif selection == "n":
                 return
             else:
                 print('Invalid input. Try again:')
                 key_pressed()
+                break
+
+        # while True:
+        #     selection = input('Please, \
+        # choose the weather component you want to know more about by \
+        # entering a, b, c, d, e, f, g, h, or i: ')
+        #     if selection == "a":
+        #         print('Temperature')
+        #         key_pressed()
+        #         break
+        #     elif selection == "b":
+        #         print('Humidity')
+        #         key_pressed()
+        #         break
+        #     elif selection == "c":
+        #         print('Precipitation')
+        #         key_pressed()
+        #         break
+        #     elif selection == "d":
+        #         print('Surface Pressure')
+        #         key_pressed()
+        #         break
+        #     elif selection == "e":
+        #         print('Visibility')
+        #         key_pressed()
+        #         break
+        #     elif selection == "f":
+        #         print('Wind')
+        #         key_pressed()
+        #         break
+        #     elif selection == "g":
+        #         print('UV Index')
+        #         key_pressed()
+        #         break
+        #     elif selection == "h":
+        #         print('Sunrise and Sunset')
+        #         key_pressed()
+        #         break
+        #     elif selection == "i":
+        #         return
+        #     else:
+        #         print('Invalid input. Try again:')
+        #         key_pressed()
+        #         break
 
 
+# PREVIOUS SEARCHES DISPLAY
 def pass_searches():
     pass
 
 
+# INSTRUCTIONS
 def instructions():
     pass
 
 
+# MAIN FUNCTION
 def main():
     # Call clear_screen function
     clear_screen()
