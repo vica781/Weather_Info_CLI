@@ -10,7 +10,7 @@ import sys
 
 MENU = [
     'a. Get Weather information',
-    'b. Weather Components Info Explained',
+    'b. Weather Components Explained',
     'c. Display Search History',
     'd. Instructions',
     'e. Exit'
@@ -28,6 +28,8 @@ precipitation_probability,surface_pressure,visibility,windspeed_10m,\
 winddirection_10m,windgusts_10m&daily=temperature_2m_max,temperature_2m_min,\
 sunrise,sunset,uv_index_max,\
 precipitation_probability_max&windspeed_unit=ms&timezone=GMT'
+
+# BANNERS FOR THE APP - ASCII ART
 BANNER_INPUT = """
 .----..-. .-..----..----..-.  .-.    .---. .-.    .----. .-. .-..----.     
 | {_  | | | || {_  | {}  }\ \/ /    /  ___}| |   /  {}  \| { } || {}  \   
@@ -124,7 +126,7 @@ def name_input():
         for character in line:
             print(colored(character, 'yellow'), end='', flush=True)
             # delay printing of each character by 0.003 seconds
-            # time.sleep(.003)
+            time.sleep(.003)
         print('')  # print a new line
         time.sleep(0.5)  # delay printing of each line by 0.5 seconds
 
@@ -356,9 +358,20 @@ def weather_components():
             selection = input('Please, \
 choose the weather component you want to know more about by \
 entering a, b, c, d, e, f, g, h, or i: ').lower().strip()
+
             if selection in ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i']:
-                print(f"You've chosen {selection}")
-                key_pressed()
+                if selection == "a":
+                    print('Temperature is a physical quantity \
+expressed in degrees. It is measured with a thermometer \
+calibrated in one or more temperature scales. \
+The most commonly used scales are the Celsius scale (formerly called centigrade) \
+(°C), Fahrenheit scale (°F), and Kelvin scale (K). \
+The kelvin (K) is the unit of temperature in the International System of Units \
+(SI), in which temperature is one of the seven fundamental base quantities. \
+The Kelvin scale is widely used in science and technology.')
+                    print()
+                    break
+
                 break
             elif selection == "i":
                 return
