@@ -7,6 +7,14 @@ import readchar
 import os
 import time
 
+MENU = [
+    'a. Weather information for the location of your choice',
+    'b. Go here if you want to learn about the Weather Components and Units',
+    'c. Previous Searches Display',
+    'd. Information about this app',
+    'e. Exit'
+]
+
 
 # Define constants
 BASE_URL = 'https://api.open-meteo.com/v1/forecast?'
@@ -112,7 +120,7 @@ def name_input():
         for character in line:
             print(colored(character, 'yellow'), end='', flush=True)
             # delay printing of each character by 0.05 seconds
-            time.sleep(.003)
+            # time.sleep(.009)
         print('')  # print a new line
         time.sleep(0.5)  # delay printing of each line by 0.5 seconds
 
@@ -291,15 +299,14 @@ def main():
     clear_screen()
     # Ask for city and country
     print(colored(f'Hello, {name}! In order to obtain the weather information, \
-please enter the city and country of your choise.', 'green'))
+please enter the city and country of your choice.', 'green'))
     print()
     print()
     city = input('City: ')
     country = input('Country: ')
     # Call get_location function
     latitude, longitude = get_location(city, country)
-    # Call get_weather function
-    data = get_weather(latitude, longitude)
+    # TODO - add a check if the location is valid
     print()
     print()
     # Print weather information
@@ -307,20 +314,20 @@ please enter the city and country of your choise.', 'green'))
 {city}, {country}", 'yellow'))
     print()
     print()
-    key_pressed()
-    clear_screen()
 
     print('Please wait while I am getting the weather information for you...')
     print('This may take a few seconds...')
     print('Thank you for your patience!')
     print()
     print()
-    key_pressed()
-    clear_screen()
+    # Call get_weather function
+    data = get_weather(latitude, longitude)
     # Print success message
     print(colored('Success! Everything is okay. I got the data!', 'blue'))
     print()
-    print()
+    key_pressed()
+    clear_screen()
+
     print(
         colored(f'Here is the weather information for {city}, {country}:', 'cyan'))
     # Call print_weather function
@@ -329,6 +336,260 @@ please enter the city and country of your choise.', 'green'))
     print()
     key_pressed()
     clear_screen()
+
+    # Menu section
+    while True:
+        clear_screen()
+        print('\n M E N U\n\n'.center(80, '-'))
+        for item in MENU:
+            print(item + '\n')
+
+            menu_choices = ''
+            while menu_choices == '':
+                menu_choices = input(colored('Please, choose where you want to go; enter a, b, c, d, or e:'
+                                             ' \n\n', 'green')).lower().strip()
+                if menu_choices == 'a':
+                    result = input(colored('Do you want to see the weather \
+information for another location? Enter yes or no: ', 'green')).lower().strip()
+                    if result == 'yes':
+                        clear_screen()
+                        print(colored('Please wait while I am getting the weather \
+information for you...', 'green'))
+                        print(colored('This may take a few seconds...', 'green'))
+                        print(colored('Thank you for your patience!', 'green'))
+                        print()
+                        print()
+                        # Ask for city and country
+                        print(colored(f'Hello, {name}! In order to obtain the weather information, \
+please enter the city and country of your choice.', 'green'))
+                        print()
+                        print()
+                        city = input('City: ')
+                        country = input('Country: ')
+                        # Call get_location function
+                        latitude, longitude = get_location(city, country)
+                        # TODO - add a check if the location is valid
+                        print()
+                        print()
+                        # Print weather information
+                        print(colored(f"You have entered the following location: \
+{city}, {country}", 'yellow'))
+                        print()
+                        print()
+
+                        print(
+                            'Please wait while I am getting the weather information for you...')
+                        print('This may take a few seconds...')
+                        print('Thank you for your patience!')
+
+                    print()
+                    key_pressed()
+                    clear_screen()
+                    break
+                elif menu_choices == 'b':
+                    clear_screen()
+                    print(colored('Weather Components and Units', 'yellow'))
+                    print()
+                    print()
+                    print(colored('Temperature', 'cyan'))
+                    print()
+                    print(colored('Temperature is a physical quantity \
+expressed in degrees. It is measured with a thermometer \
+calibrated in one or more temperature scales. \
+The most commonly used scales are the Celsius scale (formerly called centigrade) \
+(°C), Fahrenheit scale (°F), and Kelvin scale (K). \
+The kelvin (K) is the unit of temperature in the International System of Units \
+(SI), in which temperature is one of the seven fundamental base quantities. \
+The Kelvin scale is widely used in science and technology.', 'green'))
+                    print()
+                    print(colored('Humidity', 'cyan'))
+                    print()
+                    print(colored('Humidity is the concentration of water vapour \
+present in the air. Water vapour, the gaseous state of water, \
+is generally invisible to the human eye. \
+Humidity indicates the likelihood for precipitation, dew, \
+or fog to be present. The amount of water vapour needed to achieve saturation \
+increases as the temperature increases. As the temperature of a parcel of air \
+becomes lower it will eventually reach the saturation point without \
+adding or losing water mass. The differences in the amount of water vapour \
+needed to achieve saturation increases as the temperature increases. \
+As the temperature of a parcel of air becomes lower it will eventually \
+reach the saturation point without adding or losing water mass. \
+The amount of water vapour contained within a parcel of air can vary \
+significantly. For example, a parcel of air near saturation may contain \
+10 g of water per cubic metre of air at 30 °C, \
+but only 2.5 g of water per cubic metre of air at 8 °C.', 'green'))
+                    print()
+                    print(colored('Precipitation Probability', 'cyan'))
+                    print()
+                    print(colored('Precipitation probability is the likelihood \
+of precipitation occurring at a given location within a given time period. \
+It is often expressed either as the probability of precipitation \
+occurring at any point in the area or as the probability of precipitation \
+occurring at a single point in the area. \
+Precipitation probability is predicted by a complex set of equations \
+based on observations of humidity, wind speed, wind direction, \
+and thermal gradients. Measurements of these variables are used to \
+calculate the probability of precipitation. \
+Precipitation probability is often expressed as a percentage. \
+For example, a 60% chance of precipitation means that there is a 60% \
+chance that precipitation will occur at any point in the area.', 'green'))
+                    print()
+                    print(colored('Pressure', 'cyan'))
+                    print()
+                    print(colored('Surface pressure is the atmospheric pressure \
+at a location on the surface of the Earth. It is directly proportional \
+to the mass of air over that location.', 'green'))
+                    print()
+                    print(colored('Visibility', 'cyan'))
+                    print()
+                    print(colored('Visibility is a measure of the distance \
+at which an object or light can be clearly discerned. \
+It is reported within surface weather observations and METAR code either \
+in meters or statute miles, depending upon the country. \
+Visibility affects all forms of traffic: roads, sailing and aviation. \
+Meteorological visibility refers to transparency of air: in dark, \
+meteorological visibility is still the same as in daylight for the same air. \
+The visibility distance is measured horizontally, in the direction of \
+the gaze, and in conditions meteorologists call standard meteorological \
+visibility, meaning conditions are assumed to be standard for a given \
+location and are the same everywhere within an area. \
+The meteorological visibility is reported as horizontal visibility \
+in the UK, and vertical visibility in the US. \
+Visibility is primarily a safety concern; poor visibility, \
+such as fog, can be the cause of accidents.', 'green'))
+                    print()
+                    print(colored('Windspeed', 'cyan'))
+                    print()
+                    print(colored('Wind speed, or wind flow velocity, \
+is a fundamental atmospheric quantity caused by air moving from \
+high to low pressure, usually due to changes in temperature. \
+Wind speed is now commonly measured with an anemometer. \
+Wind speed affects weather forecasting, aircraft and maritime operations, \
+construction projects, growth and metabolism rate of many plant species, \
+and countless other implications.', 'green'))
+                    print()
+                    print(colored('Wind direction', 'cyan'))
+                    print()
+                    print(colored('Wind direction is reported by the direction \
+from which it originates. For example, a northerly wind blows from the north \
+to the south. Wind direction is usually reported in cardinal directions \
+or in azimuth degrees. Wind direction is measured in degrees clockwise \
+from due north. Therefore, a wind blowing from the north has a wind direction \
+of 0°; a wind blowing from the east has a wind direction of 90°; \
+a wind blowing from the south has a wind direction of 180°; \
+and a wind blowing from the west has a wind direction of 270°.', 'green'))
+                    print()
+                    print(colored('Wind gusts', 'cyan'))
+                    print()
+                    print(colored('A wind gust is a sudden, \
+brief increase in the speed of the wind, \
+usually lasting less than 20 seconds. \
+It is of a more transient character than a squall, \
+which lasts minutes, or a cyclone, \
+which can last for hours or longer. \
+A gust is a separate event, whereas a squall is a whole range of conditions. \
+Gusts are usually reported in knots or m/s. \
+Wind gusts generally occur near the trailing edge of a rain shower \
+or thunderstorm, and are associated with downdrafts or microbursts. \
+Gusts can also be associated with the cold front or the warm \
+sector associated with a tropical cyclone. \
+Wind gusts can be recorded when a station is experiencing calm conditions, \
+when the wind suddenly picks up and then dies down again.', 'green'))
+                    print()
+                    print(colored('Temperature Maximum', 'cyan'))
+                    print()
+                    print(colored('The maximum temperature is the highest \
+temperature recorded between sunrise and sunset, \
+regardless of the time of observation. \
+The minimum temperature is the lowest temperature recorded \
+from sunset to sunrise, regardless of the time of observation. \
+The maximum and minimum temperatures are usually recorded during \
+the 24-hour period from midnight to midnight.', 'green'))
+                    print()
+                    print(colored('Sunrise', 'cyan'))
+                    print()
+                    print(colored('Sunrise is the moment when the upper limb \
+of the Sun appears on the horizon in the morning. \
+The term can also refer to the entire process of the Sun \
+crossing the horizon and its accompanying atmospheric effects.', 'green'))
+                    print()
+                    print(colored('Sunset', 'cyan'))
+                    print()
+                    print(colored('Sunset or sundown is the daily \
+disappearance of the Sun below the horizon due to Earth\'s rotation. \
+As viewed from the Equator, the equinox Sun sets exactly due west \
+in both Spring and Autumn. As viewed from the middle latitudes, \
+the local summer Sun sets to the northwest for the Northern Hemisphere, \
+but to the southwest for the Southern Hemisphere.', 'green'))
+                    print()
+                    print(colored('UV Index', 'cyan'))
+                    print()
+                    print(colored('The UV index is an international standard \
+measurement of the strength of ultraviolet (UV) radiation from the Sun \
+at a particular place on a particular day. \
+It is primarily used in daily forecasts aimed at the general public. \
+The UV index is designed as an open-ended linear scale, \
+directly proportional to the intensity of UV radiation \
+that causes sunburn on human skin. \
+For example, if a light-skinned individual (without sunscreen) \
+begins to sunburn in 30 minutes at UV index 6, \
+then that individual should expect to sunburn in about 15 minutes \
+at UV index 12, and should expect to sunburn in about 60 minutes \
+at UV index 3. The purpose of the UV index is to help people \
+effectively protect themselves from UV radiation, \
+which has health benefits in moderation but causes sunburn at high levels.', 'green'))
+                    print()
+                    print(colored('Precipitation Probability Maximum', 'cyan'))
+                    print()
+                    print(colored('Precipitation probability is the likelihood \
+of precipitation occurring at a given location within a given time period. \
+It is often expressed either as the probability of precipitation \
+occurring at any point in the area or as the probability of precipitation \
+occurring at a single point in the area. \
+Precipitation probability is predicted by a complex set of equations \
+based on observations of humidity, wind speed, wind direction, \
+and thermal gradients. Measurements of these variables are used to \
+calculate the probability of precipitation. \
+Precipitation probability is often expressed as a percentage. \
+For example, a 60% chance of precipitation means that there is a 60% \
+chance that precipitation will occur at any point in the area.', 'green'))
+                    print()
+                    print(colored('Windspeed Unit', 'cyan'))
+                    print()
+                    print(colored('The metre per second (symbol: m/s) \
+is an SI derived unit of both speed (scalar) and velocity (vector \
+quantity which specifies both magnitude and a specific direction), \
+defined by distance in metres divided by time in seconds.', 'green'))
+                    print()
+                    break
+                elif menu_choices == 'c':
+                    clear_screen()
+                    print(colored('Previous Searches Display', 'yellow'))
+                    print()
+                    print()
+                    print(colored('This feature is not available yet. \
+Please try again later.', 'red'))
+                    print()
+                    print()
+                    break
+                elif menu_choices == 'd':
+                    clear_screen()
+                    print(colored('Information about this app', 'yellow'))
+                    print()
+                    print()
+                    print(colored('This app was created by Victoria \
+as a third project for the Full Stack Software Development course \
+at the Code Institute.', 'green'))
+                    print()
+                    print()
+                    break
+                elif menu_choices == 'e':
+                    clear_screen()
+                    print(colored('Thank you for using Victoria\'s Weather App! \
+See you soon!', 'green'))
+                    print()
+                    print()
 
 
 # Call main function
