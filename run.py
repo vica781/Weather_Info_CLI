@@ -6,12 +6,13 @@ from termcolor import colored
 import readchar
 import os
 import time
+import sys
 
 MENU = [
-    'a. Weather information for the location of your choice',
-    'b. Go here if you want to learn about the Weather Components and Units',
-    'c. Previous Searches Display',
-    'd. Information about this app',
+    'a. Get Weather information',
+    'b. Weather Components Info Explained',
+    'c. Display Search History',
+    'd. Instructions',
     'e. Exit'
 ]
 
@@ -74,6 +75,8 @@ BANNER_RAIN = """
         /____)/____)       (_(__|   ((__|
 """
 
+# AUXILIARY FUNCTIONS
+
 
 def key_pressed():
     """
@@ -92,7 +95,7 @@ def clear_screen():
     return
 
 
-# Defining Welcome message function
+# WELCOME SCREEN FUNCTION
 def welcome_message():
     """
     This function prints a welcome message to the user
@@ -104,13 +107,18 @@ information for the location of your choice.', 'green'))
 #     print(colored('In order to obtain the weather information, \
 # please enter the city and country.', 'yellow'))
     print(colored('Enjoy!', 'green'))
+    print()
+    # Call key_pressed function
+    key_pressed()
+    # Call clear_screen function
+    clear_screen()
 
 
+# ????????
 lines = BANNER_INPUT.split()
 
-# Define name_input function
 
-
+# USER NAME INPUT
 def name_input():
     """
     This function asks for the user's name
@@ -142,15 +150,28 @@ no numbers or special characters: """)
 \nand everything you do {'to be a breeze!'.upper()}", 'green'))
     return name
 
+# WEATHER INFO APP
+# Locator Function
 
-# Defining get_location function
-def get_location(city, country):
+
+def get_location(name):
     """
-    This function returns a string of the form City, Country
+    This function returns longitude and latitude from an input: City, Country
     """
+
+    # Ask for city and country
+    print(colored(f'Hello, {name}! In order to obtain the weather information, \
+please enter the city and country of your choice.', 'green'))
+    print()
+    print()
+    city = input('City: ')
+    country = input('Country: ')
+    # Call get_location function
+    print()
+    print()
     # Initialize Nominatim API
     geolocator = Nominatim(user_agent="VictoriasApp")
-    # Get location
+    # Get location coordinates
     location = geolocator.geocode(f"{city}, {country}")
     if location is None:
         # Print error message
@@ -160,7 +181,12 @@ def get_location(city, country):
     # Get latitude and longitude
     latitude = str(location.latitude)
     longitude = str(location.longitude)
-    return latitude, longitude
+    # Get the location from geopy library
+    location_details = geolocator.reverse(f'{latitude}, {longitude}')
+    print(f"You've entered city: {city}, and country {country}!")
+    print(f"That gave this result:\n{location_details.raw['display_name']}")
+    # TODO: ask user if that's right result and if not, go back to a new
+    return latitude, longitude, city, country
 
 
 # Defining get_weather function
@@ -192,10 +218,29 @@ def get_weather(latitude, longitude):
 
 
 # Defining print_weather function
-def print_weather(data):
+def print_weather(latitude, longitude, city, country):
     """
     This function prints the weather information
     """
+
+    print()
+    print()
+
+    print('Please wait while I am getting the weather information for you...')
+    print('This may take a few seconds...')
+    print('Thank you for your patience!')
+    print()
+    print()
+
+    # Call get_weather function
+    data = get_weather(latitude, longitude)
+    # Print success message
+    print(colored('Success! Everything is okay. I got the data!', 'blue'))
+    print()
+    key_pressed()
+    clear_screen()
+    print(
+        colored(f'Here is the weather information for {city}, {country}:', 'cyan'))
     # calculate index for current hour and current date
     now = str(datetime.datetime.now()).split()
     now_time = now[0] + 'T' + now[1][:2] + ':00'
@@ -284,116 +329,121 @@ def print_weather(data):
         data = None
 
 
+def weather_components():
+    components = []
+    # You can get the info about
+    while True:
+        # clear screen
+        # Menu
+        while True:
+            selection = input('Selection: ')
+            if selection == "a":
+                print('Temperature')
+                key_pressed()
+                break
+            elif selection == "b":
+                print('Humidity')
+                key_pressed()
+                break
+            elif selection == "c":
+                print('Precipitation Probability')
+                key_pressed()
+                break
+            elif selection == "d":
+                print('Pressure')
+                key_pressed()
+                break
+            elif selection == "e":
+                print('Visibility')
+                key_pressed()
+                break
+            elif selection == "f":
+                print('Windspeed')
+                key_pressed()
+                break
+            elif selection == "g":
+                print('Wind Direction')
+                key_pressed()
+                break
+            elif selection == "h":
+                print('Wind Gusts')
+                key_pressed()
+                break
+            elif selection == "i":
+                print('Temperature Maximum')
+                key_pressed()
+                break
+            elif selection == "j":
+                print('Sunrise')
+                key_pressed()
+                break
+            elif selection == "k":
+                print('Sunset')
+                key_pressed()
+                break
+            elif selection == "l":
+                print('UV Index')
+                key_pressed()
+                break
+            elif selection == "m":
+                print('Precipitation Probability Maximum')
+                key_pressed()
+                break
+            elif selection == "n":
+                return
+            else:
+                print('Invalid input. Try again:')
+                key_pressed()
+
+
+def pass_searches():
+    pass
+
+
+def instructions():
+    pass
+
+
 def main():
-    # Call welcome message function
-    welcome_message()
-    print()
-    # Call key_pressed function
-    key_pressed()
     # Call clear_screen function
     clear_screen()
+    # Call welcome message function
+    welcome_message()
     # Call name_input function
     name = name_input()
-    print()
-    key_pressed()
-    clear_screen()
-    # Ask for city and country
-    print(colored(f'Hello, {name}! In order to obtain the weather information, \
-please enter the city and country of your choice.', 'green'))
-    print()
-    print()
-    city = input('City: ')
-    country = input('Country: ')
-    # Call get_location function
-    latitude, longitude = get_location(city, country)
-    # TODO - add a check if the location is valid
-    print()
-    print()
-    # Print weather information
-    print(colored(f"You have entered the following location: \
-{city}, {country}", 'yellow'))
-    print()
-    print()
-
-    print('Please wait while I am getting the weather information for you...')
-    print('This may take a few seconds...')
-    print('Thank you for your patience!')
-    print()
-    print()
-    # Call get_weather function
-    data = get_weather(latitude, longitude)
-    # Print success message
-    print(colored('Success! Everything is okay. I got the data!', 'blue'))
-    print()
-    key_pressed()
-    clear_screen()
-
-    print(
-        colored(f'Here is the weather information for {city}, {country}:', 'cyan'))
-    # Call print_weather function
-    print_weather(data)
-
-    print()
     key_pressed()
     clear_screen()
 
     # Menu section
+    # TODO: validation
     while True:
         clear_screen()
         print('\n M E N U\n\n'.center(80, '-'))
         for item in MENU:
             print(item + '\n')
 
-            menu_choices = ''
-            while menu_choices == '':
-                menu_choices = input(colored('Please, choose where you want to go; enter a, b, c, d, or e:'
-                                             ' \n\n', 'green')).lower().strip()
-                if menu_choices == 'a':
-                    result = input(colored('Do you want to see the weather \
-information for another location? Enter yes or no: ', 'green')).lower().strip()
-                    if result == 'yes':
-                        clear_screen()
-                        print(colored('Please wait while I am getting the weather \
-information for you...', 'green'))
-                        print(colored('This may take a few seconds...', 'green'))
-                        print(colored('Thank you for your patience!', 'green'))
-                        print()
-                        print()
-                        # Ask for city and country
-                        print(colored(f'Hello, {name}! In order to obtain the weather information, \
-please enter the city and country of your choice.', 'green'))
-                        print()
-                        print()
-                        city = input('City: ')
-                        country = input('Country: ')
-                        # Call get_location function
-                        latitude, longitude = get_location(city, country)
-                        # TODO - add a check if the location is valid
-                        print()
-                        print()
-                        # Print weather information
-                        print(colored(f"You have entered the following location: \
-{city}, {country}", 'yellow'))
-                        print()
-                        print()
-
-                        print(
-                            'Please wait while I am getting the weather information for you...')
-                        print('This may take a few seconds...')
-                        print('Thank you for your patience!')
-
-                    print()
-                    key_pressed()
-                    clear_screen()
-                    break
-                elif menu_choices == 'b':
-                    clear_screen()
-                    print(colored('Weather Components and Units', 'yellow'))
-                    print()
-                    print()
-                    print(colored('Temperature', 'cyan'))
-                    print()
-                    print(colored('Temperature is a physical quantity \
+        menu_choices = ''
+        while menu_choices == '':
+            menu_choices = input(colored('Please, choose where you want to go; enter a, b, c, d, or e:'
+                                         ' \n\n', 'green')).lower().strip()
+            if menu_choices == 'a':
+                clear_screen()
+                latitude, longitude, city, country = get_location(name)
+                # Print weather information
+                print_weather(latitude, longitude, city, country)
+                print()
+                key_pressed()
+                clear_screen()
+                break
+            elif menu_choices == 'b':
+                weather_components()
+                clear_screen()
+                print(colored('Weather Components and Units', 'yellow'))
+                print()
+                print()
+                print(colored('Temperature', 'cyan'))
+                print()
+                print(colored('Temperature is a physical quantity \
 expressed in degrees. It is measured with a thermometer \
 calibrated in one or more temperature scales. \
 The most commonly used scales are the Celsius scale (formerly called centigrade) \
@@ -401,10 +451,10 @@ The most commonly used scales are the Celsius scale (formerly called centigrade)
 The kelvin (K) is the unit of temperature in the International System of Units \
 (SI), in which temperature is one of the seven fundamental base quantities. \
 The Kelvin scale is widely used in science and technology.', 'green'))
-                    print()
-                    print(colored('Humidity', 'cyan'))
-                    print()
-                    print(colored('Humidity is the concentration of water vapour \
+                print()
+                print(colored('Humidity', 'cyan'))
+                print()
+                print(colored('Humidity is the concentration of water vapour \
 present in the air. Water vapour, the gaseous state of water, \
 is generally invisible to the human eye. \
 Humidity indicates the likelihood for precipitation, dew, \
@@ -419,10 +469,10 @@ The amount of water vapour contained within a parcel of air can vary \
 significantly. For example, a parcel of air near saturation may contain \
 10 g of water per cubic metre of air at 30 °C, \
 but only 2.5 g of water per cubic metre of air at 8 °C.', 'green'))
-                    print()
-                    print(colored('Precipitation Probability', 'cyan'))
-                    print()
-                    print(colored('Precipitation probability is the likelihood \
+                print()
+                print(colored('Precipitation Probability', 'cyan'))
+                print()
+                print(colored('Precipitation probability is the likelihood \
 of precipitation occurring at a given location within a given time period. \
 It is often expressed either as the probability of precipitation \
 occurring at any point in the area or as the probability of precipitation \
@@ -434,16 +484,16 @@ calculate the probability of precipitation. \
 Precipitation probability is often expressed as a percentage. \
 For example, a 60% chance of precipitation means that there is a 60% \
 chance that precipitation will occur at any point in the area.', 'green'))
-                    print()
-                    print(colored('Pressure', 'cyan'))
-                    print()
-                    print(colored('Surface pressure is the atmospheric pressure \
+                print()
+                print(colored('Pressure', 'cyan'))
+                print()
+                print(colored('Surface pressure is the atmospheric pressure \
 at a location on the surface of the Earth. It is directly proportional \
 to the mass of air over that location.', 'green'))
-                    print()
-                    print(colored('Visibility', 'cyan'))
-                    print()
-                    print(colored('Visibility is a measure of the distance \
+                print()
+                print(colored('Visibility', 'cyan'))
+                print()
+                print(colored('Visibility is a measure of the distance \
 at which an object or light can be clearly discerned. \
 It is reported within surface weather observations and METAR code either \
 in meters or statute miles, depending upon the country. \
@@ -458,20 +508,20 @@ The meteorological visibility is reported as horizontal visibility \
 in the UK, and vertical visibility in the US. \
 Visibility is primarily a safety concern; poor visibility, \
 such as fog, can be the cause of accidents.', 'green'))
-                    print()
-                    print(colored('Windspeed', 'cyan'))
-                    print()
-                    print(colored('Wind speed, or wind flow velocity, \
+                print()
+                print(colored('Windspeed', 'cyan'))
+                print()
+                print(colored('Wind speed, or wind flow velocity, \
 is a fundamental atmospheric quantity caused by air moving from \
 high to low pressure, usually due to changes in temperature. \
 Wind speed is now commonly measured with an anemometer. \
 Wind speed affects weather forecasting, aircraft and maritime operations, \
 construction projects, growth and metabolism rate of many plant species, \
 and countless other implications.', 'green'))
-                    print()
-                    print(colored('Wind direction', 'cyan'))
-                    print()
-                    print(colored('Wind direction is reported by the direction \
+                print()
+                print(colored('Wind direction', 'cyan'))
+                print()
+                print(colored('Wind direction is reported by the direction \
 from which it originates. For example, a northerly wind blows from the north \
 to the south. Wind direction is usually reported in cardinal directions \
 or in azimuth degrees. Wind direction is measured in degrees clockwise \
@@ -479,10 +529,10 @@ from due north. Therefore, a wind blowing from the north has a wind direction \
 of 0°; a wind blowing from the east has a wind direction of 90°; \
 a wind blowing from the south has a wind direction of 180°; \
 and a wind blowing from the west has a wind direction of 270°.', 'green'))
-                    print()
-                    print(colored('Wind gusts', 'cyan'))
-                    print()
-                    print(colored('A wind gust is a sudden, \
+                print()
+                print(colored('Wind gusts', 'cyan'))
+                print()
+                print(colored('A wind gust is a sudden, \
 brief increase in the speed of the wind, \
 usually lasting less than 20 seconds. \
 It is of a more transient character than a squall, \
@@ -496,36 +546,36 @@ Gusts can also be associated with the cold front or the warm \
 sector associated with a tropical cyclone. \
 Wind gusts can be recorded when a station is experiencing calm conditions, \
 when the wind suddenly picks up and then dies down again.', 'green'))
-                    print()
-                    print(colored('Temperature Maximum', 'cyan'))
-                    print()
-                    print(colored('The maximum temperature is the highest \
+                print()
+                print(colored('Temperature Maximum', 'cyan'))
+                print()
+                print(colored('The maximum temperature is the highest \
 temperature recorded between sunrise and sunset, \
 regardless of the time of observation. \
 The minimum temperature is the lowest temperature recorded \
 from sunset to sunrise, regardless of the time of observation. \
 The maximum and minimum temperatures are usually recorded during \
 the 24-hour period from midnight to midnight.', 'green'))
-                    print()
-                    print(colored('Sunrise', 'cyan'))
-                    print()
-                    print(colored('Sunrise is the moment when the upper limb \
+                print()
+                print(colored('Sunrise', 'cyan'))
+                print()
+                print(colored('Sunrise is the moment when the upper limb \
 of the Sun appears on the horizon in the morning. \
 The term can also refer to the entire process of the Sun \
 crossing the horizon and its accompanying atmospheric effects.', 'green'))
-                    print()
-                    print(colored('Sunset', 'cyan'))
-                    print()
-                    print(colored('Sunset or sundown is the daily \
+                print()
+                print(colored('Sunset', 'cyan'))
+                print()
+                print(colored('Sunset or sundown is the daily \
 disappearance of the Sun below the horizon due to Earth\'s rotation. \
 As viewed from the Equator, the equinox Sun sets exactly due west \
 in both Spring and Autumn. As viewed from the middle latitudes, \
 the local summer Sun sets to the northwest for the Northern Hemisphere, \
 but to the southwest for the Southern Hemisphere.', 'green'))
-                    print()
-                    print(colored('UV Index', 'cyan'))
-                    print()
-                    print(colored('The UV index is an international standard \
+                print()
+                print(colored('UV Index', 'cyan'))
+                print()
+                print(colored('The UV index is an international standard \
 measurement of the strength of ultraviolet (UV) radiation from the Sun \
 at a particular place on a particular day. \
 It is primarily used in daily forecasts aimed at the general public. \
@@ -539,10 +589,10 @@ at UV index 12, and should expect to sunburn in about 60 minutes \
 at UV index 3. The purpose of the UV index is to help people \
 effectively protect themselves from UV radiation, \
 which has health benefits in moderation but causes sunburn at high levels.', 'green'))
-                    print()
-                    print(colored('Precipitation Probability Maximum', 'cyan'))
-                    print()
-                    print(colored('Precipitation probability is the likelihood \
+                print()
+                print(colored('Precipitation Probability Maximum', 'cyan'))
+                print()
+                print(colored('Precipitation probability is the likelihood \
 of precipitation occurring at a given location within a given time period. \
 It is often expressed either as the probability of precipitation \
 occurring at any point in the area or as the probability of precipitation \
@@ -554,42 +604,45 @@ calculate the probability of precipitation. \
 Precipitation probability is often expressed as a percentage. \
 For example, a 60% chance of precipitation means that there is a 60% \
 chance that precipitation will occur at any point in the area.', 'green'))
-                    print()
-                    print(colored('Windspeed Unit', 'cyan'))
-                    print()
-                    print(colored('The metre per second (symbol: m/s) \
+                print()
+                print(colored('Windspeed Unit', 'cyan'))
+                print()
+                print(colored('The metre per second (symbol: m/s) \
 is an SI derived unit of both speed (scalar) and velocity (vector \
 quantity which specifies both magnitude and a specific direction), \
 defined by distance in metres divided by time in seconds.', 'green'))
-                    print()
-                    break
-                elif menu_choices == 'c':
-                    clear_screen()
-                    print(colored('Previous Searches Display', 'yellow'))
-                    print()
-                    print()
-                    print(colored('This feature is not available yet. \
+                print()
+                break
+            elif menu_choices == 'c':
+                pass_searches()
+                clear_screen()
+                print(colored('Previous Searches Display', 'yellow'))
+                print()
+                print()
+                print(colored('This feature is not available yet. \
 Please try again later.', 'red'))
-                    print()
-                    print()
-                    break
-                elif menu_choices == 'd':
-                    clear_screen()
-                    print(colored('Information about this app', 'yellow'))
-                    print()
-                    print()
-                    print(colored('This app was created by Victoria \
+                print()
+                print()
+                break
+            elif menu_choices == 'd':
+                instructions()
+                clear_screen()
+                print(colored('Information about this app', 'yellow'))
+                print()
+                print()
+                print(colored('This app was created by Victoria \
 as a third project for the Full Stack Software Development course \
 at the Code Institute.', 'green'))
-                    print()
-                    print()
-                    break
-                elif menu_choices == 'e':
-                    clear_screen()
-                    print(colored('Thank you for using Victoria\'s Weather App! \
+                print()
+                print()
+                break
+            elif menu_choices == 'e':
+                clear_screen()
+                print(colored('Thank you for using Victoria\'s Weather App! \
 See you soon!', 'green'))
-                    print()
-                    print()
+                print()
+                print()
+                sys.exit()
 
 
 # Call main function
