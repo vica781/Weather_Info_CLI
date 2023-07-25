@@ -359,25 +359,42 @@ def weather_components():
 choose the weather component you want to know more about by \
 entering a, b, c, d, e, f, g, h, or i: ').lower().strip()
 
-            if selection in ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i']:
-                if selection == "a":
-                    print('Temperature is a physical quantity \
+            if selection == "a":
+                print(colored('Temperature is a physical quantity \
 expressed in degrees. It is measured with a thermometer \
 calibrated in one or more temperature scales. \
 The most commonly used scales are the Celsius scale (formerly called centigrade) \
 (°C), Fahrenheit scale (°F), and Kelvin scale (K). \
 The kelvin (K) is the unit of temperature in the International System of Units \
 (SI), in which temperature is one of the seven fundamental base quantities. \
-The Kelvin scale is widely used in science and technology.')
-                    print()
-                    break
-
+The Kelvin scale is widely used in science and technology.', 'green'))
+                print()
+                break
+            elif selection == "b":
+                print(colored('Humidity is the concentration of water vapour \
+present in the air. Water vapour, the gaseous state of water, \
+is generally invisible to the human eye. \
+Humidity indicates the likelihood for precipitation, dew, \
+or fog to be present. The amount of water vapour needed to achieve saturation \
+increases as the temperature increases. As the temperature of a parcel of air \
+becomes lower it will eventually reach the saturation point without \
+adding or losing water mass. The differences in the amount of water vapour \
+needed to achieve saturation increases as the temperature increases. \
+As the temperature of a parcel of air becomes lower it will eventually \
+reach the saturation point without adding or losing water mass. \
+The amount of water vapour contained within a parcel of air can vary \
+significantly. For example, a parcel of air near saturation may contain \
+10 g of water per cubic metre of air at 30 °C, \
+but only 2.5 g of water per cubic metre of air at 8 °C.', 'green'))
+                print()
                 break
             elif selection == "i":
                 return
+            elif selection in ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i']:
+                print(f"You've chosen {selection}")
+                break
             else:
                 print('Invalid input. Try again:')
-                key_pressed()
                 break
 
         # while True:
