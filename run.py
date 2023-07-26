@@ -45,12 +45,12 @@ BANNER_INPUT = """
 `----'`-'`-' `-'`-'`-' `-' `---' 
 """
 BANNER_INTRO = """            					
-    .        .      /				
-      \      |     .				
-             oo  /
+    .        .  				
+      \      |   .				     
+            oo  /
         \ ,oOOO__== --__ =-
-.____ -__. OoOO(`  )).                   _
-____. __  OOO(o    )). __ . __--    .+(`  )`.
+.-___ -__.OOoOO(`  )).                 _
+__- _._  OOO(o    )). __ . __--    .+(`  )`.
 )        oOOO(o      '`.          :(   .    )
         .+(`(      .   ))    .--  `.  (    ) )
        ((    (..__.:'-'   .=(   )   ` _`  ) )
@@ -67,13 +67,13 @@ BANNER_RAIN = """
 /_.-..-..-..-..-._\ .---------------------------------.
          #  _,,_   ( I hear it might rain people today )
          #/`    `\ /'---------------------------------'
-         / / 6 6\ \
-         \/\  Y /\/       /\-/\
+         / / 6 6\ \\
+         \/\  Y /\/       /\-/\\
          #/ `'U` \       /a a  \               _
        , (  \   | \     =\ Y  =/-~~~~~~-,_____/ )
        |\|\_/#  \_/       '^--'          ______/
        \/'.  \  /'\         \           /
-        \    /=\  /         ||  |---'\  \
+        \    /=\  /         ||  |---'\  \\
         /____)/____)       (_(__|   ((__|
 """
 
@@ -106,8 +106,6 @@ def welcome_message():
     print(colored(BANNER_INTRO, 'yellow'))
     print(colored('This app will provide you with the weather \
 information for the location of your choice.', 'green'))
-    print()
-    print()
     print(colored('Enjoy!', 'green'))
     print()
     # Call key_pressed function
@@ -203,7 +201,6 @@ information for a different location, please enter the new city and country.'
                 if conformation == 'y':
                     return latitude, longitude, city, country
                 elif conformation == 'n':
-                    ############
                     context = 'change'
                     break  # This will break the inner loop
                     # and prompt user to enter a new location
@@ -214,8 +211,8 @@ information for a different location, please enter the new city and country.'
             # Print error message
             # and continue with the next iteration of the loop
             print(colored('Oops! Something went wrong. The location you entered \
-has not been found. Please, check the spelling and try again.', 'red'))\
-                #########
+has not been found. Please, check the spelling and try again.', 'red'))
+            print()
             context = 'error'
 
 
@@ -287,6 +284,15 @@ def print_weather(latitude, longitude, city, country):
         # Get current precipitation probability
         current_precipitation_probability = data['hourly'][
             'precipitation_probability'][hourly_index]
+        # Print rain banner if the precipitation probability is more than 50%
+        if current_precipitation_probability > 50:
+            print(colored(BANNER_RAIN, 'blue'))
+            print(colored('It might rain today. Take an umbrella with you!', 'blue'))
+            print(colored('Press any key to see full weather information.', 'blue'))
+            key_pressed()
+            clear_screen()
+            print(
+                colored(f'Here is the weather information for {city}, {country}:', 'cyan'))
         # Get current pressure
         current_pressure = data['hourly']['surface_pressure'][hourly_index]
         # Get current visibility
