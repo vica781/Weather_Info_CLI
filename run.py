@@ -106,8 +106,8 @@ def welcome_message():
     print(colored(BANNER_INTRO, 'yellow'))
     print(colored('This app will provide you with the weather \
 information for the location of your choice.', 'green'))
-#     print(colored('In order to obtain the weather information, \
-# please enter the city and country.', 'yellow'))
+    print()
+    print()
     print(colored('Enjoy!', 'green'))
     print()
     # Call key_pressed function
@@ -153,7 +153,9 @@ The input is not valid. Please, check the format and try again.', 'red'))
 # Locator Function
 
 
-def get_location(name):
+def get_location(name, context="initial"):  # context parameter is used
+    # to determine if the user is entering the location for the first time
+    # or not in order to adapt the message accordingly
     """
     This function returns longitude and latitude from an input: City, Country
     """
@@ -162,8 +164,17 @@ def get_location(name):
 
     while True:  # Loop indefinitely until the user enters a valid location
         # Ask for city and country
-        print(colored(f'{name},in order to obtain the weather information, \
-please enter the city and country of your choice.', 'green'))
+        if context == "initial":  # if the user is entering the location for the first time
+            prompt_msg = f'{name}, in order to obtain the weather \
+information, please enter the city and country of your choice.'
+        elif context == "error":  # if the user has entered an invalid location
+            prompt_msg = f'{name}, it seems there was an error with your \
+previous input. Please enter the city and country of your choice again.'
+        else:  # if the user desided to change the location
+            prompt_msg = f'{name}, to change the location and get weather \
+information for a different location, please enter the new city and country.'
+
+        print(colored(prompt_msg, 'green'))
         print()
         print()
         city = input('City: ')
@@ -198,28 +209,8 @@ please enter the city and country of your choice.', 'green'))
         else:
             # Print error message
             # and continue with the next iteration of the loop
-            print()
-            print()
             print(colored('Oops! Something went wrong. The location you entered \
 has not been found. Please, check the spelling and try again.', 'red'))
-
-
-#     # Get location coordinates
-#     location = geolocator.geocode(f"{city}, {country}")
-#     if location is None:
-#         # Print error message
-#         print(colored('Oops! Something went wrong. The location you entered \
-# has not been found. Please, check the spelling and try again.', 'red'))
-#         # exit()
-#     # Get latitude and longitude
-#     latitude = str(location.latitude)
-#     longitude = str(location.longitude)
-#     # Get the location from geopy library
-#     location_details = geolocator.reverse(f'{latitude}, {longitude}')
-#     print(f"You've entered city: {city}, and country {country}!")
-#     print(f"That gave this result:\n{location_details.raw['display_name']}")
-#     # TODO: ask user if that's right result and if not, go back to a new
-#     return latitude, longitude, city, country
 
 
 # Defining get_weather function
