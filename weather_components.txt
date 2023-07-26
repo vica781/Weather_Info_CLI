@@ -1,0 +1,235 @@
+TEMPERATURE
+is a physical quantity expressed in degrees. 
+It is measured with a thermometer calibrated in one or more temperature scales. 
+The most commonly used scales are the Celsius scale (formerly called centigrade) 
+(°C), Fahrenheit scale (°F), and Kelvin scale (K). 
+The kelvin (K) is the unit of temperature in the International System of Units 
+(SI), in which temperature is one of the seven fundamental base quantities. 
+The Kelvin scale is widely used in science and technology.
+
+MAXIMUM TEMPERATURE
+is the highest temperature recorded between sunrise and sunset, 
+regardless of the time of observation. 
+
+MINIMUM TEMPERATURE
+is the lowest temperature recorded between sunset to sunrise, 
+regardless of the time of observation. 
+
+The maximum and minimum temperatures are usually recorded during 
+the 24-hour period from midnight to midnight.
+
+
+HUMIDITY
+is the amount of water vapor in the air (in other words it is 
+wetness in the air). Too much or too little humidity can be dangerous. 
+For example, high humidity combined with hot temperatures is a combination that
+can be a health risk, especially for the very young and the very old.
+
+Humidity plays an important role in our daily weather. 
+Without water vapor in the air, our weather might be like the weather on Mars. 
+Could you imagine life without clouds, rain, snow, thunder, or lightning?
+
+Absolute humidity is the mass of water vapor divided by the mass of dry air
+in a volume of air at a given temperature.
+
+Relative humidity (RH) is the ratio of the partial pressure of water vapor
+to the equilibrium vapor pressure of water at a given temperature.
+Relative humidity depends on temperature and the pressure of the 
+system of interest.
+
+Humidity is the concentration of water vapour present in the air. 
+Water vapour, the gaseous state of water, is generally invisible 
+to the human eye. Humidity indicates the likelihood for precipitation, 
+dew, or fog to be present. 
+
+The amount of water vapour needed to achieve saturation increases as the 
+temperature increases. As the temperature of a parcel of air becomes lower 
+it will eventually reach the saturation point 
+without adding or losing water mass. 
+
+The amount of water vapour contained within a parcel of air can vary 
+significantly. For example, a parcel of air near saturation may contain 
+10 g of water per cubic metre of air at 30 °C, 
+but only 2.5 g of water per cubic metre of air at 8 °C.
+
+
+PRECIPITATION
+is any product of the condensation of atmospheric water vapour 
+that falls under gravity. The main forms of precipitation include
+drizzle, rain, sleet, snow, graupel and hail. Precipitation occurs when
+a portion of the atmosphere becomes saturated with water vapour, so that
+the water condenses and "precipitates". 
+
+Thus, fog and mist are not precipitation but suspensions, 
+because the water vapour does not condense sufficiently to precipitate. 
+Two processes, possibly acting together, can lead to air becoming saturated: 
+cooling the air or adding water vapour to the air.
+
+
+PRECIPITATION PROBABILITY
+is the probability (likelihood) of precipitation occurring at a given 
+location within a given time period. 
+
+It is often expressed either as the probability of precipitation occurring 
+at any point in the area or as the probability of precipitation occurring 
+at a single point in the area. 
+
+Precipitation probability is predicted by a complex set of equations 
+based on observations of humidity, wind speed, wind direction, 
+and thermal gradients. Measurements of these variables are used to 
+calculate the probability of precipitation. 
+
+Precipitation probability is often expressed as a percentage. 
+For example, a 60% chance of precipitation means that there is a 60% 
+chance that precipitation will occur at any point in the area.
+
+
+PRECEPITATION PROBABILITY MAXIMUM
+is the highest probability of precipitation occurring at any point 
+in the area during the forecast period.
+
+
+ATMOSPHERIC PRESSURE 
+is the force exerted by the weight of air on a unit area of surface.
+The Earth's atmosphere exerts pressure everywhere on the planet's surface.
+Pressure is measured in hectoPascals (hPa), also called millibars. 
+Standard pressure at sea level is defined as 1013hPa, but we can see large 
+areas of either high or low pressure. These areas are all relative 
+to each other, so what defines a high will change depending 
+on the area around it. 
+It is measured with a barometer in units of millibars (mb) or kilopascals (kPa).
+
+On a weather chart, lines joining places with equal sea-level pressures 
+are called isobars. Charts showing isobars are useful because they identify 
+features such as anticyclones (areas of high pressure) 
+and depressions (areas of low pressure).
+
+HIGH and LOW PRESSURE SYSTEMS cause the day-to-day changes in our weather. 
+In a high pressure system, air flows away from the center of high pressure,
+and winds tend to be light and variable.
+In a low pressure system, air flows towards the center of low pressure,
+and winds tend to be strong and gusty.
+
+Areas of high and low pressure are caused by ascending and descending air. 
+As air warms it ascends, leading to low pressure at the surface. 
+As air cools it descends, leading to high pressure at the surface.
+In general, areas of low pressure are associated with wet weather 
+and areas of high pressure are associated with dry weather.
+
+ANTICYCLONE & DEPRESSION are the names given to areas of high and low pressure.
+
+Anticyclone (high pressure)
+In an anticyclone (high pressure) the winds tend to be light and blow in 
+a clockwise direction (in the northern hemisphere). 
+Also, the air is descending, which reduces the formation of cloud and 
+leads to light winds and settled weather conditions.
+
+Depression (low pressure)
+In a depression (low pressure), air is rising and blows in 
+an anticlockwise direction around the low (in the northern hemisphere). 
+As it rises and cools, water vapour condenses to form clouds and 
+perhaps precipitation. This is why the weather in a depression is 
+often unsettled, there are usually weather fronts associated with depressions.
+
+
+WIND SPEED or wind flow velocity
+is a fundamental atmospheric quantity caused by air moving from 
+high to low pressure, usually due to changes in temperature. 
+It is the speed of air moving past a given point.
+Wind speed is measured with an anemometer in units of miles per hour (mph),
+kilometers per hour (km/h), or knots (kts).
+
+Wind speed is now commonly measured with an anemometer. 
+Wind speed affects weather forecasting, aircraft and maritime operations, 
+construction projects, growth and metabolism rate of many plant species, 
+and countless other implications.
+
+WIND DIRECTION
+is reported by the direction from which it originates. 
+For example, a northerly wind blows from the north to the south. 
+Wind direction is usually reported in cardinal directions or in azimuth degrees. 
+
+Wind direction is measured in degrees clockwise from due north. 
+Therefore, a wind blowing from the north has a wind direction of 0°; 
+a wind blowing from the east has a wind direction of 90°; 
+a wind blowing from the south has a wind direction of 180°; 
+and a wind blowing from the west has a wind direction of 270°.
+So, a wind blowing from the north-east would have a wind direction of 45°.
+
+WIND GUST
+is a sudden, brief increase in the speed of the wind, 
+usually lasting less than 20 seconds. 
+It is of a more transient character than a squall, which lasts minutes, 
+or a cyclone, which can last for hours or longer.
+
+A gust is a separate event, whereas a squall is a whole range of conditions. 
+Gusts are usually reported in knots or m/s. 
+Wind gusts generally occur near the trailing edge of a rain shower 
+or thunderstorm, and are associated with downdrafts or microbursts.
+Gusts can also be associated with the cold front or the warm
+sector associated with a tropical cyclone.
+
+Gusts can also be associated with the cold front 
+or the warm sector associated with a tropical cyclone. 
+
+Wind gusts can be recorded when a station is experiencing calm conditions, 
+when the wind suddenly picks up and then dies down again.
+
+Wind gusts are measured with an anemometer in units of miles per hour (mph),
+kilometers per hour (km/h), or knots (kts).
+
+
+VISIBILITY
+is a measure of the greatest distance that can be seen clearly 
+from a given point at which an object or light can be clearly discerned. 
+
+Visibility is primarily a meteorological tool for air quality. 
+Meteorological visibility refers to transparency of air: in dark, meteorological
+visibility is still the same as in daylight for the same air; however,
+in dark, the human eye is less sensitive and objects are harder to see.
+
+It is reported within surface weather observations and METAR code 
+and is measured with a visibility sensor in units of meters (m) or
+statute miles (sm), depending upon the country.
+
+Visibility affects all forms of traffic: roads, sailing and aviation.
+
+
+SUNRISE
+is the moment when the upper limb of the Sun appears on the horizon
+in the morning. The term can also refer to the entire process of the Sun
+crossing the horizon and its accompanying atmospheric effects.
+
+SUNSET
+is the daily disappearance of the Sun below the horizon as a result
+of Earth's rotation.
+
+As viewed from the Equator, the equinox Sun sets exactly due west 
+in both Spring and Autumn. 
+
+As viewed from the middle latitudes, the local summer Sun sets 
+to the north-west for the Northern Hemisphere, 
+but to the south-west for the Southern Hemisphere.
+
+
+UV INDEX
+is an international standard measurement of the strength of
+sunburn-producing ultraviolet (UV) radiation at a particular place and time.
+The scale was developed by Canadian scientists in 1992, then adopted
+and standardized by the UN's World Health Organization and World Meteorological
+Organization in 1994. It is primarily used in daily forecasts aimed at the
+general public, and is increasingly available as an hourly forecast as well.
+
+The UV Index is designed as an open-ended linear scale, directly proportional
+to the intensity of UV radiation that causes sunburn on human skin, 
+(which is correlated with other health risks) due to UV exposure.
+
+An index of 0 corresponds to zero UV radiation, as is essentially the case
+at night. An index of 10 corresponds roughly to midday summer sunlight
+with a clear sky when the UV Index was originally designed to measure
+sunburn-producing UV radiation in the absence of cloud cover.
+
+For example, if a light-skinned individual (without sunscreen or a suntan)
+begins to sunburn in 30 minutes at UV Index 6, then that individual should
+expect to sunburn in about 15 minutes at UV Index 12, and should avoid
+the sun between 10 a.m. and 4 p.m. when the UV Index is 12 or higher.
