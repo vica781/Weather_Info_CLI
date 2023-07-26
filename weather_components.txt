@@ -65,7 +65,6 @@ because the water vapour does not condense sufficiently to precipitate.
 Two processes, possibly acting together, can lead to air becoming saturated: 
 cooling the air or adding water vapour to the air.
 
-
 PRECIPITATION PROBABILITY
 is the probability (likelihood) of precipitation occurring at a given 
 location within a given time period. 
@@ -83,10 +82,9 @@ Precipitation probability is often expressed as a percentage.
 For example, a 60% chance of precipitation means that there is a 60% 
 chance that precipitation will occur at any point in the area.
 
-
 PRECEPITATION PROBABILITY MAXIMUM
 is the highest probability of precipitation occurring at any point 
-in the area during the forecast period.
+in the area during the 24-hour period from midnight to midnight.
 
 
 ATMOSPHERIC PRESSURE 

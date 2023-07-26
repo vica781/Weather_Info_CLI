@@ -125,10 +125,10 @@ def name_input():
     for line in BANNER_INPUT.splitlines():
         for character in line:
             print(colored(character, 'yellow'), end='', flush=True)
-            # delay printing of each character by 0.003 seconds
-            time.sleep(.003)
+            # delay printing of each character by 0.001 seconds
+            time.sleep(.0001)
         print('')  # print a new line
-        time.sleep(0.5)  # delay printing of each line by 0.5 seconds
+        time.sleep(0.01)  # delay printing of each line by 0.01 seconds
 
     # Ask for name
     name = input("""Choose a name - it must be at least 3 characters long, 
@@ -137,7 +137,7 @@ no numbers or special characters: """)
     # Check if the name is valid
     while len(name) < 3 or len(name) > 10 or not name.isalpha():
         print(colored('Oops! Something went wrong. \
-        The input is not valid. Please try again.', 'red'))
+The input is not valid. Please, check the format and try again.', 'red'))
         name = input('Choose a name - it must be at least 3 characters long,\
 \nbut no longer than 10 characters, include only letters,\
 \nno numbers or special characters: ')
@@ -157,35 +157,58 @@ def get_location(name):
     """
     This function returns longitude and latitude from an input: City, Country
     """
-
-    # Ask for city and country
-    print(colored(f'Hello, {name}! In order to obtain the weather information, \
-please enter the city and country of your choice.', 'green'))
-    print()
-    print()
-    city = input('City: ')
-    country = input('Country: ')
-    # Call get_location function
-    print()
-    print()
     # Initialize Nominatim API
     geolocator = Nominatim(user_agent="VictoriasApp")
-    # Get location coordinates
-    location = geolocator.geocode(f"{city}, {country}")
-    if location is None:
-        # Print error message
-        print(colored('Oops! Something went wrong.\
- Please try again later.', 'red'))
-        exit()
-    # Get latitude and longitude
-    latitude = str(location.latitude)
-    longitude = str(location.longitude)
-    # Get the location from geopy library
-    location_details = geolocator.reverse(f'{latitude}, {longitude}')
-    print(f"You've entered city: {city}, and country {country}!")
-    print(f"That gave this result:\n{location_details.raw['display_name']}")
-    # TODO: ask user if that's right result and if not, go back to a new
-    return latitude, longitude, city, country
+
+    while True:  # Loop indefinitely until the user enters a valid location
+        # Ask for city and country
+        print(colored(f'{name},in order to obtain the weather information, \
+please enter the city and country of your choice.', 'green'))
+        print()
+        print()
+        city = input('City: ')
+        country = input('Country: ')
+        print()
+        print()
+
+        # Get location coordinates
+        location = geolocator.geocode(f"{city}, {country}")
+
+        if location is not None:
+            # Get latitude and longitude
+            latitude = str(location.latitude)
+            longitude = str(location.longitude)
+            # Get the location from geopy library
+            location_details = geolocator.reverse(f'{latitude}, {longitude}')
+            print(f"You've entered city: {city}, and country {country}!")
+            print(
+                f"That gave this result:\n{location_details.raw['display_name']}")
+            return latitude, longitude, city, country
+        else:
+            # Print error message
+            # and continue with the next iteration of the loop
+            print()
+            print()
+            print(colored('Oops! Something went wrong. The location you entered \
+has not been found. Please, check the spelling and try again.', 'red'))
+
+
+#     # Get location coordinates
+#     location = geolocator.geocode(f"{city}, {country}")
+#     if location is None:
+#         # Print error message
+#         print(colored('Oops! Something went wrong. The location you entered \
+# has not been found. Please, check the spelling and try again.', 'red'))
+#         # exit()
+#     # Get latitude and longitude
+#     latitude = str(location.latitude)
+#     longitude = str(location.longitude)
+#     # Get the location from geopy library
+#     location_details = geolocator.reverse(f'{latitude}, {longitude}')
+#     print(f"You've entered city: {city}, and country {country}!")
+#     print(f"That gave this result:\n{location_details.raw['display_name']}")
+#     # TODO: ask user if that's right result and if not, go back to a new
+#     return latitude, longitude, city, country
 
 
 # Defining get_weather function
@@ -361,32 +384,11 @@ choose the weather component you want to know more about by \
 entering a, b, c, d, e, f, g, h, or i: ').lower().strip()
 
             if selection == "a":
-                print(colored('Temperature is a physical quantity \
-expressed in degrees. It is measured with a thermometer \
-calibrated in one or more temperature scales. \
-The most commonly used scales are the Celsius scale (formerly called centigrade) \
-(°C), Fahrenheit scale (°F), and Kelvin scale (K). \
-The kelvin (K) is the unit of temperature in the International System of Units \
-(SI), in which temperature is one of the seven fundamental base quantities. \
-The Kelvin scale is widely used in science and technology.', 'green'))
+                print(colored('Temperature is a physical quantity', 'green'))
                 print()
                 break
             elif selection == "b":
-                print(colored('Humidity is the concentration of water vapour \
-present in the air. Water vapour, the gaseous state of water, \
-is generally invisible to the human eye. \
-Humidity indicates the likelihood for precipitation, dew, \
-or fog to be present. The amount of water vapour needed to achieve saturation \
-increases as the temperature increases. As the temperature of a parcel of air \
-becomes lower it will eventually reach the saturation point without \
-adding or losing water mass. The differences in the amount of water vapour \
-needed to achieve saturation increases as the temperature increases. \
-As the temperature of a parcel of air becomes lower it will eventually \
-reach the saturation point without adding or losing water mass. \
-The amount of water vapour contained within a parcel of air can vary \
-significantly. For example, a parcel of air near saturation may contain \
-10 g of water per cubic metre of air at 30 °C, \
-but only 2.5 g of water per cubic metre of air at 8 °C.', 'green'))
+                print(colored('Humidity is the', 'green'))
                 print()
                 break
             elif selection == "i":
