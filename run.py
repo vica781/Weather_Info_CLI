@@ -153,12 +153,14 @@ The input is not valid. Please, check the format and try again.', 'red'))
 # Locator Function
 
 
-def get_location(name, context="initial"):  # context parameter is used
+def get_location(name):  # context parameter is used
     # to determine if the user is entering the location for the first time
     # or not in order to adapt the message accordingly
     """
     This function returns longitude and latitude from an input: City, Country
     """
+
+    context = "initial"
     # Initialize Nominatim API
     geolocator = Nominatim(user_agent="VictoriasApp")
 
@@ -201,16 +203,20 @@ information for a different location, please enter the new city and country.'
                 if conformation == 'y':
                     return latitude, longitude, city, country
                 elif conformation == 'n':
+                    ############
+                    context = 'change'
                     break  # This will break the inner loop
                     # and prompt user to enter a new location
                 else:
-                    print('Invalid input. Please, enter y for Yes or n for No.')
+                    print('Invalid input. Please, enter (Y)es or (N)o.')
 
         else:
             # Print error message
             # and continue with the next iteration of the loop
             print(colored('Oops! Something went wrong. The location you entered \
-has not been found. Please, check the spelling and try again.', 'red'))
+has not been found. Please, check the spelling and try again.', 'red'))\
+                #########
+            context = 'error'
 
 
 # Defining get_weather function
