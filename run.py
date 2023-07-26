@@ -183,7 +183,18 @@ please enter the city and country of your choice.', 'green'))
             print(f"You've entered city: {city}, and country {country}!")
             print(
                 f"That gave this result:\n{location_details.raw['display_name']}")
-            return latitude, longitude, city, country
+
+            while True:  # Keep asking until the user confirms the location
+                conformation = input(
+                    'Is this the location you wnat to use? (y/n): ').lower().strip()
+                if conformation == 'y':
+                    return latitude, longitude, city, country
+                elif conformation == 'n':
+                    break  # This will break the inner loop
+                    # and prompt user to enter a new location
+                else:
+                    print('Invalid input. Please, enter y for Yes or n for No.')
+
         else:
             # Print error message
             # and continue with the next iteration of the loop
