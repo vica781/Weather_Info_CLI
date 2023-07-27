@@ -329,52 +329,29 @@ def weather_components():
     """
     This function prints the weather components information
     """
-    # Define menu
-    components_menu = [
-        'a. Temperature',
-        'b. Humidity',
-        'c. Precipitation',
-        'd. Surface Pressure',
-        'e. Visibility',
-        'f. Wind',
-        'g. UV Index',
-        'h. Sunrise and Sunset'
-    ]
 
-    # You can get the info about
-    while True:
-        clear_screen()
-        # Print menu
-        print('\n W E A T H E R   C O M P O N E N T S\n\n'.center(80, '-'))
-        for item in components_menu:
-            print(item + '\n')
-        print('i. Back to Main Menu\n')
+    print('\n W E A T H E R   C O M P O N E N T S\n\n'.center(80, '-'))
 
-        # Ask for user input
-        while True:
-            selection = input('Please, \
-choose the weather component you want to know more about by \
-entering a, b, c, d, e, f, g, h, or i: ').lower().strip()
-
-            if selection == "a":
-                print(colored('Temperature is a physical quantity', 'green'))
-                print()
-                break
-            elif selection == "b":
-                print(colored('Humidity is the', 'green'))
-                print()
-                break
-            elif selection == "i":
-                return
-            elif selection in ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i']:
-                print(f"You've chosen {selection}")
-                break
-            else:
-                print('Invalid input. Try again:')
-                break
-
+    # Load weather components from a file
+    with open('weather_components.txt', 'r') as file:
+        weather_components = file.readlines()
+    counter = 0
+    for line in weather_components:
+        counter += 1
+        print(line, end='')
+        if counter % 21 == 0:
+            print('\n')
+            key_pressed()
+            clear_screen()
+    print('\nThis is the end of the weather components explanation.'
+          'You can now go back to the main menu.')
+    print('\n\n')
+    key_pressed()
+    return
 
 # WEATHER IDIOMS EXPLAINED
+
+
 def weather_idioms():
     pass
 
