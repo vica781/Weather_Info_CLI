@@ -12,10 +12,9 @@ from banners import *
 MENU = [
     'a. Get Weather information',
     'b. Weather Components Explained',
-    'c. Weather Idioms Explained',
-    'd. Display Search History',
-    'e. Instructions',
-    'f. Exit'
+    'c. Display Search History',
+    'd. Instructions',
+    'e. Exit'
 ]
 
 
@@ -345,16 +344,35 @@ def weather_components():
             key_pressed()
             clear_screen()
     print(colored('\n\n\nThis is the end of the weather components explanation.'
-          '\n\nYou can now go back to the main menu.', 'green'))
+                  '\n\nYou can now go back to the main menu.', 'green'))
     print('\n\n')
     key_pressed()
     return
 
-# WEATHER IDIOMS EXPLAINED
+# INSTRUCTIONS
 
 
-def weather_idioms():
-    pass
+def instructions():
+    """
+    This function prints the instructions
+    """
+    print('\n I N S T R U C T I O N S\n\n'.center(80, '-'))
+
+    # Load instructions from a file
+    with open('instructions.txt', 'r') as file:
+        instructions = file.readlines()
+    counter = 0
+    for line in instructions:
+        counter += 1
+        print(line, end='')
+        if counter % 24 == 0:
+            print('\n')
+            key_pressed()
+            clear_screen()
+    print(colored('\n\nThis is the end of the instructions.'
+                  '\n\nYou can now go back to the main menu.', 'green'))
+    key_pressed()
+    return
 
 
 # PREVIOUS SEARCHES DISPLAY
@@ -362,8 +380,10 @@ def pass_searches():
     pass
 
 
-# INSTRUCTIONS
-def instructions():
+# SEARCH HISTORY
+
+
+def search_history():
     pass
 
 
@@ -378,8 +398,8 @@ def main():
     key_pressed()
     clear_screen()
 
-    # Menu section
-    # TODO: validation
+    # MENU SECTION
+
     while True:
         clear_screen()
         print('\n M E N U\n\n'.center(80, '-'))
@@ -390,7 +410,7 @@ def main():
         while menu_choices == '':
             menu_choices = input(colored('Please, CHOOSE where you want to go \
 \nand then Press ENTER to continue; \
-\nenter a, b, c, d, e or f: ', 'green')).lower().strip()
+\nenter a, b, c, d, or e: ', 'green')).lower().strip()
             if menu_choices == 'a':
                 clear_screen()
                 latitude, longitude, city, country = get_location(name)
@@ -403,13 +423,13 @@ def main():
             elif menu_choices == 'b':
                 weather_components()
                 clear_screen()
-                print(colored('Weather Components and Units', 'yellow'))
+                # print(colored('Weather Components and Units', 'yellow'))
                 print()
                 break
             elif menu_choices == 'c':
                 pass_searches()
                 clear_screen()
-                print(colored('Previous Searches Display', 'yellow'))
+                # print(colored('Previous Searches Display', 'yellow'))
                 print()
                 print()
                 print(colored('This feature is not available yet. \
@@ -420,7 +440,7 @@ Please try again later.', 'red'))
             elif menu_choices == 'd':
                 instructions()
                 clear_screen()
-                print(colored('Information about this app', 'yellow'))
+                # print(colored('Instructions', 'yellow'))
                 print()
                 print()
                 print(colored('This app was created by Victoria \
@@ -429,7 +449,7 @@ at the Code Institute.', 'green'))
                 print()
                 print()
                 break
-            elif menu_choices == 'f':
+            elif menu_choices == 'e':
                 clear_screen()
                 print(colored('Thank you for using Victoria\'s Weather App! \
 See you soon!', 'green'))
