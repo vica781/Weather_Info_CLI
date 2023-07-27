@@ -76,6 +76,26 @@ BANNER_RAIN = """
         \    /=\  /         ||  |---'\  \\
         /____)/____)       (_(__|   ((__|
 """
+BANNER_SUN = """               
+          .      '      .
+    .      .     :     .      .  .-----------------------------------------.
+     '.        ______       .'  (While it is fine weather - mend your sails )
+       '  _.-"`      `"-._ '     .-----------------------------------------.
+        .'                '.
+ `'--. /                    \ .--'`
+      /                      \\
+     ;                        ;                          
+- -- |     _.                 | -- -
+     ;    /__`A   ,_          ;
+ .-'  \   |= |;._.}{__       /  '-.
+    _.-""-|.' # '. `  `.-"||<._
+          /      \     \  x   `"
+     ----/         \_.-'|--X----
+     -=_ |         |    |- X.  =_
+    - __ |_________|_.-'|_X-X##
+        `'-._|_|;:;_.-'` '::.  `"-
+     .:;.      .:.   ::.     '::.
+"""
 
 # AUXILIARY FUNCTIONS
 
@@ -123,10 +143,10 @@ def name_input():
     for line in BANNER_INPUT.splitlines():
         for character in line:
             print(colored(character, 'yellow'), end='', flush=True)
-            # delay printing of each character by 0.001 seconds
-            time.sleep(.0001)
+            # delay printing of each character by 0.01 seconds
+            time.sleep(.01)
         print('')  # print a new line
-        time.sleep(0.01)  # delay printing of each line by 0.01 seconds
+        time.sleep(0.04)  # delay printing of each line by 0.01 seconds
 
     # Ask for name
     name = input("""Choose a name - it must be at least 3 characters long, 
