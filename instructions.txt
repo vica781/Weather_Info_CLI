@@ -40,7 +40,67 @@ INSTRUCTIONS
    If you enter your name in a wrong format, 
    you will be asked to enter it again.   
 
-3. The next screen you will see is the LOCATION INPUT SCREEN.
+3. The next screen you will see is the M E N U.
+
+   Please, read menu and choose where you want to go 
+   by entering one of the options: a, b, c, d, e or f.
+
+   Press 'enter' to continue as prompted in the message.
+
+   Pressing any other key will not you allow to continue and program will 
+   continue to ask you to enter one of the options: a, b, c, d, e or f.
+
+   Pressing 'enter' without entering any of the options will not allow you 
+   to continue and will repeatedly reprint input request message.
+
+4. Next screen you will see will display message informing that in order 
+   to obtain the weather in the location of your choice, you will need to 
+   enter the location. 
+
+   Enter CITY of you coiceand press 'enter'.
+   Enter COUNTRY of your choice and press 'enter'.
+
+- not case sensitive
+- no numbers or special characters
+- spaces are allowed
+- if you enter city or country in a wrong format, 
+  you will be informed that something is wrong and asked to enter it again.
+- all entries will checked for the meaning and if an address in any way 
+  related to the location you have entered is found, you will be asked 
+  if that is the location you want to use.
+
+  For EXAMPLE, if you enter 'London' as a city, and 'London' as a country,
+  you will be asked if you want to use the location that was found:
+  Charles I, Charing Cross, St. James's, Covent Garden, City of Westminster, 
+  Greater London, England, SW1A 2DX, United Kingdom (Is this the location 
+  you wnat to use? (y/n))
+  
+  ONE MORE EXAMPLE, if you enter 'Vic' as a city, and 'Tom' as a country,
+  you will be asked if you want to use the location that was found:
+  Tom Wills Interchange, Monash Freeway, Dandenong North, Melbourne,
+  City of Greater Dandenong, Victoria, 3170, Australia
+  (Is this the location you wnat to use? (y/n))
+
+   To confirm the location if you want to use found location, enter 'y' or 'Y', 
+   to enter new location, enter 'n' or 'N'.
+
+   After you have entered a new location and confirmed it, you will be 
+   presented with the weather information for the location of your choice.
+
+   After you have pressed any key or 'enter' to continue as prompted 
+   on the screen, you will be presented with the M E N U again.
+
+5. Choosing option 'b' will display information about the weather components 
+   used in the program. 
+
+   It is presented in a form of a continuous text. To read it, press any key
+   or 'enter' to continue as prompted on the screen.
+   
+     
+
+  
+
+
    
 
 
