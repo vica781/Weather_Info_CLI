@@ -365,7 +365,7 @@ def instructions():
     for line in instructions:
         counter += 1
         print(line, end='')
-        if counter % 24 == 0:
+        if counter % 18 == 0:
             print('\n')
             key_pressed()
             clear_screen()
