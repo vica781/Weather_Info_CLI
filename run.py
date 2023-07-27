@@ -343,7 +343,7 @@ def weather_components():
             print('\n')
             key_pressed()
             clear_screen()
-    print('\nThis is the end of the weather components explanation.'
+    print('\n\n\nThis is the end of the weather components explanation.'
           'You can now go back to the main menu.')
     print('\n\n')
     key_pressed()
