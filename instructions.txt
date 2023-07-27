@@ -1,0 +1,46 @@
+------------------------------------------------------------
+INSTRUCTIONS
+------------------------------------------------------------
+1. The first screen you will see would be the Welcome Screen. 
+   It will greet you with Welcoming Message, banner displaying image 
+   of the sun coming out of the clouds, and explanation of 
+   the purpose of the app. That is to provide you with the weather 
+   information for the location of your choice. 
+
+   Please, press any key or 'enter' to continue as prompted on the screen.
+
+2. The next screen you will see is the user's name input screen. 
+   You will be greeted with an emitation of the typewriter typing at a speed 
+   a weather idiom. 
+   
+   The opportunity to enter your name will be presented to you emidiately after
+   the typing is done. 
+
+   INPUT YOUR NAME and PRESS 'ENTER' to continue as prompted on the screen.
+
+   You will be presented with welcoming message.
+
+   Please, press any key or 'enter' to continue as prompted on the screen.
+   
+   Please, don't press any key until the typing is done. Because if you do, 
+   it will not interrupt the typing, but it will add the value of the key 
+   you have pressed to the pattern of the banner, and ,also, be recorded 
+   as a part of your name. That will result in the name that is not yours 
+   or name in a wrong format.
+   
+   If in order to speed up typing of the banner, instead pressing any key, you 
+   press 'enter', it will be recorded as a part of your name.
+   That will result in 'error' message, and you will be asked to enter your name
+   again. 
+   
+   Your name must be at least 3 characters long, but no longer than 
+   10 characters, include only letters, no numbers or special characters.
+   The name format is not case sensitive. 
+
+   If you enter your name in a wrong format, 
+   you will be asked to enter it again.   
+
+3. The next screen you will see is the LOCATION INPUT SCREEN.
+   
+
+

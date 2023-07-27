@@ -83,9 +83,10 @@ def name_input():
         time.sleep(0.04)  # delay printing of each line by 0.01 seconds
 
     # Ask for name
-    name = input("""Choose a name - it must be at least 3 characters long, 
-but no longer than 10 characters, include only letters, 
-no numbers or special characters: """)
+    name = input('CHOOSE a NAME and then PRESS ENTER to continue. \
+    \nThe name must be at least 3 characters long, \
+    \nbut no longer than 10 characters, include only letters, \
+    \nno numbers or special characters: ')
     # Check if the name is valid
     while len(name) < 3 or len(name) > 10 or not name.isalpha():
         print(colored('Oops! Something went wrong. \
@@ -94,11 +95,11 @@ The input is not valid. Please, check the format and try again.', 'red'))
 \nbut no longer than 10 characters, include only letters,\
 \nno numbers or special characters: ')
     print()
-    print()
     # Print welcome message
     print(colored(f"Hello,{name}! {'come rain or shine'.upper()},\
 \nI wish you to be on a {'cloud nine'.upper()} \
 \nand everything you do {'to be a breeze!'.upper()}", 'green'))
+    print()
     return name
 
 # WEATHER INFO APP
@@ -387,8 +388,9 @@ def main():
 
         menu_choices = ''
         while menu_choices == '':
-            menu_choices = input(colored('Please, choose where you want to go; enter a, b, c, d, e or f:'
-                                         ' \n\n', 'green')).lower().strip()
+            menu_choices = input(colored('Please, CHOOSE where you want to go \
+\nand then Press ENTER to continue; \
+\nenter a, b, c, d, e or f: ', 'green')).lower().strip()
             if menu_choices == 'a':
                 clear_screen()
                 latitude, longitude, city, country = get_location(name)
