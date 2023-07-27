@@ -7,13 +7,15 @@ import readchar
 import os
 import time
 import sys
+from banners import *
 
 MENU = [
     'a. Get Weather information',
     'b. Weather Components Explained',
-    'c. Display Search History',
-    'd. Instructions',
-    'e. Exit'
+    'c. Weather Idioms Explained',
+    'd. Display Search History',
+    'e. Instructions',
+    'f. Exit'
 ]
 
 
@@ -28,74 +30,6 @@ precipitation_probability,surface_pressure,visibility,windspeed_10m,\
 winddirection_10m,windgusts_10m&daily=temperature_2m_max,temperature_2m_min,\
 sunrise,sunset,uv_index_max,\
 precipitation_probability_max&windspeed_unit=ms&timezone=GMT'
-
-# BANNERS FOR THE APP - ASCII ART
-BANNER_INPUT = """
-.----..-. .-..----..----..-.  .-.    .---. .-.    .----. .-. .-..----.     
-| {_  | | | || {_  | {}  }\ \/ /    /  ___}| |   /  {}  \| { } || {}  \   
-| {__ \ \_/ /| {__ | .-. \ }  {     \     }| `--.\      /| {_} ||     /   
-`----' `---' `----'`-' `-' `--'      `---' `----' `----' `-----'`----'     
-.-. .-.  .--.   .----.     .--.      .----..-..-.   .-. .-..----..----.     
-| {_} | / {} \ { {__      / {} \    { {__  | || |   | | | || {_  | {}  }   
-| { } |/  /\  \.-._} }   /  /\  \   .-._} }| || `--.\ \_/ /| {__ | .-. \   
-`-' `-'`-'  `-'`----'    `-'  `-'   `----' `-'`----' `---' `----'`-' `-'    
-.-.   .-..-. .-..-..-. .-. .---. 
-| |   | ||  `| || ||  `| |/   __}
-| `--.| || |\  || || |\  |\  {_ }
-`----'`-'`-' `-'`-'`-' `-' `---' 
-"""
-BANNER_INTRO = """            					
-    .        .  				
-      \      |   .				     
-            oo  /
-        \ ,oOOO__== --__ =-
-.-___ -__.OOoOO(`  )).                 _
-__- _._  OOO(o    )). __ . __--    .+(`  )`.
-)        oOOO(o      '`.          :(   .    )
-        .+(`(      .   ))    .--  `.  (    ) )
-       ((    (..__.:'-'   .=(   )   ` _`  ) )
-`.     `(       ) )       (   .  )     (   )  ._
-  )      ` __.:'   )     (   (   ))     `-'.:(`  )
-)  )  ( )       --'       `- __.'         :(      ))
-.-'  (_.'          .')                    `(    )  ))
---..,___.--,--'`,---..-.--+--.,,-,,..._.--..-._.-a:f--.
-"""
-BANNER_RAIN = """
-      __I__
-   .-'"  .  "'-.
- .'  / . ' . \  '.
-/_.-..-..-..-..-._\ .---------------------------------.
-         #  _,,_   ( I hear it might rain people today )
-         #/`    `\ /'---------------------------------'
-         / / 6 6\ \\
-         \/\  Y /\/       /\-/\\
-         #/ `'U` \       /a a  \               _
-       , (  \   | \     =\ Y  =/-~~~~~~-,_____/ )
-       |\|\_/#  \_/       '^--'          ______/
-       \/'.  \  /'\         \           /
-        \    /=\  /         ||  |---'\  \\
-        /____)/____)       (_(__|   ((__|
-"""
-BANNER_SUN = """               
-          .      '      .
-    .      .     :     .      .  .-----------------------------------------.
-     '.        ______       .'  (While it is fine weather - mend your sails )
-       '  _.-"`      `"-._ '     .-----------------------------------------.
-        .'                '.
- `'--. /                    \ .--'`
-      /                      \\
-     ;                        ;                          
-- -- |     _.                 | -- -
-     ;    /__`A   ,_          ;
- .-'  \   |= |;._.}{__       /  '-.
-    _.-""-|.' # '. `  `.-"||<._
-          /      \     \  x   `"
-     ----/         \_.-'|--X----
-     -=_ |         |    |- X.  =_
-    - __ |_________|_.-'|_X-X##
-        `'-._|_|;:;_.-'` '::.  `"-
-     .:;.      .:.   ::.     '::.
-"""
 
 # AUXILIARY FUNCTIONS
 
@@ -301,18 +235,6 @@ def print_weather(latitude, longitude, city, country):
         current_temperature = data['hourly']['temperature_2m'][hourly_index]
         # Get current humidity
         current_humidity = data['hourly']['relativehumidity_2m'][hourly_index]
-        # Get current precipitation probability
-        current_precipitation_probability = data['hourly'][
-            'precipitation_probability'][hourly_index]
-        # Print rain banner if the precipitation probability is more than 50%
-        if current_precipitation_probability > 50:
-            print(colored(BANNER_RAIN, 'blue'))
-            print(colored('It might rain today. Take an umbrella with you!', 'blue'))
-            print(colored('Press any key to see full weather information.', 'blue'))
-            key_pressed()
-            clear_screen()
-            print(
-                colored(f'Here is the weather information for {city}, {country}:', 'cyan'))
         # Get current pressure
         current_pressure = data['hourly']['surface_pressure'][hourly_index]
         # Get current visibility
@@ -341,6 +263,23 @@ def print_weather(latitude, longitude, city, country):
         # Get current precipitation probability
         current_precipitation_probability = data['daily'][
             'precipitation_probability_max'][daily_index]
+        if current_precipitation_probability > 50:
+            print(colored(BANNER_RAIN, 'blue'))
+            print(colored('It might rain today. Take an umbrella with you!', 'blue'))
+            print(colored('Press any key to see full weather information.', 'blue'))
+            key_pressed()
+            clear_screen()
+            print(
+                colored(f'Here is the weather information for {city}, {country}:', 'cyan'))
+        elif current_temperature > 30 and current_precipitation_probability < 30:
+            print(colored(BANNER_SUN, 'yellow'))
+            print(colored('It is going to be a hot day today. '
+                          'Don\'t forget to put on sunscreen!', 'yellow'))
+            key_pressed()
+            clear_screen()
+            print(
+                colored(f'Here is the weather information for'
+                        '{city}, {country}:', 'cyan'))
 
         # Print hourly requests
         # Print current temperature
@@ -435,6 +374,11 @@ entering a, b, c, d, e, f, g, h, or i: ').lower().strip()
                 break
 
 
+# WEATHER IDIOMS EXPLAINED
+def weather_idioms():
+    pass
+
+
 # PREVIOUS SEARCHES DISPLAY
 def pass_searches():
     pass
@@ -466,7 +410,7 @@ def main():
 
         menu_choices = ''
         while menu_choices == '':
-            menu_choices = input(colored('Please, choose where you want to go; enter a, b, c, d, or e:'
+            menu_choices = input(colored('Please, choose where you want to go; enter a, b, c, d, e or f:'
                                          ' \n\n', 'green')).lower().strip()
             if menu_choices == 'a':
                 clear_screen()
@@ -506,7 +450,7 @@ at the Code Institute.', 'green'))
                 print()
                 print()
                 break
-            elif menu_choices == 'e':
+            elif menu_choices == 'f':
                 clear_screen()
                 print(colored('Thank you for using Victoria\'s Weather App! \
 See you soon!', 'green'))
