@@ -18,7 +18,6 @@ regardless of the time of observation.
 The maximum and minimum temperatures are usually recorded during 
 the 24-hour period from midnight to midnight.
 
-
 HUMIDITY
 is the amount of water vapor in the air (in other words it is 
 wetness in the air). Too much or too little humidity can be dangerous. 
@@ -51,7 +50,6 @@ The amount of water vapour contained within a parcel of air can vary
 significantly. For example, a parcel of air near saturation may contain 
 10 g of water per cubic metre of air at 30 °C, 
 but only 2.5 g of water per cubic metre of air at 8 °C.
-
 
 PRECIPITATION
 is any product of the condensation of atmospheric water vapour 
@@ -86,7 +84,6 @@ PRECEPITATION PROBABILITY MAXIMUM
 is the highest probability of precipitation occurring at any point 
 in the area during the 24-hour period from midnight to midnight.
 
-
 ATMOSPHERIC PRESSURE 
 is the force exerted by the weight of air on a unit area of surface.
 The Earth's atmosphere exerts pressure everywhere on the planet's surface.
@@ -115,7 +112,6 @@ In general, areas of low pressure are associated with wet weather
 and areas of high pressure are associated with dry weather.
 
 ANTICYCLONE & DEPRESSION are the names given to areas of high and low pressure.
-
 Anticyclone (high pressure)
 In an anticyclone (high pressure) the winds tend to be light and blow in 
 a clockwise direction (in the northern hemisphere). 
@@ -128,7 +124,6 @@ an anticlockwise direction around the low (in the northern hemisphere).
 As it rises and cools, water vapour condenses to form clouds and 
 perhaps precipitation. This is why the weather in a depression is 
 often unsettled, there are usually weather fronts associated with depressions.
-
 
 WIND SPEED or wind flow velocity
 is a fundamental atmospheric quantity caused by air moving from 
@@ -176,7 +171,6 @@ when the wind suddenly picks up and then dies down again.
 Wind gusts are measured with an anemometer in units of miles per hour (mph),
 kilometers per hour (km/h), or knots (kts).
 
-
 VISIBILITY
 is a measure of the greatest distance that can be seen clearly 
 from a given point at which an object or light can be clearly discerned. 
@@ -191,7 +185,6 @@ and is measured with a visibility sensor in units of meters (m) or
 statute miles (sm), depending upon the country.
 
 Visibility affects all forms of traffic: roads, sailing and aviation.
-
 
 SUNRISE
 is the moment when the upper limb of the Sun appears on the horizon
@@ -208,7 +201,6 @@ in both Spring and Autumn.
 As viewed from the middle latitudes, the local summer Sun sets 
 to the north-west for the Northern Hemisphere, 
 but to the south-west for the Southern Hemisphere.
-
 
 UV INDEX
 is an international standard measurement of the strength of
