@@ -365,12 +365,11 @@ def instructions():
     for line in instructions:
         counter += 1
         print(line, end='')
-        if counter % 18 == 0:
-            print('\n')
+        if counter % 16 == 0:
             key_pressed()
             clear_screen()
-    print(colored('\n\nThis is the end of the instructions.'
-                  '\n\nYou can now go back to the main menu.', 'green'))
+    print(colored('\nThis is the end of the instructions.'
+                  '\nYou can now go back to the main menu.', 'green'))
     key_pressed()
     return
 
