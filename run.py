@@ -339,7 +339,7 @@ def weather_components():
     for line in weather_components:
         counter += 1
         print(line, end='')
-        if counter % 21 == 0:
+        if counter % 19 == 0:
             print('\n')
             key_pressed()
             clear_screen()
