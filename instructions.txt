@@ -123,14 +123,3 @@
 
    If you choose to exit the program, you will be presented with the 
    Goodbye message and the program will exit.
-
-     
-
-
-
-  
-
-
-   
-
-

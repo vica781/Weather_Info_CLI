@@ -356,6 +356,7 @@ def instructions():
     """
     This function prints the instructions
     """
+
     print('\n I N S T R U C T I O N S\n\n'.center(80, '-'))
 
     # Load instructions from a file
@@ -365,11 +366,13 @@ def instructions():
     for line in instructions:
         counter += 1
         print(line, end='')
-        if counter % 16 == 0:
+        if counter % 19 == 0:
+            print('\n')
             key_pressed()
             clear_screen()
-    print(colored('\nThis is the end of the instructions.'
-                  '\nYou can now go back to the main menu.', 'green'))
+    print(colored('\n\n\nThis is the end of the instructions.'
+                  '\n\nYou can now go back to the main menu.', 'green'))
+    print('\n\n')
     key_pressed()
     return
 
