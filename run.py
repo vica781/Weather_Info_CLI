@@ -455,8 +455,7 @@ at the Code Institute.', 'green'))
                 clear_screen()
                 print(colored('Thank you for using Victoria\'s Weather App! \
 See you soon!', 'green'))
-                print()
-                print()
+                print(colored(BANNER_EXIT, 'yellow'))
                 sys.exit()
 
 
