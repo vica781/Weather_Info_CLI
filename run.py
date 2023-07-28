@@ -32,6 +32,10 @@ GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 # Define spreadsheet
 SHEET = GSPREAD_CLIENT.open('weather_search_history')
 
+# Define worksheet
+SEARCH_HISTORY = SHEET.worksheet('search_data')
+
+
 # Define menu
 MENU = [
     'a. Get Weather information',
@@ -61,8 +65,10 @@ def key_pressed():
     """
     This function waits for a key to be pressed
     """
+    # Argument readkey() is used to read a keypress from the user
     print('Press any key to continue...')
     key = readchar.readkey()
+    # Return the key pressed
     return
 
 
@@ -70,7 +76,9 @@ def clear_screen():
     """
     This function clears the screen
     """
+    # Argument os.name is used to determine the name of the operating system
     os.system('cls' if os.name == 'nt' else 'clear')
+    # Return None
     return
 
 
@@ -79,6 +87,7 @@ def welcome_message():
     """
     This function prints a welcome message to the user
     """
+    # Argument colored() is used to change the color of the text
     print(colored('Welcome to Victoria\'s Weather App!'.upper(), 'green'))
     print(colored(BANNER_INTRO, 'yellow'))
     print(colored('This app will provide you with the weather \
@@ -129,12 +138,13 @@ The input is not valid. Please, check the format and try again.', 'red'))
 # Locator Function
 
 
-def get_location(name):  # context parameter is used
-    # to determine if the user is entering the location for the first time
-    # or not in order to adapt the message accordingly
+def get_location(name):
     """
     This function returns longitude and latitude from an input: City, Country
     """
+    # context parameter is used
+    # to determine if the user is entering the location for the first time
+    # or not in order to adapt the message accordingly
 
     context = "initial"
     # Initialize Nominatim API
@@ -142,7 +152,8 @@ def get_location(name):  # context parameter is used
 
     while True:  # Loop indefinitely until the user enters a valid location
         # Ask for city and country
-        if context == "initial":  # if the user is entering the location for the first time
+        if context == "initial":  # if the user is entering
+            # the location for the first time
             prompt_msg = f'{name}, in order to obtain the weather \
 information, please enter the city and country of your choice.'
         elif context == "error":  # if the user has entered an invalid location
@@ -170,13 +181,26 @@ information for a different location, please enter the new city and country.'
             # Get the location from geopy library
             location_details = geolocator.reverse(f'{latitude}, {longitude}')
             print(f"You've entered city: {city}, and country {country}!")
-            print(
-                f"That gave this result:\n{location_details.raw['display_name']}")
+            print(f'That gave this'
+                  f'result:\n{location_details.raw["display_name"]}')
 
             while True:  # Keep asking until the user confirms the location
-                conformation = input(
-                    'Is this the location you wnat to use? (y/n): ').lower().strip()
+                conformation = input('Is this the location you wnat'
+                                     'to use? (y/n): ').lower().strip()
                 if conformation == 'y':
+
+                    # ADD SEARCH TO THE SPREADSHEET (user name,
+                    # date, time, city, country)
+
+                    # Get the the current date
+                    current_date = datetime.datetime.now().strftime('%d-%m-%Y')
+                    # Get the current time
+                    current_time = datetime.datetime.now().strftime('%H:%M:%S')
+                    # Append the search data to the spreadsheet
+                    search_data = [name, current_date,
+                                   current_time, city, country]
+                    SEARCH_HISTORY.append_row(search_data)
+
                     return latitude, longitude, city, country
                 elif conformation == 'n':
                     context = 'change'
@@ -188,8 +212,9 @@ information for a different location, please enter the new city and country.'
         else:
             # Print error message
             # and continue with the next iteration of the loop
-            print(colored('Oops! Something went wrong. The location you entered \
-has not been found. Please, check the spelling and try again.', 'red'))
+            print(colored('Oops! Something went wrong.'
+                          'The location you entered has not been found.'
+                          'Please, check the spelling and try again.', 'red'))
             print()
             context = 'error'
 
@@ -199,6 +224,7 @@ def get_weather(latitude, longitude):
     """
     This function returns the current weather information
     """
+    # Define global variables
     global LATITUDE_PART, LONGITUDE_PART, CLOSING_PART
     # Define URL
     url = BASE_URL + LATITUDE_PART + latitude + \
@@ -227,10 +253,12 @@ def print_weather(latitude, longitude, city, country):
     """
     This function prints the weather information
     """
+    # Arguments latitude, longitude, city and country are used
+    # to get parameters of a location
 
     print()
     print()
-
+    # Print message to the user
     print('Please wait while I am getting the weather information for you...')
     print('This may take a few seconds...')
     print('Thank you for your patience!')
@@ -244,8 +272,8 @@ def print_weather(latitude, longitude, city, country):
     print()
     key_pressed()
     clear_screen()
-    print(
-        colored(f'Here is the weather information for {city}, {country}:', 'cyan'))
+    print(colored(f'Here is the weather'
+                  'information for {city}, {country}:', 'cyan'))
     # calculate index for current hour and current date
     now = str(datetime.datetime.now()).split()
     now_time = now[0] + 'T' + now[1][:2] + ':00'
@@ -289,13 +317,17 @@ def print_weather(latitude, longitude, city, country):
             'precipitation_probability_max'][daily_index]
         if current_precipitation_probability > 50:
             print(colored(BANNER_RAIN, 'blue'))
-            print(colored('It might rain today. Take an umbrella with you!', 'blue'))
-            print(colored('Press any key to see full weather information.', 'blue'))
+            print(colored('It might rain today.'
+                          'Take an umbrella with you!', 'blue'))
+            print(colored('Press any key to see full'
+                          'weather information.', 'blue'))
             key_pressed()
             clear_screen()
             print(
-                colored(f'Here is the weather information for {city}, {country}:', 'cyan'))
-        elif current_temperature > 30 and current_precipitation_probability < 30:
+                colored(f'Here is the weather information'
+                        'for {city}, {country}:', 'cyan'))
+        elif current_temperature > 30 \
+                and current_precipitation_probability < 30:
             print(colored(BANNER_SUN, 'yellow'))
             print(colored('It is going to be a hot day today. '
                           'Don\'t forget to put on sunscreen!', 'yellow'))
@@ -312,8 +344,8 @@ def print_weather(latitude, longitude, city, country):
         # Print current humidity
         print(f"The current relative humidity is {current_humidity} %")
         # Print current precipitation probability
-        print(
-            f"The current precipitation probability is {current_precipitation_probability} %")
+        print(f'The current precipitation'
+              'probability is {current_precipitation_probability} %')
         # Print current surface pressure
         print(f"The current surface pressure is {current_pressure} hPa")
         # Print current visibility
@@ -327,11 +359,11 @@ def print_weather(latitude, longitude, city, country):
 
         # Print daily requests
         # Print daily maximum temperature
-        print(
-            f"The daily maximum temperature is {current_temperature_max}\u00b0 C")
+        print(f'The daily maximum temperature'
+              'is {current_temperature_max}\u00b0 C')
         # Print daily minimum temperature
-        print(
-            f"The daily minimum temperature is {current_temperature_min}\u00b0 C")
+        print(f'The daily minimum temperature'
+              'is {current_temperature_min}\u00b0 C')
         # Print sunrise
         print(f"The sunrise is at {current_sunrise}")
         # Print sunset
@@ -339,8 +371,8 @@ def print_weather(latitude, longitude, city, country):
         # Print UV index
         print(f"The UV index is {current_uv_index}")
         # Print precipitation probability
-        print(
-            f"The maximum daily precipitation probability is {current_precipitation_probability} %")
+        print(f'The maximum daily precipitation'
+              'probability is {current_precipitation_probability} %')
     else:
         # Print error message
         print('Oops! Something went wrong. Please try again later.')
@@ -402,14 +434,9 @@ def instructions():
 
 
 # PREVIOUS SEARCHES DISPLAY
-def pass_searches():
-    pass
-
-
-# SEARCH HISTORY
-
-
-def search_history():
+def past_searches():
+    # TODO: get the search history from the spreadsheet and display it
+    # TODO: if the user has not searched anything yet, display a message
     pass
 
 
@@ -449,36 +476,22 @@ def main():
             elif menu_choices == 'b':
                 weather_components()
                 clear_screen()
-                # print(colored('Weather Components and Units', 'yellow'))
                 print()
                 break
             elif menu_choices == 'c':
-                pass_searches()
+                past_searches()
                 clear_screen()
-                # print(colored('Previous Searches Display', 'yellow'))
-                print()
-                print()
-                print(colored('This feature is not available yet. \
-Please try again later.', 'red'))
-                print()
                 print()
                 break
             elif menu_choices == 'd':
                 instructions()
                 clear_screen()
-                # print(colored('Instructions', 'yellow'))
-                print()
-                print()
-                print(colored('This app was created by Victoria \
-as a third project for the Full Stack Software Development course \
-at the Code Institute.', 'green'))
-                print()
                 print()
                 break
             elif menu_choices == 'e':
                 clear_screen()
-                print(colored('Thank you for using Victoria\'s Weather App! \
-See you soon!', 'green'))
+                print(colored('Thank you for using Victoria\'s'
+                              'Weather App! See you soon!', 'green'))
                 print(colored(BANNER_EXIT, 'yellow'))
                 sys.exit()
 
