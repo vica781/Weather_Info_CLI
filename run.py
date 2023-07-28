@@ -8,7 +8,31 @@ import os
 import time
 import sys
 from banners import *
+import gspread
+from google.oauth2.service_account import Credentials
 
+
+# Define scope
+SCOPE = [
+    "https://www.googleapis.com/auth/spreadsheets",
+    "https://www.googleapis.com/auth/drive.file",
+    "https://www.googleapis.com/auth/drive"
+]
+
+# Define credentials
+CREDS = Credentials.from_service_account_file(
+    'CREDS.json')
+
+# Define scope with credentials
+SCOPED_CREDS = CREDS.with_scopes(SCOPE)
+
+# Define gspread client
+GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
+
+# Define spreadsheet
+SHEET = GSPREAD_CLIENT.open('weather_search_history')
+
+# Define menu
 MENU = [
     'a. Get Weather information',
     'b. Weather Components Explained',
