@@ -339,40 +339,39 @@ def print_weather(latitude, longitude, city, country):
 
         # Print hourly requests
         # Print current temperature
-        print(
-            f"The current temperature is {current_temperature}\u00b0 C")
+        print(f'The current temperature is {current_temperature}\u00b0C')
         # Print current humidity
-        print(f"The current relative humidity is {current_humidity} %")
+        print(f'The current relative humidity is {current_humidity} %')
         # Print current precipitation probability
-        print(f'The current precipitation'
-              'probability is {current_precipitation_probability} %')
+        print(f'The current precipitation '
+              f'probability is {current_precipitation_probability} %')
         # Print current surface pressure
-        print(f"The current surface pressure is {current_pressure} hPa")
+        print(f'The current surface pressure is {current_pressure} hPa')
         # Print current visibility
-        print(f"The current visibility is {current_visibility} km")
+        print(f'The current visibility is {current_visibility} km')
         # Print current windspeed
-        print(f"The current windspeed is {current_windspeed} m/s")
+        print(f'The current windspeed is {current_windspeed} m/s')
         # Print current wind direction
-        print(f"The current wind direction is {current_winddirection}")
+        print(f'The current wind direction is {current_winddirection}')
         # Print current wind gusts
-        print(f"The current wind gusts are {current_windgusts} m/s")
+        print(f'The current wind gusts are {current_windgusts} m/s')
 
         # Print daily requests
         # Print daily maximum temperature
-        print(f'The daily maximum temperature'
-              'is {current_temperature_max}\u00b0 C')
+        print(f'The daily maximum temperature '
+              f'is {current_temperature_max}\u00b0C')
         # Print daily minimum temperature
-        print(f'The daily minimum temperature'
-              'is {current_temperature_min}\u00b0 C')
+        print(f'The daily minimum temperature '
+              f'is {current_temperature_min}\u00b0C')
         # Print sunrise
-        print(f"The sunrise is at {current_sunrise}")
+        print(f'The sunrise is at {current_sunrise}')
         # Print sunset
-        print(f"The sunset is at {current_sunset}")
+        print(f'The sunset is at {current_sunset}')
         # Print UV index
-        print(f"The UV index is {current_uv_index}")
+        print(f'The UV index is {current_uv_index}')
         # Print precipitation probability
-        print(f'The maximum daily precipitation'
-              'probability is {current_precipitation_probability} %')
+        print(f'The maximum daily precipitation '
+              f'probability is {current_precipitation_probability} %')
     else:
         # Print error message
         print('Oops! Something went wrong. Please try again later.')
@@ -435,9 +434,26 @@ def instructions():
 
 # PREVIOUS SEARCHES DISPLAY
 def past_searches():
-    # TODO: get the search history from the spreadsheet and display it
-    # TODO: if the user has not searched anything yet, display a message
-    pass
+    """
+    This function prints the previous searches
+    """
+    print('\n P R E V I O U S   S E A R C H E S\n\n'.center(80, '-'))
+    # Load previous searches from a file
+    with open('previous_searches.txt', 'r') as file:
+        previous_searches = file.readlines()
+        counter = 0
+        for line in previous_searches:
+            counter += 1
+            print(line, end='')
+            if counter % 19 == 0:
+                print('\n')
+                key_pressed()
+                clear_screen()
+        print(colored('\n\n\nThis is the end of the previous searches.'
+                      '\n\nYou can now go back to the main menu.', 'green'))
+        print('\n\n')
+        key_pressed()
+        return
 
 
 # MAIN FUNCTION
