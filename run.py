@@ -161,7 +161,7 @@ information, \nplease enter the city and country of your choice.'
 previous input. \nPlease enter the city and country of your choice again.'
         else:  # if the user desided to change the location
             prompt_msg = f'{name}, to change the location and get weather \
-information for a different location, please enter the new city and country.'
+information for a different \nlocation, please enter the new city and country.'
 
         print(colored(prompt_msg, 'green'))
         print()
