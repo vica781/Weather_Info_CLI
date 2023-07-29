@@ -1,8 +1,8 @@
 TEMPERATURE
 is a physical quantity expressed in degrees. 
 It is measured with a thermometer calibrated in one or more temperature scales. 
-The most commonly used scales are the Celsius scale (formerly called centigrade) 
-(°C), Fahrenheit scale (°F), and Kelvin scale (K). 
+The most commonly used scales are the Celsius scale (formerly called 
+centigrade) (°C), Fahrenheit scale (°F), and Kelvin scale (K). 
 The kelvin (K) is the unit of temperature in the International System of Units 
 (SI), in which temperature is one of the seven fundamental base quantities. 
 The Kelvin scale is widely used in science and technology.
@@ -148,6 +148,7 @@ a wind blowing from the east has a wind direction of 90°;
 a wind blowing from the south has a wind direction of 180°; 
 and a wind blowing from the west has a wind direction of 270°.
 So, a wind blowing from the north-east would have a wind direction of 45°.
+
 
 WIND GUST
 is a sudden, brief increase in the speed of the wind, 

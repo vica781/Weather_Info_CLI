@@ -396,7 +396,7 @@ def weather_components():
     """
     This function prints the weather components information
     """
-
+    clear_screen()
     print('\n W E A T H E R   C O M P O N E N T S\n\n'.center(80, '-'))
 
     # Load weather components from a file
@@ -423,7 +423,7 @@ def instructions():
     """
     This function prints the instructions
     """
-
+    clear_screen()
     print('\n I N S T R U C T I O N S\n\n'.center(80, '-'))
 
     # Load instructions from a file
@@ -450,6 +450,7 @@ def past_searches():
     as a table and shows a message if the user has not searched anything yet.
     """
     # Get all the values from the search_data worksheet
+    clear_screen()
     all_search_data = SEARCH_HISTORY.get_all_values()
 
     # Check if any data is present in the search history
@@ -501,9 +502,10 @@ def main():
 
         menu_choices = ''
         while menu_choices == '':
-            menu_choices = input(colored('Please, CHOOSE where you want to go \
-\nand then Press ENTER to continue; \
-\nenter a, b, c, d, or e: ', 'green')).lower().strip()
+            menu_choices = input(
+                colored('Please, CHOOSE where you want to go and then\n'
+                        'Press ENTER to continue;\nenter a, b, c, d, or e: ',
+                        'green')).lower().strip()
             if menu_choices == 'a':
                 clear_screen()
                 latitude, longitude, city, country = get_location(name)
