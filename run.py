@@ -1,4 +1,5 @@
 # Import required libraries
+from prettytable import PrettyTable
 from geopy.geocoders import Nominatim
 import requests
 import datetime
@@ -10,7 +11,7 @@ import sys
 from banners import *
 import gspread
 from google.oauth2.service_account import Credentials
-
+from prettytable import prettytable
 
 # Define scope
 SCOPE = [
@@ -206,20 +207,14 @@ information for a different location, please enter the new city and country.'
                     current_precipitation_probability = get_weather(
                         latitude, longitude)['daily']['precipitation_'
                                                       'probability_max'][0]
-                    # Get daily sunrise
-                    current_sunrise = get_weather(
-                        latitude, longitude)['daily']['sunrise'][0]
-                    # Get daily sunset
-                    current_sunset = get_weather(
-                        latitude, longitude)['daily']['sunset'][0]
 
                     # Append the search data to the spreadsheet
                     search_data = [name, current_date,
-                                   current_time, city, country,
+                                   current_time,
+                                   city, country,
                                    current_temperature_max,
                                    current_temperature_min,
-                                   current_precipitation_probability,
-                                   current_sunrise, current_sunset
+                                   current_precipitation_probability
                                    ]
                     SEARCH_HISTORY.append_row(search_data)
 
@@ -348,7 +343,7 @@ def print_weather(latitude, longitude, city, country):
             print(
                 colored(f'Here is the weather information'
                         'for {city}, {country}:', 'cyan'))
-        elif current_temperature > 30 \
+        elif current_temperature_max > 30 \
                 and current_precipitation_probability < 30:
             print(colored(BANNER_SUN, 'yellow'))
             print(colored('It is going to be a hot day today. '
@@ -359,7 +354,8 @@ def print_weather(latitude, longitude, city, country):
                 colored(f'Here is the weather information for'
                         '{city}, {country}:', 'cyan'))
 
-        # Print hourly requests
+        # PRINT WEATHER INFORMATION OF HOURLY REQUESTS
+
         # Print current temperature
         print(f'The current temperature is {current_temperature}\u00b0C')
         # Print current humidity
@@ -378,7 +374,8 @@ def print_weather(latitude, longitude, city, country):
         # Print current wind gusts
         print(f'The current wind gusts are {current_windgusts} m/s')
 
-        # Print daily requests
+        # PRINT WEATHER INFORMATION OF DAILY REQUESTS
+
         # Print daily maximum temperature
         print(f'The daily maximum temperature '
               f'is {current_temperature_max}\u00b0C')
@@ -402,6 +399,8 @@ def print_weather(latitude, longitude, city, country):
 
 
 # WEATHER COMPONENTS INFO EXPLAINED
+
+
 def weather_components():
     """
     This function prints the weather components information
@@ -420,8 +419,8 @@ def weather_components():
             print('\n')
             key_pressed()
             clear_screen()
-    print(colored('\n\n\nThis is the end of the weather components explanation.'
-                  '\n\nYou can now go back to the main menu.', 'green'))
+    print(colored('\n\nThis is the end of the weather components explanation.'
+                  '\nYou can now go back to the main menu.', 'green'))
     print('\n\n')
     key_pressed()
     return
@@ -447,35 +446,47 @@ def instructions():
             print('\n')
             key_pressed()
             clear_screen()
-    print(colored('\n\n\nThis is the end of the instructions.'
-                  '\n\nYou can now go back to the main menu.', 'green'))
+    print(colored('\n\nThis is the end of the instructions.'
+                  '\nYou can now go back to the main menu.', 'green'))
     print('\n\n')
     key_pressed()
     return
 
 
-# PREVIOUS SEARCHES DISPLAY
 def past_searches():
     """
-    This function prints the previous searches
+    This function displays the search history from the spreadsheet
+    as a table and shows a message if the user has not searched anything yet.
     """
-    print('\n P R E V I O U S   S E A R C H E S\n\n'.center(80, '-'))
-    # Load previous searches from a file
-    with open('previous_searches.txt', 'r') as file:
-        previous_searches = file.readlines()
-        counter = 0
-        for line in previous_searches:
-            counter += 1
-            print(line, end='')
-            if counter % 19 == 0:
-                print('\n')
-                key_pressed()
-                clear_screen()
-        print(colored('\n\n\nThis is the end of the previous searches.'
-                      '\n\nYou can now go back to the main menu.', 'green'))
-        print('\n\n')
+    # Get all the values from the search_data worksheet
+    all_search_data = SEARCH_HISTORY.get_all_values()
+
+    # Check if any data is present in the search history
+    if len(all_search_data) == 1:
+        print(colored("You haven't searched anything yet.", "red"))
+        print(colored("Please use option 'a' from the menu to get \
+                      \nweather information for a location.", "red"))
         key_pressed()
         return
+
+    # Create a new prettytable instance
+    table = PrettyTable()
+    # Set the field names (header row)
+    table.field_names = all_search_data[0]
+    # Add rows to the table (skip the header row)
+    for row in all_search_data[1:]:
+        table.add_row(row)
+
+    print('\n P A S T   S E A R C H E S\n\n'.center(80, '-'))
+
+    # Display the table
+    print(table)
+
+    print(colored('\n\nThis is the end of the search history.'
+                  '\nYou can now go back to the main menu.', 'green'))
+    print('\n')
+    key_pressed()
+    return
 
 
 # MAIN FUNCTION
