@@ -199,9 +199,6 @@ information for a different location, please enter the new city and country.'
                     # Get maximum daily temperature
                     current_temperature_max = get_weather(
                         latitude, longitude)['daily']['temperature_2m_max'][0]
-                    # Get minimum daily temperature
-                    current_temperature_min = get_weather(
-                        latitude, longitude)['daily']['temperature_2m_min'][0]
                     # Get precipitation probability
                     current_precipitation_probability = get_weather(
                         latitude, longitude)['daily']['precipitation_'
@@ -212,7 +209,6 @@ information for a different location, please enter the new city and country.'
                                    current_time,
                                    city, country,
                                    current_temperature_max,
-                                   current_temperature_min,
                                    current_precipitation_probability
                                    ]
                     SEARCH_HISTORY.append_row(search_data)
