@@ -532,7 +532,7 @@ def main():
                 break
             elif menu_choices == 'e':
                 clear_screen()
-                print(colored('Thank you for using Victoria\'s'
+                print(colored('Thank you for using Victoria\'s '
                               'Weather App! See you soon!', 'green'))
                 print(colored(BANNER_EXIT, 'yellow'))
                 sys.exit()
