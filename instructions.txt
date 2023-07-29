@@ -10,8 +10,8 @@
    You will be greeted with an emitation of the typewriter typing at a speed 
    a weather idiom. 
    
-   The opportunity to enter your name will be presented to you emidiately after
-   the typing is done. 
+   The opportunity to enter your name will be presented to you emidiately 
+   after the typing is done. 
 
 -  INPUT YOUR NAME and PRESS 'ENTER' to continue as prompted on the screen.
 -  You will be presented with welcoming message.
@@ -19,14 +19,14 @@
    
    Please, don't press any key until the typing is done. Because if you do, 
    it will not interrupt the typing, but it will add the value of the key 
-   you have pressed to the pattern of the banner, and ,also, be recorded 
+   you have pressed to the pattern of the banner, and , also, be recorded 
    as a part of your name. That will result in the name that is not yours 
    or name in a wrong format.
    
-   If in order to speed up typing of the banner, instead pressing any key, you 
-   press 'enter', it will be recorded as a part of your name.
-   That will result in 'error' message, and you will be asked to enter your name
-   again. 
+   If in order to speed up typing of the banner, instead pressing any key, 
+   you press 'enter', it will be recorded as a part of your name.
+   That will result in 'error' message, and you will be asked 
+   to enter your name again. 
    
    Your name must be at least 3 characters long, but no longer than 
    10 characters, include only letters, no numbers or special characters.
@@ -75,8 +75,8 @@
   City of Greater Dandenong, Victoria, 3170, Australia
   (Is this the location you wnat to use? (y/n))
 
-   To confirm the location if you want to use found location, enter 'y' or 'Y', 
-   to enter new location, enter 'n' or 'N'.
+   To confirm the location if you want to use found location, 
+   enter 'y' or 'Y', to enter new location, enter 'n' or 'N'.
 
    After you have entered a new location and confirmed it, you will be 
    presented with the weather information for the location of your choice.
@@ -84,37 +84,68 @@
    After you have pressed any key or 'enter' to continue as prompted 
    on the screen, you will be presented with the M E N U again.
 
-5. Choosing option 'b' will display information about the weather components 
-   used in the program. 
+5. Choosing option 'b' will display information about the weather 
+   components used in the program. 
 
-   It is presented in a form of a continuous text. To read it, press any key
-   or 'enter' to continue as prompted at the bottom of the screen.
+   It is presented in a form of a continuous text. 
+   To read it, press any key or 'enter' to continue as prompted 
+   at the bottom of the screen.
 
-   For you convenience, the text is divided into paragraphs. Name of each new 
-   Weather Component and important information about has been CAPITALISED. 
+   For you convenience, the text is divided into paragraphs. 
+   Name of each new Weather Component and important information 
+   about has been CAPITALISED. 
 
-   Also, for your convenience, end of Weather Component description is marked 
-   by the notification message 'This is the end of the weather components 
-   explanation.' in green color.
+   Also, for your convenience, end of Weather Component description 
+   is marked by the notification message 'This is the end of the 
+   weather components explanation.' in green color.
 
    Pressing any key or 'enter', as prompted at the bottom of the screen,
    will bring you back to the M E N U. 
 
-6. Choosing option 'c' will display Instructions for the program. 
+6. Choosing option 'c' will display information about previous searches. 
+   The infromation is presented in a form of the table with 6 columns:
+   - 1st column is the name of the user who has made the search
+   - 2nd column is the date of the search
+   - 3rd column is the time of the search
+   - 4th column is the name of a City of the search
+   - 5th column is the name of a Country of the search
+   - 6th column is the maximum temperature for the day of the search 
+     in the location of the search
 
-   It is presented in a form of a continuous text. To read it, press any key
-   or 'enter' to continue as prompted at the bottom of the screen.
+   The table is sorted by the date of the search in the descending order.
+   The is no lemit on the number of searches that can be stored in the table.
+   If the no searches have been made yet, the table will be empty and you 
+   will be informed about it and asked to make a search.  
 
-   For you convenience, the text is divided into paragraphs and sections are 
-   numbered for your convenience. 
+   Every time you make a search, the table will be updated with the new
+   search information and whan you choose option 'c' again, you will see
+   the updated table. The screen allways displays the most recent searches, 
+   hence, the end of the table will be shawn on the screen. If you wish to see
+   the beginning of the table, you will need to scroll up using tne mouse.
 
-   Also, for your convenience, end of Instructions is marked by the notification 
-   message 'This is the end of the instructions.' in green color.
+   DO NOT USE arrow 'up' and 'down' keys, or 'page up' and 'page down' keys 
+   to scroll up and down the screen, as doing so will result in you being
+   taken back to the M E N U.
+
+   For your convenience, at the bottom of the table you will see the 
+   notification message 'This is the end of the table. 
+   You can now go back to the main menu.' in green color. 
 
    Pressing any key or 'enter', as prompted at the bottom of the screen,
    will bring you back to the M E N U.
 
-7. Choosing option 'd' will display information about previous searches. 
+7. Choosing option 'd' will display INSTRUCTIONS for the program. 
+
+   It is presented in a form of a continuous text. To read it, 
+   press any key or 'enter' to continue as prompted at the bottom 
+   of the screen.
+
+   For you convenience, the text is divided into paragraphs and 
+   sections are numbered. 
+
+   Also, for your convenience, end of Instructions is marked by 
+   the notification message 'This is the end of the instructions.
+   You can now go back to the main menu.' in green color.
 
    Pressing any key or 'enter', as prompted at the bottom of the screen,
    will bring you back to the M E N U.
@@ -122,4 +153,13 @@
 8. Choosing option 'e' will allow you to exit the program. 
 
    If you choose to exit the program, you will be presented with the 
-   Goodbye message and the program will exit.
+   Goodbye message and the Banner, and the program will exit.
+
+   The message and the banner will be displayed on the screen and pressing 
+   any key or 'enter' will not interrupt the display.
+
+   In an event that you would like to return to the Weather App,
+   you will need to restart the program. To do that, you just need to press
+   orange 'Run Program' button located emidiately above the program display 
+   area.
+
