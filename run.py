@@ -1,5 +1,4 @@
 # Import required libraries
-from prettytable import PrettyTable
 from geopy.geocoders import Nominatim
 import requests
 import datetime
