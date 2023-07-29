@@ -58,6 +58,20 @@ winddirection_10m,windgusts_10m&daily=temperature_2m_max,temperature_2m_min,\
 sunrise,sunset,uv_index_max,\
 precipitation_probability_max&windspeed_unit=ms&timezone=GMT'
 
+# Define the HEADER
+HEADER = "VICTORIA'S WEATHER INFO APP"
+
+# Define the function to print the HEADER
+
+
+def print_header():
+    """
+    This function prints the HEADER
+    """
+    print(colored(HEADER, 'yellow'))
+    print(colored('===================================', 'yellow'))
+
+
 # AUXILIARY FUNCTIONS
 
 
@@ -78,8 +92,7 @@ def clear_screen():
     """
     # Argument os.name is used to determine the name of the operating system
     os.system('cls' if os.name == 'nt' else 'clear')
-    # Return None
-    return
+    print_header()
 
 
 # WELCOME SCREEN FUNCTION
@@ -87,6 +100,8 @@ def welcome_message():
     """
     This function prints a welcome message to the user
     """
+    # Call clear_screen function to clear the screen before printing the header
+    clear_screen()
     # Argument colored() is used to change the color of the text
     print(colored('Welcome to Victoria\'s Weather App!'.upper(), 'green'))
     print(colored(BANNER_INTRO, 'yellow'))
@@ -397,7 +412,7 @@ def weather_components():
     This function prints the weather components information
     """
     clear_screen()
-    print('\n W E A T H E R   C O M P O N E N T S\n\n'.center(80, '-'))
+    print('\n W E A T H E R   C O M P O N E N T S\n'.center(80, '-'))
 
     # Load weather components from a file
     with open('weather_components.txt', 'r') as file:
@@ -406,13 +421,13 @@ def weather_components():
     for line in weather_components:
         counter += 1
         print(line, end='')
-        if counter % 19 == 0:
+        if counter % 17 == 0:
             print('\n')
             key_pressed()
             clear_screen()
     print(colored('\n\nThis is the end of the weather components explanation.'
                   '\nYou can now go back to the main menu.', 'green'))
-    print('\n\n')
+    print()
     key_pressed()
     return
 
@@ -433,7 +448,7 @@ def instructions():
     for line in instructions:
         counter += 1
         print(line, end='')
-        if counter % 19 == 0:
+        if counter % 17 == 0:
             print('\n')
             key_pressed()
             clear_screen()
@@ -496,7 +511,7 @@ def main():
 
     while True:
         clear_screen()
-        print('\n M E N U\n\n'.center(80, '-'))
+        print('\n M E N U\n'.center(80, '-'))
         for item in MENU:
             print(item + '\n')
 

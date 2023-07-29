@@ -149,7 +149,6 @@ a wind blowing from the south has a wind direction of 180°;
 and a wind blowing from the west has a wind direction of 270°.
 So, a wind blowing from the north-east would have a wind direction of 45°.
 
-
 WIND GUST
 is a sudden, brief increase in the speed of the wind, 
 usually lasting less than 20 seconds. 
@@ -186,7 +185,6 @@ and is measured with a visibility sensor in units of meters (m) or
 statute miles (sm), depending upon the country.
 
 Visibility affects all forms of traffic: roads, sailing and aviation.
-
 
 SUNRISE
 is the moment when the upper limb of the Sun appears on the horizon
