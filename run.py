@@ -129,7 +129,7 @@ def name_input():
         time.sleep(0.04)  # delay printing of each line by 0.01 seconds
 
     # Ask for name
-    name = input('\n\nCHOOSE a NAME and then PRESS ENTER to continue. \
+    name = input('\nCHOOSE a NAME and then PRESS ENTER to continue. \
     \nThe name must be at least 3 characters long, \
     \nbut no longer than 10 characters, include only letters, \
     \nno numbers or special characters: ')
