@@ -66,7 +66,7 @@ def key_pressed():
     This function waits for a key to be pressed
     """
     # Argument readkey() is used to read a keypress from the user
-    print('Press any key to continue...')
+    print(colored('Press any key to continue...', 'blue', 'on_white'))
     key = readchar.readkey()
     # Return the key pressed
     return
@@ -280,8 +280,8 @@ def print_weather(latitude, longitude, city, country):
     print()
     key_pressed()
     clear_screen()
-    print(colored(f'Here is the weather'
-                  '\ninformation for {city}, {country}:', 'cyan'))
+    print(colored(f'Here is the weather '
+                  f'information for {city}, {country}:', 'cyan'))
     # calculate index for current hour and current date
     now = str(datetime.datetime.now()).split()
     now_time = now[0] + 'T' + now[1][:2] + ':00'
@@ -332,8 +332,8 @@ def print_weather(latitude, longitude, city, country):
             key_pressed()
             clear_screen()
             print(
-                colored(f'Here is the weather information'
-                        'for {city}, {country}:', 'cyan'))
+                colored(f'Here is the weather information '
+                        f'for {city}, {country}:', 'cyan'))
         elif current_temperature_max > 30 \
                 and current_precipitation_probability < 30:
             print(colored(BANNER_SUN, 'yellow'))
@@ -342,8 +342,8 @@ def print_weather(latitude, longitude, city, country):
             key_pressed()
             clear_screen()
             print(
-                colored(f'Here is the weather information for'
-                        '{city}, {country}:', 'cyan'))
+                colored(f'Here is the weather information for '
+                        f'{city}, {country}:', 'cyan'))
 
         # PRINT WEATHER INFORMATION OF HOURLY REQUESTS
 
