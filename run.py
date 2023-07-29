@@ -68,8 +68,8 @@ def print_header():
     """
     This function prints the HEADER
     """
-    print(colored(HEADER, 'yellow'))
-    print(colored('===================================', 'yellow'))
+    print(colored(HEADER.center(80, '='), 'yellow'))
+    # print(colored('===================================', 'yellow'))
 
 
 # AUXILIARY FUNCTIONS
@@ -103,7 +103,7 @@ def welcome_message():
     # Call clear_screen function to clear the screen before printing the header
     clear_screen()
     # Argument colored() is used to change the color of the text
-    print(colored('Welcome to Victoria\'s Weather App!'.upper(), 'green'))
+    print(colored('\nWelcome to Victoria\'s Weather App!'.upper(), 'green'))
     print(colored(BANNER_INTRO, 'yellow'))
     print(colored('This app will provide you with the weather \
 information for the location of your choice.', 'green'))
@@ -130,7 +130,7 @@ def name_input():
         time.sleep(0.04)  # delay printing of each line by 0.01 seconds
 
     # Ask for name
-    name = input('CHOOSE a NAME and then PRESS ENTER to continue. \
+    name = input('\n\nCHOOSE a NAME and then PRESS ENTER to continue. \
     \nThe name must be at least 3 characters long, \
     \nbut no longer than 10 characters, include only letters, \
     \nno numbers or special characters: ')
@@ -412,7 +412,7 @@ def weather_components():
     This function prints the weather components information
     """
     clear_screen()
-    print('\n W E A T H E R   C O M P O N E N T S\n'.center(80, '-'))
+    print('W E A T H E R   C O M P O N E N T S'.center(80, '_'))
 
     # Load weather components from a file
     with open('weather_components.txt', 'r') as file:
@@ -439,7 +439,7 @@ def instructions():
     This function prints the instructions
     """
     clear_screen()
-    print('\n I N S T R U C T I O N S\n\n'.center(80, '-'))
+    print('I N S T R U C T I O N S'.center(80, '_'))
 
     # Load instructions from a file
     with open('instructions.txt', 'r') as file:
@@ -484,7 +484,7 @@ def past_searches():
     for row in all_search_data[1:]:
         table.add_row(row)
 
-    print('\n P A S T   S E A R C H E S\n\n'.center(80, '-'))
+    print('\n P A S T   S E A R C H E S\n\n'.center(80, '_'))
 
     # Display the table
     print(table)
@@ -511,7 +511,8 @@ def main():
 
     while True:
         clear_screen()
-        print('\n M E N U\n'.center(80, '-'))
+        print('M E N U'.center(80, '_'))
+        print()
         for item in MENU:
             print(item + '\n')
 
@@ -547,7 +548,7 @@ def main():
                 break
             elif menu_choices == 'e':
                 clear_screen()
-                print(colored('Thank you for using Victoria\'s '
+                print(colored('\nThank you for using Victoria\'s '
                               'Weather App! See you soon!', 'green'))
                 print(colored(BANNER_EXIT, 'yellow'))
                 sys.exit()
