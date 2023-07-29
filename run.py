@@ -106,8 +106,7 @@ def welcome_message():
     print(colored('\nWelcome to Victoria\'s Weather App!'.upper(), 'green'))
     print(colored(BANNER_INTRO, 'yellow'))
     print(colored('This app will provide you with the weather \
-information for the location of your choice.', 'green'))
-    print(colored('Enjoy!', 'green'))
+information for the location of your choice. Enjoy!', 'green'))
     print()
     # Call key_pressed function
     key_pressed()
@@ -169,7 +168,7 @@ def get_location(name):
         # Ask for city and country
         if context == "initial":  # if the user is entering
             # the location for the first time
-            prompt_msg = f'{name}, in order to obtain the weather \
+            prompt_msg = f'\n\n{name}, in order to obtain the weather \
 information, \nplease enter the city and country of your choice.'
         elif context == "error":  # if the user has entered an invalid location
             prompt_msg = f'{name}, it seems there was an error with your \
