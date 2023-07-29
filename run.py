@@ -343,7 +343,7 @@ def print_weather(latitude, longitude, city, country):
                           'Take an umbrella with you!', 'blue'))
             print(colored('Press any key to see full'
                           'weather information.', 'blue'))
-            key_pressed()
+            key_pressed('\n')
             clear_screen()
             print(
                 colored(f'Here is the weather information '
@@ -355,9 +355,9 @@ def print_weather(latitude, longitude, city, country):
                           'Don\'t forget to put on sunscreen!', 'yellow'))
             key_pressed()
             clear_screen()
-            print(
-                colored(f'Here is the weather information for '
-                        f'{city}, {country}:', 'cyan'))
+            print(colored(f'Here is the weather information for '
+                          f'{city}, {country}:', 'cyan'))
+            print()
 
         # PRINT WEATHER INFORMATION OF HOURLY REQUESTS
 
@@ -412,6 +412,7 @@ def weather_components():
     """
     clear_screen()
     print('W E A T H E R   C O M P O N E N T S'.center(80, '_'))
+    print()
 
     # Load weather components from a file
     with open('weather_components.txt', 'r') as file:
@@ -420,7 +421,7 @@ def weather_components():
     for line in weather_components:
         counter += 1
         print(line, end='')
-        if counter % 15 == 0:
+        if counter % 17 == 0:
             print('\n')
             key_pressed()
             clear_screen()
@@ -439,6 +440,7 @@ def instructions():
     """
     clear_screen()
     print('I N S T R U C T I O N S'.center(80, '_'))
+    print()
 
     # Load instructions from a file
     with open('instructions.txt', 'r') as file:
@@ -447,7 +449,7 @@ def instructions():
     for line in instructions:
         counter += 1
         print(line, end='')
-        if counter % 15 == 0:
+        if counter % 17 == 0:
             print('\n')
             key_pressed()
             clear_screen()
