@@ -155,7 +155,7 @@ def get_location(name):
         if context == "initial":  # if the user is entering
             # the location for the first time
             prompt_msg = f'{name}, in order to obtain the weather \
-information, please enter the city and country of your choice.'
+information, \nplease enter the city and country of your choice.'
         elif context == "error":  # if the user has entered an invalid location
             prompt_msg = f'{name}, it seems there was an error with your \
 previous input. Please enter the city and country of your choice again.'
