@@ -421,7 +421,7 @@ def weather_components():
     for line in weather_components:
         counter += 1
         print(line, end='')
-        if counter % 17 == 0:
+        if counter % 15 == 0:
             print('\n')
             key_pressed()
             clear_screen()
@@ -448,7 +448,7 @@ def instructions():
     for line in instructions:
         counter += 1
         print(line, end='')
-        if counter % 17 == 0:
+        if counter % 15 == 0:
             print('\n')
             key_pressed()
             clear_screen()
