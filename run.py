@@ -199,18 +199,14 @@ information for a different location, please enter the new city and country.'
                     # Get maximum daily temperature
                     current_temperature_max = get_weather(
                         latitude, longitude)['daily']['temperature_2m_max'][0]
-                    # Get precipitation probability
-                    current_precipitation_probability = get_weather(
-                        latitude, longitude)['daily']['precipitation_'
-                                                      'probability_max'][0]
 
                     # Append the search data to the spreadsheet
                     search_data = [name, current_date,
                                    current_time,
                                    city, country,
-                                   current_temperature_max,
-                                   current_precipitation_probability
+                                   current_temperature_max
                                    ]
+
                     SEARCH_HISTORY.append_row(search_data)
 
                     return latitude, longitude, city, country
