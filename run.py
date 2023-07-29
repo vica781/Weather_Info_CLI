@@ -221,8 +221,8 @@ information for a different location, please enter the new city and country.'
             # Print error message
             # and continue with the next iteration of the loop
             print(colored('Oops! Something went wrong.'
-                          'The location you entered has not been found.'
-                          'Please, check the spelling and try again.', 'red'))
+                          '\nThe location you entered has not been found.'
+                          '\nPlease, check the spelling and try again.', 'red'))
             print()
             context = 'error'
 
@@ -281,7 +281,7 @@ def print_weather(latitude, longitude, city, country):
     key_pressed()
     clear_screen()
     print(colored(f'Here is the weather'
-                  'information for {city}, {country}:', 'cyan'))
+                  '\ninformation for {city}, {country}:', 'cyan'))
     # calculate index for current hour and current date
     now = str(datetime.datetime.now()).split()
     now_time = now[0] + 'T' + now[1][:2] + ':00'
