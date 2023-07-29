@@ -158,7 +158,7 @@ def get_location(name):
 information, \nplease enter the city and country of your choice.'
         elif context == "error":  # if the user has entered an invalid location
             prompt_msg = f'{name}, it seems there was an error with your \
-previous input. Please enter the city and country of your choice again.'
+previous input. \nPlease enter the city and country of your choice again.'
         else:  # if the user desided to change the location
             prompt_msg = f'{name}, to change the location and get weather \
 information for a different location, please enter the new city and country.'
