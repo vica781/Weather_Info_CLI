@@ -38,11 +38,11 @@
 3. The next screen you will see is the M E N U.
 
 -  Please, read menu and choose where you want to go 
-   by entering one of the options: a, b, c, d, e or f.
+   by entering one of the options: a, b, c, d, or e.
 -  Press 'enter' to continue as prompted in the message.
  
    Pressing any other key will not you allow to continue and program will 
-   continue to ask you to enter one of the options: a, b, c, d, e or f.
+   continue to ask you to enter one of the options: a, b, c, d, or e.
 
    Pressing 'enter' without entering any of the options will not allow you 
    to continue and will repeatedly reprint input request message.
