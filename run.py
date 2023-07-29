@@ -11,7 +11,7 @@ import sys
 from banners import *
 import gspread
 from google.oauth2.service_account import Credentials
-from prettytable import prettytable
+from prettytable import PrettyTable
 
 # Define scope
 SCOPE = [
