@@ -2,9 +2,9 @@
 
 # WEATHER INFO APP
 
-![Am I Responsive Image](./assets/readme_files/amiresponsive.png)
+![Am I Responsive Image](./assets/readme_files/images/am_i_responsive.png)
 
-[View the live project here](https://millionaire-kindof.herokuapp.com/)
+[View the live project here](https://weather-info-vk781-59b552e10969.herokuapp.com/)
 
 ## Table of contents
 

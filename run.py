@@ -343,7 +343,7 @@ def print_weather(latitude, longitude, city, country):
                           'Take an umbrella with you!', 'blue'))
             print(colored('Press any key to see full'
                           'weather information.', 'blue'))
-            key_pressed('\n')
+            key_pressed()
             clear_screen()
             print(
                 colored(f'Here is the weather information '
@@ -463,7 +463,7 @@ def instructions():
 def past_searches():
     """
     This function displays the search history from the spreadsheet
-    as a table and shows a message if the user has not searched anything yet.
+    as a table and shows a message if the were no previous searches.
     """
     # Get all the values from the search_data worksheet
     clear_screen()
@@ -471,9 +471,13 @@ def past_searches():
 
     # Check if any data is present in the search history
     if len(all_search_data) == 1:
-        print(colored("You haven't searched anything yet.", "red"))
+
+        print('\n P A S T   S E A R C H E S\n\n'.center(80, '_'))
+
+        print(colored("There were no searches conducted yet.", "red"))
         print(colored("Please use option 'a' from the menu to get \
-                      \nweather information for a location.", "red"))
+weather information for a location of your choice.", "red"))
+        print('\n\n')
         key_pressed()
         return
 
