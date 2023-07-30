@@ -147,36 +147,70 @@ A flowchart made in [LUCID](https://lucid.app.com/ "Link to Lucid") demonstrates
 
 #### Skeleton
 
-**Welcome Screen**
+The application consists of several files each perfoming unique task, and they come together to form overall functioning of the Weather Info App. The files are:
 
-1. The application is designed to be simple and intuitive. The user is presented with a welcome screen upon launching the application. The welcome screen provides:
+- run.py - This is the main file that runs the application.
+- banners.py - This file contains the ASCII art for the different screens.
+- CREDS.json - This file contains the credentials for the Google Sheet.
+- weather_components.txt - This file contains text describing the weather components that are displayed on the screen.
+  instructions.txt - This file contains the instructions on how to use the application.
+- requirements.txt - This file contains the list of dependencies used in the project.
 
-- A BANNER_INTRO (ASCII art) depicting the sun and clouds to give the user a visual representation of the application's purpose.
-- An informative message for the user explaining that the application is used to check the weather of a city and country of their choice.
-- A prompt to press any key to continue.
-  ![Welcome Screen](./assets/readme_files/images/welcome_screen.png)
-  **User Name Input Screen**
+Each of these files includes functions that are invoked by the main program depending on user input. The flowchart included earlier in this README provides a visual representation of how these components interact.
 
-2. Then user is presented with the Name Input screen. The user is prompted to enter their name. The user's name is used to personalize the application. The user's name is also used to display the historical searches. The user's name is validated to ensure that it is a string and not a number. The user is prompted to enter their name again if the input is invalid. The user is also prompted to enter their name again if the input is less than 3 characters or more then 10 characters. The Name Input screen provides:
-
-- An imitation of a typewriter effect typing - British weather idiom 'Every cloud has a silver lining' - to enhance the user experience (BANNER_INPUT [ASCII art]).
-- A prompt to enter the user's name that satisfies the stated validation criteria.
+More details that will help to understand the application's sceleton are provided in the following sections.
 
 [Back to the top ⇧](#weather-info-app)
 
 ### Design
 
-The overall design of this command line application is quite simple. The developer at first decided to use different colours and ASCII text art. But, upon the deployment on Heroku, and some feedback from the testers, the developer opted for a more simpler design and less colourful in order to keep the best possible visibility of the application - beign a quiz game based on a lot of text that needs to be read.
+In general, the application is designed to be simple and intuitive, ingaging, and maybe even fun to use. This app can be used by anyone, regardless of technical ability, as it only requires the ability to enter a city and a country name and press keys to navigate through the displayed data.
 
-For more engaging design, the devlopper has decided use a few screens at the intro, end game, end quiz, display high scores, etc. ASCII art is used for a games 'LOGO' that repeat itself throughout the application. For the passages from the screens, the developer opted for a simple keypress detection.
+Taking into consideration the target audience, the developer has chosen to include with application several British weather idioms, as this can be a source of knowledge and fun for the user.
 
-The interactive parts of the application are the user name insertion, the menu and the answering to the questions, which require a valid input and pressing of the 'Enter' key.
+The application is designed to be responsive and accessible on a range of devices, making it easy to navigate for potential users.
 
-[Back to the top ⇧](#weather-info-app)(#Who-Wants-To-Be-A-Millionaire-Kind-Of)
+To increase the user's engagement, the developer has included the following design features:
+
+- BANNER_INTRO (ASCII art) depicting the sun and clouds to give the user a visual representation of the application's purpose.
+- BANNER_INPUT (ASCII art) displaying the British weather idiom 'Every cloud has a silver lining' to enhance the user experience.
+- BANNER_RAIN (ASCII art) depicting the Cat and Dog with an umbrella having a traditional British weather conversation, trying to establish if it is going to rain 'humans' - connection to another British weather idiom 'It's raining cats and dogs' - to enhance the user experience.
+- BANNER_SUN (ASCII art) depicting fine day somewhere in the British countryside (high sky with clouds and sun, causy house, and grass). The banne include sign 'No rain!' to pass the message to the user as to what to expect from the weather in the location of their choice. The banner is also content two more British weather idioms
+  - 'While it is fine weather - mend your sails'
+  - 'Make hay while the sun shines!'
+- BANNER_EXIT (ASCII art) depicting peacefull water surface with swan, singing birds, fish and fine weather sky with clouds and sun. The banner is also content British weather idiom within the message from the developer to the user 'I wish you to find your PLACE IN THE SUN!!'
+- Slow print function. It gives the user the impression of an animation. In fact, it consists of the printing the characters of the string on by one with a time delay.
+
+Also, in order to improve user experience, the developer has included the following design features:
+
+- Header 'Weather Info App' on each screen. It helps the user to understand what application they are using.
+- Clear screen function.
+- Press any key to continue prompt. It helps the user to navigate through the application.
+- User input validations for various input scenarios. It helps to improve user experience, avoid errors, and guarantee the correct functioning of the application.
+
+The interactive parts of the application:
+
+- Menu
+  - The menu is the central feature of the application. It gives to the user four possibilities to proceed:
+    - Get the weather information
+    - Weather Components Explanation
+    - Display Search History
+    - Exit from the application
+- Name Input
+- City and Country Input
+- Conformation of the City and Country Input
+
+[Back to the top ⇧](#weather-info-app)
 
 ## Features
 
 ### Existing Features
+
+- Clear screen function. It clears the screen after each user input, so that the user can focus on the information displayed on the screen.
+
+  - User name input validation. The user is prompted to enter their name again if the input is invalid. The user is also prompted to enter their name again if the input is less than 3 characters or more then 10 characters.
+  - City and country input validation
+    - user is ofered to confirm the city and country input. If the user confirms, the application will proceed to display the weather information. If the user wants to change the city and country, the application will allow the user to do so.
 
 - **Different info screens**
 
@@ -195,6 +229,28 @@ The interactive parts of the application are the user name insertion, the menu a
   - At the beginning of the application the json files are loaded with the data stored locally, but produced by the API https://the-trivia-api.com/. At first, the developer copied the data recevied into the code of another Python file that was imported to the main file. After organizing the data in json files, the developer integrated the code into main file. The three json files contain different difficulety level questions, and each 15 different ones.
 
   ![JSON Files](./assets/readme_files/json_files.png)
+
+  **Welcome Screen**
+
+1. The application is designed to be simple and intuitive. The user is presented with a welcome screen upon launching the application. The welcome screen provides:
+
+- A BANNER_INTRO (ASCII art) depicting the sun and clouds to give the user a visual representation of the application's purpose.
+- An informative message for the user explaining that the application is used to check the weather of a city and country of their choice.
+- A prompt to press any key to continue.
+  ![Welcome Screen](./assets/readme_files/images/welcome_screen.png)
+
+[Back to the top ⇧](#weather-info-app)
+
+**User Name Input Screen**
+
+2. Then user is presented with the Name Input screen. The user is prompted to enter their name. The user's name is used to personalize the application. The user's name is also used to display the historical searches. The user's name is validated to ensure that it is a string and not a number. The user is prompted to enter their name again if the input is invalid. The user is also prompted to enter their name again if the input is less than 3 characters or more then 10 characters. The Name Input screen provides:
+
+- An imitation of a typewriter effect typing - British weather idiom 'Every cloud has a silver lining' - to enhance the user experience (BANNER_INPUT [ASCII art]).
+- A prompt to enter the user's name that satisfies the stated validation criteria.
+
+![Name Input Screen](./assets/readme_files/gifs/name_input.gif)
+
+[Back to the top ⇧](#weather-info-app)
 
 - **How to play the game instructions display**
 
