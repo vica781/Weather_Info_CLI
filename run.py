@@ -343,6 +343,7 @@ def print_weather(latitude, longitude, city, country):
                           'Take an umbrella with you!', 'blue'))
             print(colored('Press any key to see full'
                           'weather information.', 'blue'))
+            print()
             key_pressed()
             clear_screen()
             print(
@@ -353,6 +354,7 @@ def print_weather(latitude, longitude, city, country):
             print(colored(BANNER_SUN, 'yellow'))
             print(colored('It is going to be a hot day today. '
                           'Don\'t forget to put on sunscreen!', 'yellow'))
+            print()
             key_pressed()
             clear_screen()
             print(colored(f'Here is the weather information for '

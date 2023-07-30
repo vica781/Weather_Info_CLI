@@ -82,6 +82,8 @@ The application was developed with the following planes in mind:
 4. Skeleton: Clear and readable text output.
 5. Surface: Clean interface with no unnecessary distractions.
 
+[Back to the top ⇧](#weather-info-app)
+
 #### Strategy
 
 The strategy for Victoria's Weather Info App incorporates user needs as well as product objectives. This application targets the following audiences, divided into three main categories:
@@ -116,24 +118,21 @@ The Developer/Administrator receives:
 - User's queried city and country
 - Feedback from users for continuous improvement and updates (optional) - this can be done through email or social media.
 
+[Back to the top ⇧](#weather-info-app)
+
 #### Scope
 
-After defining goals of the game, we are delineating the necessary features:
+Upon defining the goals of the application, the following are the required functionalities:
 
-- Required functionalities
-  - Intro screen display
-  - Question database loader
-  - How to play the game instructions display
-  - High scores display
-  - Global Menu
-  - Quiz starter
-  - Quiz questions generator
-  - Points/Threshold display
-  - Question display and guess
-  - Answer validator
-  - Correct answer displayed if wrongly answered or congratulatory message if answered correctly
-  - On game end - displayed a new screen with appropriate messages, points and the high scores saved to Google Sheet
-  - On application exit - displayed a new screen with Thank you note
+- Required functionalities:
+  - Welcome screen display with a brief introduction of the application.
+  - Input prompts for city and country queries.
+  - Weather data loader - Fetches and loads the weather data based on user input.
+  - Instructions display - Guide on how to use the application.
+  - Current weather display - Displays the current weather information of the selected city and country.
+  - Error handling - In case of invalid inputs or issues with fetching data.
+  - Allow the user to check/confirm the selected city and country. If the user confirms, the application will proceed to display the weather information. If the user wants to change the city and country, the application will allow the user to do so.
+  - On application exit - Displays a thank you note.
 
 #### Structure
 
