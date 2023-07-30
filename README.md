@@ -191,12 +191,12 @@ Also, in order to improve user experience, the developer has included the follow
 The interactive parts of the application:
 
 - Menu
-  - The menu is the central feature of the application. It gives to the user five possibilities to proceed:
-    - Get the weather information
-    - Weather Components Explanation
-    - Display Search History
-    - Instructions
-    - Exit from the application
+  The menu is the central feature of the application. It gives to the user five possibilities to proceed:
+  - Get the weather information
+  - Weather Components Explanation
+  - Display Search History
+  - Instructions
+  - Exit from the application
 - Name Input
 - City and Country Input
 - Conformation of the City and Country Input
@@ -269,7 +269,9 @@ _Get Weather Information_
 
 After choosing the first option from the menu, the user is presented with the Get Weather Information screen. The user is prompted to enter the city and country of their choice. The user is also prompted to confirm the city and country input. If the user confirms, the application will proceed to display the weather information. If the user wants to change the city and country, the application will allow the user to do so as been demonstrated in the section [User input validations for various input scenarios.](#user-input-validations-for-various-input-scenarios)
 
-. The user is prompted to enter the city and country of their choice. The user is also prompted to confirm the city and country input. If the user confirms, the application will proceed to display the weather information. If the user wants to change the city and country, the application will allow the user to do so. The Get Weather Information screen provides:
+The user is prompted to enter the city and country of their choice. The user is also prompted to confirm the city and country input. If the user confirms, the application will proceed to display the weather information. If the user wants to change the city and country, the application will allow the user to do so.
+
+![Get Weather Information Screen](./assets/readme_files/different_info_screens/i_got_data_screen.png)
 
 [Back to the top ⇧](#weather-info-app)
 
@@ -279,7 +281,7 @@ After choosing the first option from the menu, the user is presented with the Ge
 
   ![Slow Print Function](./assets/readme_files/slow_print.gif)
 
-[Back to the top ⇧](#weather-info-app)(#Who-Wants-To-Be-A-Millionaire-Kind-Of)
+[Back to the top ⇧](#weather-info-app)
 
 ### Features to Implement in the future
 

@@ -290,7 +290,7 @@ def print_weather(latitude, longitude, city, country):
     # Call get_weather function
     data = get_weather(latitude, longitude)
     # Print success message
-    print(colored('Success! Everything is okay. I got the data!', 'blue'))
+    print(colored('Success! Everything is okay. I got the data!', 'magenta'))
     print()
     key_pressed()
     clear_screen()
