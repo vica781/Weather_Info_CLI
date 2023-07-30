@@ -472,9 +472,9 @@ def past_searches():
     # Check if any data is present in the search history
     if len(all_search_data) == 1:
 
-        print(colored('"There were no searches conducted yet. '
-                      '\nPlease use option "a" from the menu to get weather '
-                      'information for a location of your choice."', "red"))
+        print(colored('\n\nThere were no searches conducted yet. '
+                      '\nPlease use option "a" from the menu to get weather'
+                      '\ninformation for a location of your choice.', "red"))
 
         print('\n\n')
         key_pressed()
