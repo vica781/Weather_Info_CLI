@@ -206,9 +206,18 @@ The interactive parts of the application:
 
 ### Existing Features
 
+All the fueatures would be part of the application design, and some of them already have been mentioned in the previous sections. Following is the list of the features that are present in the application with more additional details.
+
 - Clear screen function. It clears the screen after each user input, so that the user can focus on the information displayed on the screen.
 
-  - User name input validation. The user is prompted to enter their name again if the input is invalid. The user is also prompted to enter their name again if the input is less than 3 characters or more then 10 characters.
+- Press any key to continue prompt. It helps the user to navigate through the application. This feature is printed on the screen in blue, rather than the default white, and highlighted in white to make it stand out.
+
+- **User input validations for various input scenarios**. It helps to improve user experience, avoid errors, and guarantee the correct functioning of the application.
+
+  1. User name input validation. The user is prompted to enter their name again if the input is invalid. The user is also prompted to enter their name again if the input is less than 3 characters or more then 10 characters.
+
+  ![Name Input Screen](./assets/readme_files/input_validations/name_input_validation.gif)
+
   - City and country input validation
     - user is ofered to confirm the city and country input. If the user confirms, the application will proceed to display the weather information. If the user wants to change the city and country, the application will allow the user to do so.
 
