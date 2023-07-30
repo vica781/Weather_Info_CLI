@@ -141,15 +141,28 @@ A flowchart made in [LUCID](https://lucid.app.com/ "Link to Lucid") demonstrates
 <details>
 <summary>Flowchart Image</summary>
 
-![Flowchart](./assets/readme_files/flowchart.svg)
+![Flowchart](./assets/readme_files/images/flowchart.png)
 
 </details>
 
 #### Skeleton
 
-Being the game in fact a terminal application, the skeleton plane would be somwhat in between the presented flowchart and the design. Therefore, the relative details will follow in the next section.
+**Welcome Screen**
 
-[Back to the top ⇧](#weather-info-app)(#Who-Wants-To-Be-A-Millionaire-Kind-Of)
+1. The application is designed to be simple and intuitive. The user is presented with a welcome screen upon launching the application. The welcome screen provides:
+
+- A BANNER_INTRO (ASCII art) depicting the sun and clouds to give the user a visual representation of the application's purpose.
+- An informative message for the user explaining that the application is used to check the weather of a city and country of their choice.
+- A prompt to press any key to continue.
+  ![Welcome Screen](./assets/readme_files/images/welcome_screen.png)
+  **User Name Input Screen**
+
+2. Then user is presented with the Name Input screen. The user is prompted to enter their name. The user's name is used to personalize the application. The user's name is also used to display the historical searches. The user's name is validated to ensure that it is a string and not a number. The user is prompted to enter their name again if the input is invalid. The user is also prompted to enter their name again if the input is less than 3 characters or more then 10 characters. The Name Input screen provides:
+
+- An imitation of a typewriter effect typing - British weather idiom 'Every cloud has a silver lining' - to enhance the user experience (BANNER_INPUT [ASCII art]).
+- A prompt to enter the user's name that satisfies the stated validation criteria.
+
+[Back to the top ⇧](#weather-info-app)
 
 ### Design
 

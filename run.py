@@ -135,8 +135,8 @@ def name_input():
     \nno numbers or special characters: ')
     # Check if the name is valid
     while len(name) < 3 or len(name) > 10 or not name.isalpha():
-        print(colored('Oops! Something went wrong. \
-The input is not valid. Please, check the format and try again.', 'red'))
+        print(colored('Oops! Something went wrong. The input is not valid. '
+                      'Please, check the format and try again.', 'red'))
         name = input('Choose a name - it must be at least 3 characters long,\
 \nbut no longer than 10 characters, include only letters,\
 \nno numbers or special characters: ')
