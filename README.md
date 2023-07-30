@@ -8,41 +8,44 @@
 
 ## Table of contents
 
-1. [Introduction](#Introduction)
-2. [UX](#UX)
-   1. [Ideal User Demographic](#Ideal-User-Demographic)
-   2. [User Stories](#User-Stories)
-   3. [Development Planes](#Development-Planes)
-   4. [Design](#Design)
-3. [Features](#Features)
-   1. [Existing Features](#Existing-Features)
-   2. [Features to Implement in the future](#Features-to-Implement-in-the-future)
-4. [Issues and Bugs](#Issues-and-Bugs)
-5. [Technologies Used](#Technologies-Used)
-   1. [Main Languages Used](#Main-Languages-Used)
-   2. [Libraries And Modules Used](#Libraries-And-Modules-Used)
-   3. [Frameworks And Programs Used](#Frameworks-And-Programs-Used)
-6. [Testing](#Testing)
+1. [Introduction](#introduction)
+2. [UX](#ux)
+   1. [Ideal User Demographic](#ideal-user-demographic)
+   2. [User Stories](#user-stories)
+   3. [Development Planes](#development-planes)
+   4. [Design](#design)
+3. [Features](#features)
+   1. [Existing Features](#existing-features)
+   2. [Features to Implement in the future](#features-to-implement-in-the-future)
+4. [Issues and Bugs](#issues-and-bugs)
+5. [Technologies Used](#technologies-used)
+   1. [Main Languages Used](#main-languages-used)
+   2. [Libraries And Modules Used](#libraries-and-modules-used)
+   3. [Frameworks And Programs Used](#frameworks-and-programs-used)
+6. [Testing](#testing)
    1. [Testing.md](TESTING.md)
-7. [Deployment](#Deployment)
-   1. [Deploying on Heroku](#Deploying-On-Heroku)
-8. [Credits](#Credits)
-   1. [Code](#Code)
-   2. [Contents](#Contents)
-9. [Acknowledgements](#Acknowledgements)
+7. [Deployment](#deployment)
+   1. [Deploying on Heroku](#deploying-on-heroku)
+8. [Credits](#credits)
+   1. [Code](#code)
+   2. [Contents](#contents)
+9. [Acknowledgements](#acknowledgements)
 
 ---
 
 ## Introduction
 
-The WEATHER INFO APP is the 3rd Portfolio Project at the Code Institute.
-Victoria's Weather Info App is a simple and intuitive command line interface application written in Python. It utilizes weather data provided by Weather Forcast API from Open Meteo. The application allows the user to check the weather in a city and a country of their choice. The purpose of this project is to build a command-line application in Python that allows the user to manage a common dataset about a particular domain.
+The WEATHER INFO APP is the 3rd Portfolio Project at the Code Institute. I hope that you will enjoy it as much as I enjoyed making it.
 
-[Back to the top ⇧](#Weather-Info-App)
+Weather Info App is a simple and intuitive command line interface application written in Python. It utilizes weather data provided by Weather Forcast API from Open Meteo. The application allows the user to check the weather in a city and a country of their choice. The purpose of this project is to build a command-line application in Python that allows the user to manage a common dataset about a particular domain.
+
+[Back to the top ⇧](#weather-info-app)
 
 ## UX
 
 ### Ideal User Demographic
+
+The ideal user for this application is someone who wants quick, no-fuss access to current weather information. It can be used by anyone, regardless of technical ability, as it only requires the ability to enter a city name and press keys to navigate through the displayed data.
 
 There are two types of ideal users:
 
@@ -54,7 +57,7 @@ There are two types of ideal users:
 #### New User Goals
 
 1. As a new user, I want to easily understand the main purpose of the site.
-2. As a new user, I want to be able to easily navigate through the application to find the information I need.
+2. As a new user, I want to be able to easily navigate through the application to find the information I need, so that I can plan my activities accordingly.
 3. As a new user, I want to find information on how to use the application effectively.
 4. As a new user, I want to easily input the city and country name to get the weather information.
 5. As a new user, I want the application to provide detailed weather information such as temperature, humidity, percipitation probability, wind speed, uv index, sunrise and sunset time.
@@ -64,17 +67,24 @@ There are two types of ideal users:
 1. As a current user, I want to find the latest weather updates of the city and country of my choice.
 2. As a current user, I want to navigate quickly through the application without unnecessary steps or complications.
 3. As a current user, I want the information to be displayed in a clean and readable format.
-4. As a current user, I want to find updates or new features that have been implemented in the application.
+4. As a current user, I want to be able to see history of previous searches. Perhaps, I want to go back and remember the weather of a particular day, or use the data for future reference and other purposes.
+5. As a current user, I want to find updates or new features that have been implemented in the application.
 
-[Back to the top ⇧](#Weather-Info-App)
+[Back to the top ⇧](#weather-info-app)
 
 ### Development-Planes
 
-To build a command-line application to give the user an experience similar to the one of the Who Wants To Be A Millionaire TV game, with the questions about movies.
+The application was developed with the following planes in mind:
+
+1. Strategy: Provide a straightforward way to access and display weather information.
+2. Scope: Basic weather information including temperature (hourly and daily[maximum and minimum]), humidity, percipitation probability (hourly and daily), information about wind, uv index, sunrise and sunset time.
+3. Structure: A simple command-line interface.
+4. Skeleton: Clear and readable text output.
+5. Surface: Clean interface with no unnecessary distractions.
 
 #### Strategy
 
-Strategy incorporates user needs as well as product objectives. This application will focus on the following target audience, divided into three main categories
+The strategy for Victoria's Weather Info App incorporates user needs as well as product objectives. This application targets the following audiences, divided into three main categories:
 
 - Audience
 
@@ -86,24 +96,25 @@ Strategy incorporates user needs as well as product objectives. This application
   - All ages
 
 - Psychographic:
-  - Movie fan
-  - Quiz fan
-  - Problem solver
+  - Weather enthusiast
+  - Travel planner
+  - Outdoor activity planner
+  - Students
 
-The application is supposed to enable the user to:
+The application is designed to enable users to:
 
-- Play the Who Wants To Be A Millionaire
-- Insert a player name
-- Answer to a series of randomly selected questions from the database
-- Experience a progressive difficulty level
-- Be aware of the points gained, threshold points and won points
-- Know when answers wrongly and learn the correct answer
-- Enter the high score databes if there are some points won at the game end
-- Restart the game if wanted with a new set of questions
-- Read the instructions about the game
-- See the high scores from the database
+- Access weather information for cities across the world.
+- Easily input a city and country name to get the weather details.
+- Receive detailed weather information such as temperature, humidity, percipitation probability, wind speed, uv index, sunrise and sunset time.
+- Understand the weather details in a user-friendly format.
+- Navigate the application with ease and intuitiveness.
+- Continuously update to get the latest weather information.
+- See the historical searches.
 
-The Developer/Administrator needs to receive: \* Player's Name
+The Developer/Administrator receives:
+
+- User's queried city and country
+- Feedback from users for continuous improvement and updates (optional) - this can be done through email or social media.
 
 #### Scope
 
@@ -139,7 +150,7 @@ A flowchart made in [LUCID](https://lucid.app.com/ "Link to Lucid") demonstrates
 
 Being the game in fact a terminal application, the skeleton plane would be somwhat in between the presented flowchart and the design. Therefore, the relative details will follow in the next section.
 
-[Back to the top ⇧](#Who-Wants-To-Be-A-Millionaire-Kind-Of)
+[Back to the top ⇧](#weather-info-app)(#Who-Wants-To-Be-A-Millionaire-Kind-Of)
 
 ### Design
 
@@ -149,7 +160,7 @@ For more engaging design, the devlopper has decided use a few screens at the int
 
 The interactive parts of the application are the user name insertion, the menu and the answering to the questions, which require a valid input and pressing of the 'Enter' key.
 
-[Back to the top ⇧](#Who-Wants-To-Be-A-Millionaire-Kind-Of)
+[Back to the top ⇧](#weather-info-app)(#Who-Wants-To-Be-A-Millionaire-Kind-Of)
 
 ## Features
 
@@ -216,7 +227,7 @@ The interactive parts of the application are the user name insertion, the menu a
 
   ![Slow Print Function](./assets/readme_files/slow_print.gif)
 
-[Back to the top ⇧](#Who-Wants-To-Be-A-Millionaire-Kind-Of)
+[Back to the top ⇧](#weather-info-app)(#Who-Wants-To-Be-A-Millionaire-Kind-Of)
 
 ### Features to Implement in the future
 
@@ -225,7 +236,7 @@ The interactive parts of the application are the user name insertion, the menu a
 - The use of API for the questions
   The developer used the static JSON copy of the question from an API that had some limitations. Before the end of the project, the developer found one other API without the same limitations and without need of authentication to access the database, but didn't want to include it the final project. That was because the data structure was sligthly different and the developer didn't have time to properly test the API's reliability.
 
-[Back to the top ⇧](#Who-Wants-To-Be-A-Millionaire-Kind-Of)
+[Back to the top ⇧](#weather-info-app)(#Who-Wants-To-Be-A-Millionaire-Kind-Of)
 
 ## Issues and Bugs
 
@@ -244,7 +255,7 @@ Several issues were encountered during developement but the most troublesome are
 
 There are no known unfixed bugs.
 
-[Back to the top ⇧](#Who-Wants-To-Be-A-Millionaire-Kind-Of)
+[Back to the top ⇧](#weather-info-app)(#Who-Wants-To-Be-A-Millionaire-Kind-Of)
 
 ## Technologies Used
 
@@ -273,7 +284,7 @@ There are no known unfixed bugs.
 - [Am I Responsive?](https://ui.dev/amiresponsive "Link to Am I Responsive") was used for the web page picture of this README.md
 - [Peek](https://github.com/phw/peek) was used to make screencasts for the documentation.
 
-[Back to the top ⇧](#Who-Wants-To-Be-A-Millionaire-Kind-Of)
+[Back to the top ⇧](#weather-info-app)(#Who-Wants-To-Be-A-Millionaire-Kind-Of)
 
 ## Testing
 
@@ -312,7 +323,7 @@ Deploying on Heroky required the following:
 
 The application is finally deployed on the link [https://millionaire-kindof.herokuapp.com/](https://millionaire-kindof.herokuapp.com/).
 
-[Back to the top ⇧](#Who-Wants-To-Be-A-Millionaire-Kind-Of)
+[Back to the top ⇧](#weather-info-app)(#Who-Wants-To-Be-A-Millionaire-Kind-Of)
 
 ## Credits
 
@@ -330,7 +341,7 @@ The application is finally deployed on the link [https://millionaire-kindof.hero
 - For the questions database, the developer has used the following web API:
   - [The Trivia API](https://the-trivia-api.com/) The questions are taken from the Film and TV category on the web API app and copied into the json files divided by difficulty level (easy, medium, hard).
 
-[Back to the top ⇧](#Who-Wants-To-Be-A-Millionaire-Kind-Of)
+[Back to the top ⇧](#weather-info-app)
 
 ## Acknowledgements
 
@@ -340,6 +351,6 @@ I would like to thank:
 - My colleagues from the Code Institute who tested my code and gave me some wonderful feedback.
 - To my inner circle, who are secretly following my ongoing coding adventure.
 
-[Back to the top ⇧](#Who-Wants-To-Be-A-Millionaire-Kind-Of)
+[Back to the top ⇧](#weather-info-app)
 
 ---
