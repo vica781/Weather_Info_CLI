@@ -221,6 +221,13 @@ All the fueatures would be part of the application design, and some of them alre
   - City and country input validation
     - user is ofered to confirm the city and country input. If the user confirms, the application will proceed to display the weather information. If the user wants to change the city and country, the application will allow the user to do so.
 
+  ![City and Country Input Validation](./assets/readme_files/input_validations/location_input_validation.gif)
+
+  - Search history display validation
+    - If the user has no search history, the application will display a message to the user that there is no search history and will prompt the user to go back to the menu to get the weather information.
+
+  ![Search History Display Validation](./assets/readme_files/input_validations/search_history_validation.gif)
+
 - **Different info screens**
 
   - These are presented in different moment of the game. Practically every feature is related to these screens, e.g.:
