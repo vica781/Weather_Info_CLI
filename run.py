@@ -439,7 +439,6 @@ def instructions():
     """
     clear_screen()
     print('I N S T R U C T I O N S'.center(80, '_'))
-    print()
 
     # Load instructions from a file
     with open('instructions.txt', 'r') as file:
@@ -556,7 +555,7 @@ def main():
                 break
             elif menu_choices == 'e':
                 clear_screen()
-                print(colored('\nThank you for using Victoria\'s '
+                print(colored('Thank you for using Victoria\'s '
                               'Weather App! See you soon!', 'green'))
                 print(colored(BANNER_EXIT, 'yellow'))
                 sys.exit()
