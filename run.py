@@ -472,11 +472,10 @@ def past_searches():
     # Check if any data is present in the search history
     if len(all_search_data) == 1:
 
-        print('\n P A S T   S E A R C H E S\n\n'.center(80, '_'))
+        print(colored('"There were no searches conducted yet. '
+                      '\nPlease use option "a" from the menu to get weather '
+                      'information for a location of your choice."', "red"))
 
-        print(colored("There were no searches conducted yet.", "red"))
-        print(colored("Please use option 'a' from the menu to get \
-weather information for a location of your choice.", "red"))
         print('\n\n')
         key_pressed()
         return
@@ -489,7 +488,12 @@ weather information for a location of your choice.", "red"))
     for row in all_search_data[1:]:
         table.add_row(row)
 
-    print('\n P A S T   S E A R C H E S\n\n'.center(80, '_'))
+    # Clear the screen once again and print the header
+    clear_screen()
+
+    # Display the search history header
+    print('S E A R C H   H I S T O R Y'.center(80, '_'))
+    print()
 
     # Display the table
     print(table)

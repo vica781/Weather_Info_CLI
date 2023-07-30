@@ -35,11 +35,10 @@
 
 ## Introduction
 
-The game Who Wants To Be A Millionaire Kind Of is the 3rd Portfolio Project at the Code Institute. It is an hommage to the famous TV game that conquered the world. In this version, the questions are related to the Movies and TV.
+The WEATHER INFO APP is the 3rd Portfolio Project at the Code Institute.
+Victoria's Weather Info App is a simple and intuitive command line interface application written in Python. It utilizes weather data provided by Weather Forcast API from Open Meteo. The application allows the user to check the weather in a city and a country of their choice. The purpose of this project is to build a command-line application in Python that allows the user to manage a common dataset about a particular domain.
 
-The purpose of this project is to build a command-line application in Python that allows the user to manage a common dataset about a particular domain.
-
-[Back to the top ⇧](#Who-Wants-To-Be-A-Millionaire-Kind-Of)
+[Back to the top ⇧](#Weather-Info-App)
 
 ## UX
 
@@ -54,19 +53,20 @@ There are two types of ideal users:
 
 #### New User Goals
 
-- As a new user, I want easily navigate through the application.
-- As a new user, I want easily consult and find the rules.
-- As a new user, I want to test my knowledge about the movies and TV.
-- As a new user, I want to have learn something while having fun.
+1. As a new user, I want to easily understand the main purpose of the site.
+2. As a new user, I want to be able to easily navigate through the application to find the information I need.
+3. As a new user, I want to find information on how to use the application effectively.
+4. As a new user, I want to easily input the city and country name to get the weather information.
+5. As a new user, I want the application to provide detailed weather information such as temperature, humidity, percipitation probability, wind speed, uv index, sunrise and sunset time.
 
 #### Current User Goals
 
-- As a current user, I want a game similar to the Who Wants To Be A Millionaire TV game.
-- As a frequent user, I want to test my knowledge about the movies and TV.
-- As a frequent user, I want have questions with a progressive difficulty.
-- As a frequent user, I want to improve my knowledge and score.
+1. As a current user, I want to find the latest weather updates of the city and country of my choice.
+2. As a current user, I want to navigate quickly through the application without unnecessary steps or complications.
+3. As a current user, I want the information to be displayed in a clean and readable format.
+4. As a current user, I want to find updates or new features that have been implemented in the application.
 
-[Back to the top ⇧](#Who-Wants-To-Be-A-Millionaire-Kind-Of)
+[Back to the top ⇧](#Weather-Info-App)
 
 ### Development-Planes
 
