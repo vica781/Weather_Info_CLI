@@ -346,20 +346,17 @@ def print_weather(latitude, longitude, city, country):
             print()
             key_pressed()
             clear_screen()
-            print(
-                colored(f'Here is the weather information '
-                        f'for {city}, {country}:', 'cyan'))
+            print(colored(f'Here is the weather information '
+                          f'for {city}, {country}:', 'cyan'))
         elif current_temperature_max > 30 \
                 and current_precipitation_probability < 30:
             print(colored(BANNER_SUN, 'yellow'))
             print(colored('It is going to be a hot day today. '
                           'Don\'t forget to put on sunscreen!', 'yellow'))
-            # print()
             key_pressed()
             clear_screen()
             print(colored(f'Here is the weather information for '
                           f'{city}, {country}:', 'cyan'))
-            print()
 
         # PRINT WEATHER INFORMATION OF HOURLY REQUESTS
 
