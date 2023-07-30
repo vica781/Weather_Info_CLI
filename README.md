@@ -191,10 +191,11 @@ Also, in order to improve user experience, the developer has included the follow
 The interactive parts of the application:
 
 - Menu
-  - The menu is the central feature of the application. It gives to the user four possibilities to proceed:
+  - The menu is the central feature of the application. It gives to the user five possibilities to proceed:
     - Get the weather information
     - Weather Components Explanation
     - Display Search History
+    - Instructions
     - Exit from the application
 - Name Input
 - City and Country Input
@@ -206,7 +207,7 @@ The interactive parts of the application:
 
 ### Existing Features
 
-All the fueatures would be part of the application design, and some of them already have been mentioned in the previous sections. Following is the list of the features that are present in the application with more additional details.
+All fueatures would be part of the application design, and some of them already have been mentioned in the previous sections. Following is the list of the features that are present in the application with more additional details.
 
 - Clear screen function. It clears the screen after each user input, so that the user can focus on the information displayed on the screen.
 
@@ -214,96 +215,63 @@ All the fueatures would be part of the application design, and some of them alre
 
 - **User input validations for various input scenarios**. It helps to improve user experience, avoid errors, and guarantee the correct functioning of the application.
 
-  1. User name input validation. The user is prompted to enter their name again if the input is invalid. The user is also prompted to enter their name again if the input is less than 3 characters or more then 10 characters.
+  - _User name input validation_
+
+  The user is prompted to enter their name again if the input is invalid. The user is also prompted to enter their name again if the input is less than 3 characters or more then 10 characters.
 
   ![Name Input Screen](./assets/readme_files/input_validations/name_input_validation.gif)
 
-  - City and country input validation
-    - user is ofered to confirm the city and country input. If the user confirms, the application will proceed to display the weather information. If the user wants to change the city and country, the application will allow the user to do so.
+  - _City and country input validation_
+
+    The user is ofered to confirm the city and country input. If the user confirms, the application will proceed to display the weather information. If the user wants to change the city and country, the application will allow the user to do so.
 
   ![City and Country Input Validation](./assets/readme_files/input_validations/location_input_validation.gif)
 
-  - Search history display validation
-    - If the user has no search history, the application will display a message to the user that there is no search history and will prompt the user to go back to the menu to get the weather information.
+  - _Search history display validation_
+
+    If the user has no search history, the application will display a message to the user that there is no search history and will prompt the user to go back to the menu to get the weather information.
 
   ![Search History Display Validation](./assets/readme_files/input_validations/search_history_validation.gif)
 
+  [Back to the top ⇧](#weather-info-app)
+
 - **Different info screens**
 
-  - These are presented in different moment of the game. Practically every feature is related to these screens, e.g.:
+_Welcome Screen_
 
-  1. Intro Screen
-
-  ![Intro Screen](./assets/readme_files/intro_screen.png)
-
-  2. End Screen
-
-  ![End Screen](./assets/readme_files/end_screen.png)
-
-- **Question database loader**
-
-  - At the beginning of the application the json files are loaded with the data stored locally, but produced by the API https://the-trivia-api.com/. At first, the developer copied the data recevied into the code of another Python file that was imported to the main file. After organizing the data in json files, the developer integrated the code into main file. The three json files contain different difficulety level questions, and each 15 different ones.
-
-  ![JSON Files](./assets/readme_files/json_files.png)
-
-  **Welcome Screen**
-
-1. The application is designed to be simple and intuitive. The user is presented with a welcome screen upon launching the application. The welcome screen provides:
+The application is designed to be simple and intuitive. The user is presented with a welcome screen upon launching the application. The welcome screen provides:
 
 - A BANNER_INTRO (ASCII art) depicting the sun and clouds to give the user a visual representation of the application's purpose.
 - An informative message for the user explaining that the application is used to check the weather of a city and country of their choice.
 - A prompt to press any key to continue.
-  ![Welcome Screen](./assets/readme_files/images/welcome_screen.png)
+  ![Welcome Screen](./assets/readme_files/different_info_screens/welcome_screen.png)
 
 [Back to the top ⇧](#weather-info-app)
 
-**User Name Input Screen**
+_User Name Input Screen_
 
-2. Then user is presented with the Name Input screen. The user is prompted to enter their name. The user's name is used to personalize the application. The user's name is also used to display the historical searches. The user's name is validated to ensure that it is a string and not a number. The user is prompted to enter their name again if the input is invalid. The user is also prompted to enter their name again if the input is less than 3 characters or more then 10 characters. The Name Input screen provides:
+Following Welcome Screen user is presented with the Name Input screen. The user is prompted to enter their name. The user's name is used to personalize the application. The user's name is also used to display the historical searches. The user's name is validated to ensure that it is a string and not a number. The user is prompted to enter their name again if the input is invalid. The user is also prompted to enter their name again if the input is less than 3 characters or more then 10 characters. The Name Input screen provides:
 
 - An imitation of a typewriter effect typing - British weather idiom 'Every cloud has a silver lining' - to enhance the user experience (BANNER_INPUT [ASCII art]).
 - A prompt to enter the user's name that satisfies the stated validation criteria.
+- After a valid name is entered, the user is presented with a greeting name that uses the user's name - 'Hello, {user_name}! COME RAIN OR SHINE,
+  I wish you to be on a CLOUD NINE and everything you do TO BE A BREEZE!' The greeting meassega has been composed with the use of British weather idioms to enhance the user experience.
 
-![Name Input Screen](./assets/readme_files/gifs/name_input.gif)
+![Name Input Screen](./assets/readme_files/different_info_screens/name_input_screen.png)
+
+_Menu Screen_
+
+Following the Name Input screen, the user is presented with the Menu screen. As mentrioned above, the menu is the central feature of the application. It gives to the user five possibilities to proceed with the application.
+
+![Menu Screen](./assets/readme_files/different_info_screens/menu_screen.png)
+
+_Get Weather Information_
+
+After choosing the first option from the menu, the user is presented with the Get Weather Information screen. The user is prompted to enter the city and country of their choice. The user is also prompted to confirm the city and country input. If the user confirms, the application will proceed to display the weather information. If the user wants to change the city and country, the application will allow the user to do so as been demonstrated in the section [User input validations for various input scenarios.](#user-input-validations-for-various-input-scenarios)
+
+. The user is prompted to enter the city and country of their choice. The user is also prompted to confirm the city and country input. If the user confirms, the application will proceed to display the weather information. If the user wants to change the city and country, the application will allow the user to do so. The Get Weather Information screen provides:
 
 [Back to the top ⇧](#weather-info-app)
-
-- **How to play the game instructions display**
-
-  - The instructions are read from the corresponding txt file and displayed on screen. They appear after the intro screen and later when chosen from the menu.
-
-  ![How To Play Instructions Screen](./assets/readme_files/how_to_play_screen.png)
-
-- **Player's Name Input**
-
-  - After the instructions, the next screen requires user to enter they name. The valid input corresponds to a string containing only letters and of minimum 3 characters length.
-
-  ![Player's Name Input](./assets/readme_files/insert_name_screen.png)
-
-- **Menu**
-
-  - Menu is the central feature of the application. It gives to the user four possibilities to proceed: start quiz, show the instructions, show the high scores, or exit from the application.
-
-  ![Menu](./assets/readme_files/menu_screen.png)
-
-- **Quiz function**
-
-  - This functionality immediately generates 15 randomly selected questions, 5 of each level, through the dedicated Class. There are controllers which guarantee that the questions woudn't be repeated and the shuffler for the answers, so they appear every time in a different order. Once that is over, the quiz starts with the first question. On the displayed screen, there are information about the point value of the question and the threshold (points guaranteed) if they were reached. Then appears the question and four answeres given with the letters a, b, c, and d as a choice. There's fifth option given to the user, that of q if they wish to quit the game with the so far accumulated points. If the wrong answer is given, the quiz ends and the points fall to the threshold. If none is reached, the quiz ends with 0 points, relative screen, and no high score saved. If the quiz ends with some points or the million is reached, different screens are presented and the score is saved in the high scores Google Sheet (name, points, date). After the end quiz screen, Menu returns.
-
-  ![Quiz Question Screen](./assets/readme_files/question_screen.png)
-  ![End Quiez Screen](./assets/readme_files/end_quiz_screen.png)
-
-- **High Scores Display**
-
-  - This function first fetches the data from the high scores Google Sheet and then presents them in order of the points received. So, the most successful scores come first.
-
-  ![High Scores Screen](./assets/readme_files/high_scores_screen.png)
-
-- **Game Exit**
-
-  - If this choice is made, the game finishes with the thank you note to the user.
-
-  ![Game End Screen](./assets/readme_files/end_screen.png)
 
 - **Slow print function**
 
