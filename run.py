@@ -236,7 +236,8 @@ information for a different \nlocation, please enter the new city and country.'
             # and continue with the next iteration of the loop
             print(colored('Oops! Something went wrong.'
                           '\nThe location you entered has not been found.'
-                          '\nPlease, check the spelling and try again.', 'red'))
+                          '\nPlease, check the spelling '
+                          'and try again.', 'red'))
             print()
             context = 'error'
 
