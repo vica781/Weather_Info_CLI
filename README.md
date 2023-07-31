@@ -259,11 +259,15 @@ Following Welcome Screen user is presented with the Name Input screen. The user 
 
 ![Name Input Screen](./assets/readme_files/different_info_screens/name_input_screen.png)
 
+[Back to the top ⇧](#weather-info-app)
+
 _Menu Screen_
 
 Following the Name Input screen, the user is presented with the Menu screen. As mentrioned above, the menu is the central feature of the application. It gives to the user five possibilities to proceed with the application.
 
 ![Menu Screen](./assets/readme_files/different_info_screens/menu_screen.png)
+
+[Back to the top ⇧](#weather-info-app)
 
 _Get Weather Information_
 
@@ -273,6 +277,8 @@ The user is prompted to enter the city and country of their choice. The user is 
 
 ![Get Weather Information Screen](./assets/readme_files/different_info_screens/i_got_data_screen.png)
 
+[Back to the top ⇧](#weather-info-app)
+
 _Weather Display Screens_
 After been informed that the application has got the weather data, the user is presented with the weather display screens. The weather display screens provide:
 
@@ -280,17 +286,21 @@ After been informed that the application has got the weather data, the user is p
 
 ![Weather Display Screen](./assets/readme_files/different_info_screens/rainy_day_screen.png)
 
-- Pressing any key will display the next screen with the weather information.
+- Pressing any key will display the next screen with the weather information for the rainy day in the choosen location. Pressing any key as prompted at the bottom of the scrren will bring back the menu.
 
 ![Weather Display Screen](./assets/readme_files/different_info_screens/rainy_day_weather_info_screen.png)
+
+[Back to the top ⇧](#weather-info-app)
 
 - If it is hot day in a choosen location, the user will be presented with the screen indicating that it is going to be a hot day.
 
 ![Weather Display Screen](./assets/readme_files/different_info_screens/sunny_day_screen.png)
 
-- Pressing any key will display the next screen with the weather information for the hot day in the choosen location.
+- Pressing any key will display the next screen with the weather information for the hot day in the choosen location. Pressing any key as prompted at the bottom of the scrren will bring back the menu.
 
 ![Weather Display Screen](./assets/readme_files/different_info_screens/sunny_day_weather_info_screen.png)
+
+[Back to the top ⇧](#weather-info-app)
 
 _Weather Components Explanation Screen_
 
@@ -302,6 +312,8 @@ At the end of the Weather Components Explanation section, the user is informed t
 they can press any key to go back to the menu.
 
 ![Weather Components Explanation Screen](./assets/readme_files/different_info_screens/end_off_weather_comp_screen.png)
+
+[Back to the top ⇧](#weather-info-app)
 
 _Search History Screen_
 
@@ -315,19 +327,33 @@ Due to the limited space on the screen, the table created only to displey user's
 
 ![Search History Screen](./assets/readme_files/different_info_screens/search_history_screen.png)
 
+[Back to the top ⇧](#weather-info-app)
+
 _Instructions Screen_
 
 After choosing the fourth option from the menu, the user is presented with the Instructions screen. The instructions are displayed as a continuous text, and the user can navigate through the text by pressing any key. The text has been divided into the paragraphs to make it easier to read.
 
 ![Instructions Screen](./assets/readme_files/different_info_screens/instructions_screen.png)
 
+At the end of the Instructions section, the user is informed that they reached the end of the section and they can press any key to go back to the menu.
+
+![Instructions Screen](./assets/readme_files/different_info_screens/end_of_instructions_screen.png)
+
+[Back to the top ⇧](#weather-info-app)
+
+_Exit Screen_
+
+After choosing the fifth option from the menu, the user is presented with the Exit screen. The application will display a thank you message and BANNER-EXIT (ASCII art) depicting peacefull water surface with swan, singing birds, fish and fine weather sky with clouds and sun. The banner is also content British weather idiom within the message from the developer to the user 'I wish you to find your PLACE IN THE SUN!!'
+
+![Exit Screen](./assets/readme_files/different_info_screens/exit_screen.png)
+
 [Back to the top ⇧](#weather-info-app)
 
 - **Slow print function**
 
-  - This feature is present in almost every screen in the application. It gives the user the impression of an animation. In fact, it consists of the printing the characters of the string on by one with a time delay.
+To make the application more interesting and engaging, the developer has included the slow print function on a name input screen by printing - 'Every cloud has a silver lining' - British weather idiom. To create the effect of the typewriter, the developer has used the time.sleep() function to delay the printing of each character, and add different time delay for the spaces between lines.
 
-  ![Slow Print Function](./assets/readme_files/slow_print.gif)
+![Slow Print Function](./assets/readme_files/slow_print.gif)
 
 [Back to the top ⇧](#weather-info-app)
 
