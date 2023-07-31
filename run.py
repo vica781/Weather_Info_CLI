@@ -199,7 +199,7 @@ information for a different \nlocation, please enter the new city and country.'
                   f'result:\n{location_details.raw["display_name"]}')
 
             while True:  # Keep asking until the user confirms the location
-                conformation = input('Is this the location you wnat'
+                conformation = input('Is this the location you want '
                                      'to use? (y/n): ').lower().strip()
                 if conformation == 'y':
 
