@@ -2,9 +2,15 @@
 
 # WEATHER INFO APP
 
+---
+
 ![Am I Responsive Image](./assets/readme_files/images/am_i_responsive.png)
 
+---
+
 [View the live project here](https://weather-info-vk781-59b552e10969.herokuapp.com/)
+
+---
 
 ## Table of contents
 
@@ -391,6 +397,8 @@ To make the application more interesting and engaging, the developer has include
 
 ### Known Issues
 
+There are no known issues.
+
 ### Unfixed Bugs
 
 There are no known unfixed bugs.
@@ -441,7 +449,7 @@ This project leverages a variety of Python libraries and modules to create a com
 - [Am I Responsive?](https://ui.dev/amiresponsive "Link to Am I Responsive") was used for the web page picture of this README.md
 - [Peek](https://github.com/phw/peek) was used to make screencasts for the documentation.
 
-[Back to the top ⇧](#weather-info-app)(#Who-Wants-To-Be-A-Millionaire-Kind-Of)
+[Back to the top ⇧](#weather-info-app)
 
 ## Testing
 
@@ -478,9 +486,9 @@ Deploying on Heroky required the following:
 
 - Once the app is built, and the link click "View", click on it to go to the site with the deployed Python app.
 
-The application is finally deployed on the link [https://millionaire-kindof.herokuapp.com/](https://millionaire-kindof.herokuapp.com/).
+The application is finally deployed on the link [https://weather-info-vk781-59b552e10969.herokuapp.com/](https://weather-info-vk781-59b552e10969.herokuapp.com/).
 
-[Back to the top ⇧](#weather-info-app)(#Who-Wants-To-Be-A-Millionaire-Kind-Of)
+[Back to the top ⇧](#weather-info-app)
 
 ## Credits
 
@@ -488,15 +496,23 @@ The application is finally deployed on the link [https://millionaire-kindof.hero
 
 - In order to develop the application, the developer has consulted frequently the following web sites:
   - [Stack Overflow](https://stackoverflow.com/ "Link to Stack Overflow")
-  - [Geeks for Geeks](https://www.geeksforgeeks.org/ "Link to Geeks for Geeks")
-    - especially [Python sort list by second element of a sublist](https://www.geeksforgeeks.org/python-sort-list-according-second-element-sublist/)
   - [W3Schools](https://www.w3schools.com/ 'Link to W3Schools)
   - Info about the clearing screen in Python came from [Scaler](https://www.scaler.com/topics/how-to-clear-screen-in-python/ 'Link to explanation from Scaler for clear screen)
+  - Information about the time.sleep() function came from [Geeks for Geeks](https://www.geeksforgeeks.org/python-sleep-method/ 'Link to Geeks for Geeks explanation of time.sleep() function) and from the time module in the Python Standard Library documentation.
 
 ### Contents
 
-- For the questions database, the developer has used the following web API:
-  - [The Trivia API](https://the-trivia-api.com/) The questions are taken from the Film and TV category on the web API app and copied into the json files divided by difficulty level (easy, medium, hard).
+- All ASCII art was adapted by the developer from the following sources:
+  - [ASCII Art Archive](https://www.asciiart.eu/ "Link to ASCII Art Archive")
+  - [ASCII Art Generator](https://www.ascii-art-generator.org/ "Link to ASCII Art Generator")
+  - [ASCII Art Studio](https://asciiart.studio/ "Link to ASCII Art Studio")
+  - [ASCII Art World](https://www.asciiart.eu/ "Link to ASCII Art World")
+  - [ASCII Art Dictionary](https://www.asciiart.eu/ "Link to ASCII Art Dictionary")
+  - https://patorjk.com/software/taag/#p=display&f=JS%20Bracket%20Letters&t=Every%20Cloud%20has%20a%20silver%20lining
+  - Information about weather idioms came from:
+    [KapLan International languagies](https://www.kaplaninternational.com/blog/learning-languages/eng/15-english-weather-idioms "Link to The Idioms")  
+     [FluentU](https://www.fluentu.com/blog/english/english-weather-idioms/#toc_7 "Link to The Idioms")
+    [Get Action](https://www.artofmanliness.com/skills/outdoor-survival/22-old-weather-proverbs-that-are-actually-true/ "Link to The Idioms")
 
 [Back to the top ⇧](#weather-info-app)
 
@@ -504,9 +520,9 @@ The application is finally deployed on the link [https://millionaire-kindof.hero
 
 I would like to thank:
 
-- My mentor, the Supergirl Koko, for all the encouragement, advices, help and expertise.
-- My colleagues from the Code Institute who tested my code and gave me some wonderful feedback.
-- To my inner circle, who are secretly following my ongoing coding adventure.
+- My mentor Brian Macharia for all the encouragement, advices, help and expertise.
+- Tomislav Dukez - my dear friend and colleague from the Code Institute - for his endless support and help.
+- My family and friends for their support and encouragement.
 
 [Back to the top ⇧](#weather-info-app)
 
