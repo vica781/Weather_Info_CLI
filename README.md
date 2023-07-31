@@ -72,7 +72,6 @@ There are two types of ideal users:
 2. As a current user, I want to navigate quickly through the application without unnecessary steps or complications.
 3. As a current user, I want the information to be displayed in a clean and readable format.
 4. As a current user, I want to be able to see history of previous searches. Perhaps, I want to go back and remember the weather of a particular day, or use the data for future reference and other purposes.
-5. As a current user, I want to find updates or new features that have been implemented in the application.
 
 [Back to the top ⇧](#table-of-contents)
 

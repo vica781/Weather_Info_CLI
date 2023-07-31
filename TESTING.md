@@ -27,6 +27,7 @@
 - The main purpouse of the app is to provide the user with the weather information of the city and country of their choice.
 - The intro screen of the app has a clear title and a short description of the app.
 - The same is also evedent from the instructions screen.
+- The user can get information about Weather Components by selecting that explanation from the menu.
 
 2. As a new user, I want to be able to easily navigate through the application to find the information I need, so that I can plan my activities accordingly.
 
@@ -48,10 +49,23 @@
 #### Current User Goals
 
 1. As a current user, I want to find the latest weather updates of the city and country of my choice.
+
+- The app provides the user with the latest weather information of the city and country they have chosen.
+
 2. As a current user, I want to navigate quickly through the application without unnecessary steps or complications.
+
+- The app has a simple and intuitive navigation system.
+- The user is presented with a menu screen with a list of options to choose from.
+
 3. As a current user, I want the information to be displayed in a clean and readable format.
+
+- The app displays the information in a clean and readable format.
+- Also, there are some ASCII art images to make the app more visually appealing.
+
 4. As a current user, I want to be able to see history of previous searches. Perhaps, I want to go back and remember the weather of a particular day, or use the data for future reference and other purposes.
-5. As a current user, I want to find updates or new features that have been implemented in the application.
+
+- The app provides the user with the history of previous searches.
+- The user can choose to see the history of previous searches by selecting the "Display Search History" option from the menu.
 
 [Back to the top ⇧](#table-of-contents)
 
