@@ -2,8 +2,6 @@
 
 # WEATHER INFO APP
 
----
-
 ![Am I Responsive Image](./assets/readme_files/images/am_i_responsive.png)
 
 ---
@@ -45,7 +43,7 @@ The WEATHER INFO APP is the 3rd Portfolio Project at the Code Institute. I hope 
 
 Weather Info App is a simple and intuitive command line interface application written in Python. It utilizes weather data provided by Weather Forcast API from Open Meteo. The application allows the user to check the weather in a city and a country of their choice. The purpose of this project is to build a command-line application in Python that allows the user to manage a common dataset about a particular domain.
 
-[Back to the top ⇧](#weather-info-app)
+[Back to the top ⇧](#table-of-contents)
 
 ## UX
 
@@ -76,7 +74,7 @@ There are two types of ideal users:
 4. As a current user, I want to be able to see history of previous searches. Perhaps, I want to go back and remember the weather of a particular day, or use the data for future reference and other purposes.
 5. As a current user, I want to find updates or new features that have been implemented in the application.
 
-[Back to the top ⇧](#weather-info-app)
+[Back to the top ⇧](#table-of-contents)
 
 ### Development-Planes
 
@@ -88,7 +86,7 @@ The application was developed with the following planes in mind:
 4. Skeleton: Clear and readable text output.
 5. Surface: Clean interface with no unnecessary distractions.
 
-[Back to the top ⇧](#weather-info-app)
+[Back to the top ⇧](#table-of-contents)
 
 #### Strategy
 
@@ -124,7 +122,7 @@ The Developer/Administrator receives:
 - User's queried city and country
 - Feedback from users for continuous improvement and updates (optional) - this can be done through email or social media.
 
-[Back to the top ⇧](#weather-info-app)
+[Back to the top ⇧](#table-of-contents)
 
 #### Scope
 
@@ -166,7 +164,7 @@ Each of these files includes functions that are invoked by the main program depe
 
 More details that will help to understand the application's sceleton are provided in the following sections.
 
-[Back to the top ⇧](#weather-info-app)
+[Back to the top ⇧](#table-of-contents)
 
 ### Design
 
@@ -207,7 +205,7 @@ The interactive parts of the application:
 - City and Country Input
 - Conformation of the City and Country Input
 
-[Back to the top ⇧](#weather-info-app)
+[Back to the top ⇧](#table-of-contents)
 
 ## Features
 
@@ -239,7 +237,7 @@ All fueatures would be part of the application design, and some of them already 
 
   ![Search History Display Validation](./assets/readme_files/input_validations/search_history_validation.gif)
 
-  [Back to the top ⇧](#weather-info-app)
+  [Back to the top ⇧](#table-of-contents)
 
 - **Different info screens**
 
@@ -252,7 +250,7 @@ The application is designed to be simple and intuitive. The user is presented wi
 - A prompt to press any key to continue.
   ![Welcome Screen](./assets/readme_files/different_info_screens/welcome_screen.png)
 
-[Back to the top ⇧](#weather-info-app)
+[Back to the top ⇧](#table-of-contents)
 
 _User Name Input Screen_
 
@@ -265,7 +263,7 @@ Following Welcome Screen user is presented with the Name Input screen. The user 
 
 ![Name Input Screen](./assets/readme_files/different_info_screens/name_input_screen.png)
 
-[Back to the top ⇧](#weather-info-app)
+[Back to the top ⇧](#table-of-contents)
 
 _Menu Screen_
 
@@ -273,7 +271,7 @@ Following the Name Input screen, the user is presented with the Menu screen. As 
 
 ![Menu Screen](./assets/readme_files/different_info_screens/menu_screen.png)
 
-[Back to the top ⇧](#weather-info-app)
+[Back to the top ⇧](#table-of-contents)
 
 _Get Weather Information_
 
@@ -283,7 +281,7 @@ The user is prompted to enter the city and country of their choice. The user is 
 
 ![Get Weather Information Screen](./assets/readme_files/different_info_screens/i_got_data_screen.png)
 
-[Back to the top ⇧](#weather-info-app)
+[Back to the top ⇧](#table-of-contents)
 
 _Weather Display Screens_
 After been informed that the application has got the weather data, the user is presented with the weather display screens. The weather display screens provide:
@@ -296,7 +294,7 @@ After been informed that the application has got the weather data, the user is p
 
 ![Weather Display Screen](./assets/readme_files/different_info_screens/rainy_day_weather_info_screen.png)
 
-[Back to the top ⇧](#weather-info-app)
+[Back to the top ⇧](#table-of-contents)
 
 - If it is hot day in a choosen location, the user will be presented with the screen indicating that it is going to be a hot day.
 
@@ -306,7 +304,7 @@ After been informed that the application has got the weather data, the user is p
 
 ![Weather Display Screen](./assets/readme_files/different_info_screens/sunny_day_weather_info_screen.png)
 
-[Back to the top ⇧](#weather-info-app)
+[Back to the top ⇧](#table-of-contents)
 
 _Weather Components Explanation Screen_
 
@@ -319,7 +317,7 @@ they can press any key to go back to the menu.
 
 ![Weather Components Explanation Screen](./assets/readme_files/different_info_screens/end_off_weather_comp_screen.png)
 
-[Back to the top ⇧](#weather-info-app)
+[Back to the top ⇧](#table-of-contents)
 
 _Search History Screen_
 
@@ -333,7 +331,7 @@ Due to the limited space on the screen, the table created only to displey user's
 
 ![Search History Screen](./assets/readme_files/different_info_screens/search_history_screen.png)
 
-[Back to the top ⇧](#weather-info-app)
+[Back to the top ⇧](#table-of-contents)
 
 _Instructions Screen_
 
@@ -345,7 +343,7 @@ At the end of the Instructions section, the user is informed that they reached t
 
 ![Instructions Screen](./assets/readme_files/different_info_screens/end_of_instructions_screen.png)
 
-[Back to the top ⇧](#weather-info-app)
+[Back to the top ⇧](#table-of-contents)
 
 _Exit Screen_
 
@@ -353,7 +351,7 @@ After choosing the fifth option from the menu, the user is presented with the Ex
 
 ![Exit Screen](./assets/readme_files/different_info_screens/exit_screen.png)
 
-[Back to the top ⇧](#weather-info-app)
+[Back to the top ⇧](#table-of-contents)
 
 - **Slow print function**
 
@@ -361,7 +359,7 @@ To make the application more interesting and engaging, the developer has include
 
 ![Slow Print Function](./assets/readme_files/slow_print.gif)
 
-[Back to the top ⇧](#weather-info-app)
+[Back to the top ⇧](#table-of-contents)
 
 ### Features to Implement in the future
 
@@ -391,7 +389,7 @@ To make the application more interesting and engaging, the developer has include
 
 12. **Gathering User Feedback**: The app could gather feedback from users about what features they would like to see added in future versions. This could be done through a survey or poll on the app's website or social media pages. The developer could consider adding the feature that would allow the user to choose the way they want to provide the feedback. For example, through the survey or poll on the app's website or social media pages.
 
-[Back to the top ⇧](#weather-info-app)
+[Back to the top ⇧](#table-of-contents)
 
 ## Issues and Bugs
 
@@ -403,7 +401,7 @@ There are no known issues.
 
 There are no known unfixed bugs.
 
-[Back to the top ⇧](#weather-info-app)
+[Back to the top ⇧](#table-of-contents)
 
 ## Technologies Used
 
@@ -449,7 +447,7 @@ This project leverages a variety of Python libraries and modules to create a com
 - [Am I Responsive?](https://ui.dev/amiresponsive "Link to Am I Responsive") was used for the web page picture of this README.md
 - [Peek](https://github.com/phw/peek) was used to make screencasts for the documentation.
 
-[Back to the top ⇧](#weather-info-app)
+[Back to the top ⇧](#table-of-contents)
 
 ## Testing
 
@@ -488,7 +486,7 @@ Deploying on Heroky required the following:
 
 The application is finally deployed on the link [https://weather-info-vk781-59b552e10969.herokuapp.com/](https://weather-info-vk781-59b552e10969.herokuapp.com/).
 
-[Back to the top ⇧](#weather-info-app)
+[Back to the top ⇧](#table-of-contents)
 
 ## Credits
 
@@ -514,7 +512,7 @@ The application is finally deployed on the link [https://weather-info-vk781-59b5
      [FluentU](https://www.fluentu.com/blog/english/english-weather-idioms/#toc_7 "Link to The Idioms")
     [Get Action](https://www.artofmanliness.com/skills/outdoor-survival/22-old-weather-proverbs-that-are-actually-true/ "Link to The Idioms")
 
-[Back to the top ⇧](#weather-info-app)
+[Back to the top ⇧](#table-of-contents)
 
 ## Acknowledgements
 
@@ -524,6 +522,6 @@ I would like to thank:
 - Tomislav Dukez - my dear friend and colleague from the Code Institute - for his endless support and help.
 - My family and friends for their support and encouragement.
 
-[Back to the top ⇧](#weather-info-app)
+[Back to top ⇧](#table-of-contents)
 
 ---
