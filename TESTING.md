@@ -71,31 +71,33 @@
 
 ## Manual Testing
 
-### Application Start and Intro Screen
+### Intro screen and input name
 
-- Application start and intro screen is visible until the key is pressed (as indicated).
+![Intro screen and input name](./assets/readme_files/testing/intro_and_name_input_testing.gif)
 
-  ![Start and Intro Screen](./assets/readme_files/testing/application_start.gif)
+### Menu Screen Testing
 
-- After key is pressed, the new screen with instruction about how to play is displayed until the key is pressed (as indicated).
+![Menu](./assets/readme_files/testing/menu_testing.gif)
 
-  ![Intro to How To Play Instructions](./assets/readme_files/testing/transition_intro_to_rules.gif)
+### Get Weather Info
 
-- After key is pressed, the new screen with request to the user to enter the user name is indicated together with the restrictions in choosing the name. The input is validated and, if invalid, the warning appears and the request is repeated until satisfactory input is given.
+![Get Weather Info](./assets/readme_files/testing/get_weather_info_testing.gif)
 
-  ![Input Request Screen and Validation](./assets/readme_files/testing/enter_name_validation.gif)
+### Weather Components
 
-### Menu
+![Weather Components](./assets/readme_files/testing/weather_components_testing.gif)
 
-- After a valid name is given, the menu screen appears. It requires writing the correct letter presented against the feature that is presented in the menu. The input is then validated. If successful, starts the chosen feature.
+### Search History
 
-  ![Menu Selection](./assets/readme_files/testing/menu-input_validation.gif)
+![Search History](./assets/readme_files/testing/search_history_testing.gif)
 
-### Game Exit
+### Instructions
 
-- After made the corresponding choice, the screen of Game Exit appears with a simple thank you note to the user.
+![Instructions](./assets/readme_files/testing/instructions_testing.gif)
 
-  ![Game Exit](./assets/readme_files/testing/game_exit.gif)
+### Exit
+
+![Exit](./assets/readme_files/testing/exit_testing.gif)
 
 [Back to the top ⇧](#table-of-contents)
 
