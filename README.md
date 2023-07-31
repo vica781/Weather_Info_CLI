@@ -359,31 +359,43 @@ To make the application more interesting and engaging, the developer has include
 
 ### Features to Implement in the future
 
-- The auxiliary features from the original TV game
-  There are three auxiliary features in the original TV game: call a friend, ask the audience, and 50:50 options. Because of lack of time, the developer couldn't make it to implement these features. The complex algorithm for randomization with 80% of probabilty for the right answer of the first two features would have to wait for some other moment.
-- The use of API for the questions
-  The developer used the static JSON copy of the question from an API that had some limitations. Before the end of the project, the developer found one other API without the same limitations and without need of authentication to access the database, but didn't want to include it the final project. That was because the data structure was sligthly different and the developer didn't have time to properly test the API's reliability.
+(_The develope been carried away with the ideas. CHASING RAINBOWS and BUILDING CASTLES IN THE AIR (yet more British weather idioms). The following features are just a few of the ideas that the developer has for future versions of the application._)
 
-[Back to the top ⇧](#weather-info-app)(#Who-Wants-To-Be-A-Millionaire-Kind-Of)
+1. **More Weather Components**: developer could consider adding more weather components to the application to provide more detailed weather information. For example, the developer could add information about the air quality, cloud cover, snowfall, etc.
+
+2. **Extended Forecast**: The app currently only provides weather information for the current day. In future versions, an extended forecast feature could be implemented to provide weather predictions for up to a week in advance. This could be useful for users who want to plan their week around the weather.
+
+3. **Hourly Forecast**: Similarly, the developer could consider adding an hourly forecast feature that would provide weather information broken down by the hour for the current day. This could be useful for users who want to plan their day around the weather. At the moment the application provides hourly weather information for the current day, but it is precented to the user just for the time of the day when the user is using the application. The developer could consider adding the feature that would allow the user to choose the time of the day for which they want to see the hourly weather information.
+
+4. **Weather Alerts/Warnings**: Another useful feature could be the ability to provide weather alerts or severe weather warnings if any are issued for the selected location. This could be particularly useful for users who live in areas prone to severe weather events like hurricanes or tornadoes. The developer could consider adding the feature that would allow the user to choose the type of the weather alerts or severe weather warnings they want to receive.
+
+5. **Favorite Locations**: Allow users to save their favorite locations so they can quickly check the weather in those areas without needing to enter the city and country each time. This could be particularly useful for users who travel frequently or have family and friends in different locations. The developer could consider adding the feature that would allow the user to choose the number of favorite locations they want to save.
+
+6. **Local Time**: Display the local time of the selected location alongside the weather information. This could be particularly useful for users who are checking the weather in a different time zone. The developer could consider adding the feature that would allow the user to choose the time format they want to see the local time. For example, 12-hour or 24-hour format.
+
+7. **Historical Weather Data**: This could be a more advanced feature, but providing historical weather data (like what the weather was like on this day last year) could be interesting. This could be useful for users who want to compare the weather from one year to the next. The developer could consider adding the feature that would allow the user to choose the date for which they want to see the historical weather data.
+
+8. **Interactive Map**: Integrate an interactive map that shows the weather patterns across different regions. This could be useful for users who want to see how the weather is changing in their area over time. The developer could consider adding the feature that would allow the user to choose the type of the map they want to see. For example, satellite, radar, or temperature map.
+
+9. **Integration with Personal Calendars**: The app could integrate with the user's calendar and provide weather forecasts for upcoming events or trips.
+
+10. **Integration with Social Media**: The app could integrate with the user's social media accounts and allow them to share the weather information with their friends and family.
+
+11. **Integration with Smart Home Devices**: The app could integrate with the user's smart home devices and allow them to control their home's temperature based on the weather forecast. For example, if it's going to be cold outside, the app could turn on the heat in the user's home.
+
+12. **Gathering User Feedback**: The app could gather feedback from users about what features they would like to see added in future versions. This could be done through a survey or poll on the app's website or social media pages. The developer could consider adding the feature that would allow the user to choose the way they want to provide the feedback. For example, through the survey or poll on the app's website or social media pages.
+
+[Back to the top ⇧](#weather-info-app)
 
 ## Issues and Bugs
 
-Several issues were encountered during developement but the most troublesome are listed below.
-
-- **Validation Errors**
-  In different moments of the development, the validation bugs happened. First one was the unrecognized choice of a letter when written as capital letter. That was immediately corrected by validating same letters, being capital or lower. Afterwards, with the username, the developer didn't take into consideration the possibility of user entering characters that weren't letters. That bug was pointed out by the mentor and surfaced again in the testing phase of the colleagues on Slack. That bug was also corrected.
-
-- **Quiz continuing even if quit selected**
-  There was a bug because of which the quiz continued although the user selected to quit. The error was due to selection of the possibilities of gaining only threshold points (as in choosing the wrong answer), whilst in quitting, the user can save all the points they won. That was also corrected.
-
-- **Different display issues on Herokue**
-  When deployed on Heroku, the application had issues with the visibility of the ASCII art, and some selected colours were barely visible. That was pointed out by some colleagues from Slack in the testing phase. The developer decided to generate new ASCII art texts and select the plain colours to garantee the visibility of the text.
+### Known Issues
 
 ### Unfixed Bugs
 
 There are no known unfixed bugs.
 
-[Back to the top ⇧](#weather-info-app)(#Who-Wants-To-Be-A-Millionaire-Kind-Of)
+[Back to the top ⇧](#weather-info-app)
 
 ## Technologies Used
 
@@ -393,16 +405,33 @@ There are no known unfixed bugs.
 
 ### Libraries And Modules Used
 
-- **json** - JSON encoder and decoder module
-- **getch** - The module that gets a character from user input, with no output
-- **os** - This module provides a portable way of using operating system dependent functionality
-- **random** - Random variable generators module.
-- **time** - This module provides various functions to manipulate time values.
-- **datetime** - Concrete date/time and related types module.
-- **sys** - This module provides access to some objects used or maintained by the interpreter and to functions that interact strongly with the interpreter.
-- **gspread** - Google Spreadsheets client library.
-- **google.oauth2.service_account** - A module for the Google authentication.
-- **termcolor** - The module for ANSI color formatting for output in terminal.
+This project leverages a variety of Python libraries and modules to create a command-line weather information application. Here's a list of the main libraries and their purpose in the project:
+
+- `geopy.geocoders`: This library is used to identify the geographical coordinates of places. Specifically, the `Nominatim` module converts a location entered by a user to latitude and longitude, which is then used to get the weather data for that particular location.
+
+- `requests`: A popular Python library for making HTTP requests. It abstracts the complexities of making requests behind a beautiful, simple API so that you can focus on interacting with services and consuming data in your application.
+
+- `datetime`: This built-in Python module is used to handle operations related to date and time.
+
+- `termcolor`: A Python module for ANSI color output. It is used in this project to colorize the output text in the terminal, making it easier for the user to read and understand the information presented.
+
+- `readchar`: This module is used to read a single character from the user input. It allows the program to pause and wait for the user's response.
+
+- `os`: This is a built-in Python module for interacting with the operating system. In this application, it is mainly used for clearing the console.
+
+- `time`: Another built-in Python module, `time` is used here to control the pace of the application by introducing pauses.
+
+- `sys`: The `sys` module provides access to some variables used or maintained by the Python interpreter and to functions that interact strongly with the interpreter. In this project, it's used to exit the program when necessary.
+
+- `banners`: A custom module used to print header banners for the application.
+
+- `gspread`: This Python library is for interacting with Google Spreadsheets. It is used to store and retrieve user data for the application.
+
+- `google.oauth2.service_account`: This module is part of Google's Python client library for OAuth 2.0. It is used to authenticate the application's connection to the Google Sheets API.
+
+- `prettytable`: This module helps to generate ASCII code tables, which are used in this application to display weather data in a well-formatted, readable manner.
+
+[Back to the top ⇧](#table-of-contents)
 
 ### Frameworks And Programs Used
 
