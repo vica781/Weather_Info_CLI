@@ -392,6 +392,16 @@ To make the application more interesting and engaging, the developer has include
 
 ## Issues and Bugs
 
+- Issues with a Heroku screen size limitation. Theese ussies were resolved by using the line count code in the run.py file, reducing the amount of the columns in the table, redusing specing between the titles/heading and the mesages/content.
+- Issues with the colour displaying in Heroku. Theese ussies were resolved by triel and error method. The developer has tried different colours to find the ones that work.
+- Problem with the API results provided by the search of the location.
+
+![API Results](./assets/readme_files/wrong_location/api_bug.png)
+
+![API Results](./assets/readme_files/wrong_location/api_bug_2.png)
+
+That has been resolved by checking with the user if that the location they are looking for. If the user confirms, the application will proceed to display the weather information. If the user wants to change the city and country, the application will allow the user to do so.
+
 ### Known Issues
 
 There are no known issues.
