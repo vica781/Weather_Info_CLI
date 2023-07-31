@@ -273,6 +273,54 @@ The user is prompted to enter the city and country of their choice. The user is 
 
 ![Get Weather Information Screen](./assets/readme_files/different_info_screens/i_got_data_screen.png)
 
+_Weather Display Screens_
+After been informed that the application has got the weather data, the user is presented with the weather display screens. The weather display screens provide:
+
+- A BANNER_RAIN (ASCII art) depicting the Cat and Dog with an umbrella indicating that it is going to rain.
+
+![Weather Display Screen](./assets/readme_files/different_info_screens/rainy_day_screen.png)
+
+- Pressing any key will display the next screen with the weather information.
+
+![Weather Display Screen](./assets/readme_files/different_info_screens/rainy_day_weather_info_screen.png)
+
+- If it is hot day in a choosen location, the user will be presented with the screen indicating that it is going to be a hot day.
+
+![Weather Display Screen](./assets/readme_files/different_info_screens/sunny_day_screen.png)
+
+- Pressing any key will display the next screen with the weather information for the hot day in the choosen location.
+
+![Weather Display Screen](./assets/readme_files/different_info_screens/sunny_day_weather_info_screen.png)
+
+_Weather Components Explanation Screen_
+
+After choosing the second option from the menu, the user is presented with the Weather Components Explanation section that explains the weather components that are used in the application. The information is displayed as a continuous text, and the user can navigate through the text by pressing any key. For the user's convenience, the text has been divided into the paragraphs and names of the weather components are capitalized.
+
+![Weather Components Explanation Screen](./assets/readme_files/different_info_screens/weather_components_screen.png)
+
+At the end of the Weather Components Explanation section, the user is informed that they reached the end of the section and
+they can press any key to go back to the menu.
+
+![Weather Components Explanation Screen](./assets/readme_files/different_info_screens/end_off_weather_comp_screen.png)
+
+_Search History Screen_
+
+After choosing the third option from the menu, the user is presented with the Search History screen. The user is prompted to press any key to continue. If the user has no search history, the application will display a message to the user that there is no search history and will prompt the user to go back to the menu to get the weather information.
+
+![Search History Screen](./assets/readme_files/different_info_screens/no_yet_search_history_screen.png)
+
+If the user or application has search history, the application will display the search history. It will be presented in the table format and present the last searches results, so the user will see the most recent searches first. If the user wishes to see earlier searches, they can scroll up the screen.
+
+Due to the limited space on the screen, the table created only to displey user's name, date and time of the search, city and country of the search, and maximum temperature for the day of the search.
+
+![Search History Screen](./assets/readme_files/different_info_screens/search_history_screen.png)
+
+_Instructions Screen_
+
+After choosing the fourth option from the menu, the user is presented with the Instructions screen. The instructions are displayed as a continuous text, and the user can navigate through the text by pressing any key. The text has been divided into the paragraphs to make it easier to read.
+
+![Instructions Screen](./assets/readme_files/different_info_screens/instructions_screen.png)
+
 [Back to the top ⇧](#weather-info-app)
 
 - **Slow print function**
