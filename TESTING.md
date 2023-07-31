@@ -10,11 +10,11 @@
 
 ## Table of contents
 
-1. [Testing User Stories](#Testing-User-Stories)
-2. [Manual Testing](#Manual-Testing)
-3. [Automated Testing](#Automated-Testing)
-   - [Code Validation](#Code-Validation)
-4. [User Testing](#User-Testing)
+1. [Testing User Stories](#testing-user-stories)
+2. [Manual Testing](#manual-testing)
+3. [Automated Testing](#automated-testing)
+   - [Code Validation](#code-validation)
+4. [User Testing](#user-testing)
 
 ---
 
