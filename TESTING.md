@@ -23,10 +23,27 @@
 #### New User Goals
 
 1. As a new user, I want to easily understand the main purpose of the site.
+
+- The main purpouse of the app is to provide the user with the weather information of the city and country of their choice.
+- The intro screen of the app has a clear title and a short description of the app.
+- The same is also evedent from the instructions screen.
+
 2. As a new user, I want to be able to easily navigate through the application to find the information I need, so that I can plan my activities accordingly.
+
+- The app has a simple and intuitive navigation system.
+- The user is presented with a menu screen with a list of options to choose from.
+
 3. As a new user, I want to find information on how to use the application effectively.
+
+- The app has a menu option called "Instructions" which provides the user with the information on how to use the app.
+
 4. As a new user, I want to easily input the city and country name to get the weather information.
+
+- The app has a menu option called "Get Weather Info" which provides the user with the input prompts to enter the city and country name.
+
 5. As a new user, I want the application to provide detailed weather information such as temperature, humidity, percipitation probability, wind speed, uv index, sunrise and sunset time.
+
+- The app provides the user with the detailed weather information of the city and country of their choice.
 
 #### Current User Goals
 
@@ -35,7 +52,6 @@
 3. As a current user, I want the information to be displayed in a clean and readable format.
 4. As a current user, I want to be able to see history of previous searches. Perhaps, I want to go back and remember the weather of a particular day, or use the data for future reference and other purposes.
 5. As a current user, I want to find updates or new features that have been implemented in the application.
-
 
 [Back to the top ⇧](#table-of-contents)
 
