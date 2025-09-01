@@ -6,7 +6,7 @@
 
 ---
 
-[View the live project here](https://weather-info-vk781-59b552e10969.herokuapp.com/)
+[View the live project here](https://weather-info-cli.onrender.com/)
 
 ---
 
@@ -30,6 +30,7 @@
    1. [Testing.md](TESTING.md)
 7. [Deployment](#deployment)
    1. [Deploying on Heroku](#deploying-on-heroku)
+   2. [Deployment on RENDER](#deployment-on-render)
 8. [Credits](#credits)
    1. [Code](#code)
    2. [Contents](#contents)
@@ -468,6 +469,8 @@ The code was developed on Gitpod, and deployed on GitHub.
 
 ### Deploying on Heroku
 
+(DEPRECATED)
+
 Deploying on Heroky required the following:
 
 - Type "pip3 freeze > requirements.txt" in your Github terminal to update the requirements.txt file with the list of dependencies used in the project. Save, commit and push.
@@ -494,6 +497,12 @@ Deploying on Heroky required the following:
 - Once the app is built, and the link click "View", click on it to go to the site with the deployed Python app.
 
 The application is finally deployed on the link [https://weather-info-vk781-59b552e10969.herokuapp.com/](https://weather-info-vk781-59b552e10969.herokuapp.com/).
+
+### Deployment on RENDER
+
+After HEROKU changed the free tier limitations, the application was redeployed on RENDER.
+
+The application is finally deployed on the link [https://weather-info-cli.onrender.com/](https://weather-info-cli.onrender.com/).
 
 [Back to the top ⇧](#table-of-contents)
 
