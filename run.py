@@ -30,7 +30,7 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 
 # Define spreadsheet
-SHEET = GSPREAD_CLIENT.open('weather_search_history')
+SHEET = GSPREAD_CLIENT.open('weather')
 
 # Define worksheet
 SEARCH_HISTORY = SHEET.worksheet('search_data')
